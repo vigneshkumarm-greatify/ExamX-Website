@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 17.2414 17.2129" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="signal-full--phone-mobile-device-signal-wireless-smartphone-iphone-bar-bars-full-android">
+<path id="Intersect" d="M5.90284 16.4628H2.06552C1.38966 16.4628 0.827253 15.9395 0.79728 15.2644C0.732234 13.7992 0.734304 12.3506 0.803486 10.8843C0.832596 10.2673 1.30892 9.76343 1.92463 9.71451C2.93834 9.63397 3.82964 9.63397 4.84333 9.71451C5.45905 9.76343 5.93538 10.2673 5.96449 10.8843C6.05247 12.7489 6.03191 14.5847 5.90284 16.4628Z" stroke="url(#paint0_linear_0_58)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Intersect_2" d="M11.1712 16.4629H6.13356C5.99415 13.1225 5.98133 9.86341 6.09511 6.53802C6.11542 5.94406 6.54369 5.43723 7.13261 5.35752C8.19167 5.21416 9.11314 5.21416 10.1722 5.35752C10.7611 5.43723 11.1894 5.94406 11.2097 6.53802C11.3235 9.86341 11.3107 13.1225 11.1712 16.4629Z" stroke="url(#paint1_linear_0_58)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Intersect_3" d="M15.1431 16.4629H11.3386C11.1979 13.0919 11.1861 6.02493 11.3033 2.03575C11.3207 1.44171 11.7487 0.937232 12.3376 0.857517C13.3967 0.714161 14.3182 0.714161 15.3772 0.857517C15.9661 0.937232 16.3941 1.44171 16.4116 2.03575C16.5159 5.58833 16.5179 11.5818 16.4178 15.2321C16.3989 15.921 15.8323 16.4629 15.1431 16.4629Z" stroke="url(#paint2_linear_0_58)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_58" x1="3.38399" y1="9.65411" x2="3.38399" y2="16.4628" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_58" x1="8.6524" y1="5.25" x2="8.6524" y2="16.4629" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_58" x1="13.8574" y1="0.75" x2="13.8574" y2="16.4629" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+</defs>
+</svg>

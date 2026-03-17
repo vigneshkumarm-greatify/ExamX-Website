@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 14.4785 14.1695" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bag-suitcase-4--product-business-briefcase">
+<path id="Intersect" d="M7.23911 3.48464C5.55327 3.48464 3.79104 3.48464 2.31377 3.73217C1.60567 3.8508 1.04784 4.35775 0.895817 5.01688C0.656252 6.05549 0.656252 7.02429 0.656252 8.49893C0.656252 9.97358 0.656252 10.9423 0.895817 11.981C1.04784 12.6401 1.60567 13.147 2.31377 13.2657C3.79104 13.5132 5.55327 13.5132 7.23911 13.5132C8.92496 13.5132 10.6872 13.5132 12.1644 13.2657C12.8726 13.147 13.4304 12.6401 13.5824 11.981C13.8219 10.9423 13.8219 9.97358 13.8219 8.49893C13.8219 7.02429 13.8219 6.05549 13.5824 5.01688C13.4304 4.35775 12.8726 3.8508 12.1644 3.73217C10.6872 3.48464 8.92496 3.48464 7.23911 3.48464Z" stroke="url(#paint0_linear_0_25)" stroke-width="1.3125" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector 194" d="M4.49543 3.48482V2.79911C4.49543 1.61564 5.51878 0.65625 6.78115 0.65625H7.69543C8.9578 0.65625 9.98114 1.61564 9.98114 2.79911V3.48482" stroke="url(#paint1_linear_0_25)" stroke-width="1.3125" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector 2184" d="M0.66433 7.08482L6.51945 8.91725C6.98922 9.06427 7.49722 9.06427 7.96699 8.91725L13.8221 7.08482" stroke="url(#paint2_linear_0_25)" stroke-width="1.3125" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_25" x1="7.23909" y1="3.48464" x2="7.23909" y2="13.5132" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D7D7D7"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_25" x1="7.23829" y1="0.65625" x2="7.23829" y2="3.48482" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D7D7D7"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_25" x1="7.2432" y1="7.08482" x2="7.2432" y2="9.02752" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#D7D7D7"/>
+</linearGradient>
+</defs>
+</svg>

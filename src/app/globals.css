@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Chalk Green - Primary dark tones */
+  --color-chalk-green-50: #f2f5f5;
+  --color-chalk-green-100: #c2cfd0;
+  --color-chalk-green-300: #618385;
+  --color-chalk-green-400: #315d5f;
+  --color-chalk-green-500: #00373a;
+
+  /* Green - Primary accent */
+  --color-green-50: #e6fced;
+  --color-green-300: #5ce989;
+  --color-green-500: #00dc46;
+  --color-green-600: #00b63a;
+  --color-green-700: #008f2e;
+  --color-green-800: #006921;
+
+  /* Creme - Light text on dark */
+  --color-creme-50: #fdfdfc;
+  --color-creme-100: #faf9f5;
+  --color-creme-500: #f9f7e8;
+  --color-creme-600: #dbd9cc;
+  --color-creme-800: #b8b6ab;
+  --color-creme-900: #a6a59a;
+
+  /* Purple */
+  --color-purple-50: #efecfa;
+  --color-purple-100: #d3caf0;
+  --color-purple-400: #7e62d2;
+  --color-purple-500: #6240c8;
+  --color-purple-700: #3b2678;
+
+  /* Orange */
+  --color-orange-50: #fff3eb;
+  --color-orange-100: #ffdec8;
+  --color-orange-200: #ffc9a5;
+  --color-orange-400: #ff9f5e;
+  --color-orange-500: #ff8a3b;
+  --color-orange-600: #cc6e2f;
+  --color-orange-700: #995323;
+
+  /* Font family */
+  --font-yelliz: var(--font-yellix), "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-yellix), "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  .glow-tube-ellipse,
+  .grid-flow-path,
+  .glow-dot-left,
+  .glow-dot-right {
+    animation: none !important;
+    transition: none !important;
+  }
 }

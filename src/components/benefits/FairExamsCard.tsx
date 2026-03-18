@@ -1,104 +1,118 @@
+import Image from "next/image";
+import ExamMockup from "./ExamMockup";
+
 export default function FairExamsCard() {
   return (
-    <div
-      className="relative overflow-hidden rounded-[20px] bg-creme-50 md:h-[500px]"
-    >
+    <div className="relative overflow-hidden rounded-[20px] bg-white md:h-[500px]">
       {/* Title block */}
-      <div className="px-8 pt-8">
+      <div className="absolute left-[36px] top-[36px] z-10 flex w-[516px] flex-col gap-2">
         <h3 className="text-[23.04px] font-semibold leading-[1.2] tracking-[-0.46px] text-chalk-green-500">
           Fair exams for every candidate
         </h3>
-        <p className="mt-2 max-w-[411px] text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#71717a]">
+        <p className="max-w-[411px] text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#71717a]">
           Extra time accommodations, screen reader support, font size controls,
           high-contrast mode, and configurable breaks. WCAG 2.1 AA compliant.
         </p>
       </div>
 
-      {/* Exam UI mockup */}
-      <div className="relative mt-6 px-4 pb-0">
-        <div className="overflow-hidden rounded-t-[12px] border border-b-0 border-green-500/15 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
-          {/* Top bar */}
-          <div className="flex items-center justify-between border-b border-gray-100 bg-chalk-green-500 px-4 py-2.5">
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-green-500">
-                Time Left
+      {/* Green gradient background area */}
+      <div className="absolute left-[24px] top-[187px] h-[486px] w-[540px] overflow-hidden">
+        <div
+          className="absolute bottom-0 left-1/2 h-[486px] w-[540px] -translate-x-1/2 rounded-[23px]"
+          style={{
+            backgroundImage:
+              "linear-gradient(-53.07deg, #00373a 6.07%, #00dc46 86.84%)",
+          }}
+        />
+
+        {/* Glass panel overlay */}
+        <div
+          className="absolute left-[44px] top-[71px] h-[564px] w-[735px] rounded-bl-[16px] rounded-tl-[16px] border-b border-l border-t border-white"
+          style={{
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+            backgroundImage:
+              "linear-gradient(114.92deg, rgba(255,255,255,0.5) 3.78%, rgba(0,118,38,0.5) 92.35%)",
+          }}
+        />
+
+        {/* Exam UI mockup */}
+        <div className="absolute bottom-[33px] left-[52px]">
+          <ExamMockup />
+        </div>
+      </div>
+
+      {/* Floating header bar — Time Left + Submit */}
+      <div className="absolute left-[38px] top-[206px] z-10 flex items-center rounded-[6.8px] bg-chalk-green-500 px-4 py-2">
+        <div className="flex items-center gap-[6.9px]">
+          <div className="flex items-center gap-[5.2px]">
+            <Image src="/images/fair-exam-loader.svg" alt="" width={17} height={17} />
+            <div className="flex flex-col leading-[1.2]">
+              <span className="text-[4.8px] font-bold uppercase tracking-[0.05px] text-[#00dc46]">
+                Time left
               </span>
-              <span className="rounded-md bg-chalk-green-400 px-2 py-0.5 text-[12px] font-bold text-white">
+              <span className="text-[9.9px] font-semibold tracking-[-0.2px] text-white">
                 0:18:32
               </span>
             </div>
-            <span className="rounded-md border border-green-500/30 bg-green-500/10 px-3 py-1 text-[11px] font-semibold text-green-500">
-              Submit exam
-            </span>
           </div>
-
-          {/* Content area */}
-          <div className="relative flex">
-            {/* Left — question area */}
-            <div className="flex-1 p-4">
-              <div className="flex items-center gap-2 text-[12px]">
-                <span className="font-semibold text-green-600">
-                  Section A Question 8
-                </span>
-                <span className="text-[#71717a]">|</span>
-                <span className="text-[#71717a]">Descriptive Answer</span>
-              </div>
-
-              {/* Answer box */}
-              <div className="mt-3 h-20 rounded-lg border border-gray-200 bg-gray-50" />
-
-              {/* Toolbar */}
-              <div className="mt-2 flex gap-3">
-                {["B", "I", "≡", "≡", "⊞"].map((t, i) => (
-                  <span
-                    key={i}
-                    className="text-[13px] font-bold text-[#94a3b8]"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — question list panel */}
-            <div className="w-[160px] border-l border-gray-100 bg-gray-50/50 p-3">
-              <p className="text-[11px] font-bold text-chalk-green-500">
-                Question list
-              </p>
-              <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-wider text-[#94a3b8]">
-                Section A
-              </p>
-              <div className="mt-1.5 grid grid-cols-5 gap-1">
-                {Array.from({ length: 8 }, (_, i) => (
-                  <span
-                    key={i}
-                    className={`flex h-6 w-6 items-center justify-center rounded text-[10px] font-medium ${
-                      i === 7
-                        ? "bg-green-500 text-white"
-                        : i < 5
-                          ? "border border-green-500/30 bg-green-500/10 text-green-600"
-                          : "border border-gray-200 bg-white text-gray-400"
-                    }`}
-                  >
-                    {i + 1}
-                  </span>
-                ))}
-              </div>
-
-              {/* Marks */}
-              <div className="mt-3 text-right text-[10px] font-semibold text-green-600">
-                3 MARK
-              </div>
-            </div>
+          <div
+            className="flex w-[63px] items-center justify-center rounded-[3.4px] border border-[#00b63a] px-[6.9px] py-[5.2px] text-[6.87px] font-semibold leading-[1.2] tracking-[-0.14px] text-white"
+            style={{
+              backgroundImage: "linear-gradient(99.91deg, #00dc46 0.45%, #00c13d 101%)",
+            }}
+          >
+            Submit exam
           </div>
         </div>
+      </div>
 
-        {/* Accessibility icon — pen/contrast */}
-        <div className="absolute bottom-4 right-8 flex h-12 w-12 items-center justify-center rounded-xl bg-chalk-green-500 shadow-lg">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M12 4L4 20h16L12 4z" fill="white" />
-            <path d="M12 4L4 20h8V4z" fill="#1a1a1a" />
-          </svg>
+      {/* Floating Question list panel */}
+      <div className="absolute left-[350px] top-[220px] z-10 flex w-[152px] flex-col gap-[15px] rounded-[6.4px] border border-[#e4e4e7] bg-white p-[6.4px] shadow-[0px_0px_20px_rgba(0,0,0,0.1)]">
+        <p className="text-[10.3px] font-semibold leading-[1.2] tracking-[-0.2px] text-chalk-green-500">
+          Question list
+        </p>
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center justify-between">
+            <span className="text-[5.9px] font-bold uppercase leading-[1.2] tracking-[0.06px] text-chalk-green-500">
+              Section a
+            </span>
+            <div className="h-[3px] w-[30px] rounded-[8px] bg-[#e7e7e7]" />
+          </div>
+          <div className="flex flex-wrap gap-1">
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <div
+                key={n}
+                className="flex h-6 w-6 items-center justify-center rounded-[4.3px] border border-[#00dc46] text-[8px] font-medium leading-[1.3] tracking-[-0.06px] text-chalk-green-500"
+              >
+                {n}
+              </div>
+            ))}
+            <div className="flex h-6 w-6 items-center justify-center rounded-[4.3px] border border-[#ff8a3b] text-[8px] font-medium leading-[1.3] tracking-[-0.06px] text-chalk-green-500">
+              7
+            </div>
+            <div className="flex h-6 w-6 items-center justify-center rounded-[4.3px] bg-chalk-green-500 text-[8px] font-medium leading-[1.3] tracking-[-0.06px] text-white">
+              8
+            </div>
+            {Array.from({ length: 7 }, (_, i) => (
+              <div
+                key={i + 9}
+                className="flex h-6 w-6 items-center justify-center rounded-[4.3px] border border-[#e4e4e7]"
+              >
+                <div className="h-[3px] w-[9px] rounded-[8px] bg-[#e7e7e7]" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Pen tool + text file icons */}
+      <div className="absolute left-[488px] top-[386px] z-10 flex flex-col items-end gap-[8.7px]">
+        <div className="flex size-[59.3px] items-center justify-center overflow-hidden rounded-[5.4px] border border-[#dcdcdc] bg-white shadow-[0px_0.87px_8.66px_rgba(0,0,0,0.15)]">
+          <Image src="/images/fair-exam-pen.svg" alt="" width={30} height={80} className="mt-7" />
+        </div>
+        <div className="relative size-[32px] rounded-full border border-[#dcdcdc] bg-white shadow-[0px_0.87px_8.66px_rgba(0,0,0,0.15)]">
+          <Image src="/images/fair-exam-text-file.svg" alt="" width={12} height={12} className="absolute left-[10px] top-[10px]" />
         </div>
       </div>
     </div>

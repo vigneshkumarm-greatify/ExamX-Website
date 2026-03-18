@@ -23,9 +23,9 @@ export default function Home() {
       <StatsBar />
       <ExperienceSection />
       <FiveStages />
+      <BenefitsSection />
       <BuiltOnAI />
       <BuiltForOrgs />
-      <BenefitsSection />
       <Testimonials />
       <Integrations />
       <CtaSection />

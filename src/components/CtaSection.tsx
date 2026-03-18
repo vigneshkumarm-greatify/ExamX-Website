@@ -5,11 +5,11 @@ export default function CtaSection() {
       <div className="pointer-events-none absolute inset-0">
         {/* Green accent arc — large ellipse, only top visible */}
         <div
-          className="absolute left-1/2 top-[45%] h-[200%] w-[200%] -translate-x-1/2 rounded-full bg-green-500"
+          className="absolute left-[50%] top-[45%] h-[400%] w-[200%] -translate-x-1/2 rounded-l-[100%] rounded-r-[100%]  bg-green-500"
         />
         {/* Dark teal arc — slightly smaller ellipse on top */}
         <div
-          className="absolute left-1/2 top-[50%] h-[200%] w-[195%] -translate-x-1/2 rounded-full bg-chalk-green-500"
+          className="absolute  left-[50%] top-[50%] h-[400%] w-[195%] -translate-x-1/2 rounded-l-[100%] rounded-r-[93%] bg-chalk-green-500"
         />
       </div>
 

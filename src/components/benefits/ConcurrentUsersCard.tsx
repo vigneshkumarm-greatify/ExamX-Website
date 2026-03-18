@@ -3,12 +3,40 @@ export default function ConcurrentUsersCard() {
     <div
       className="relative overflow-hidden rounded-[20px] md:h-[313px]"
       style={{
-        background: "linear-gradient(160deg, #f0fdf4 0%, #dcfce7 50%, #d1fae5 100%)",
+        background:
+          "linear-gradient(-60.73deg, #b8f5cb 1.9%, #fff 78.07%)",
       }}
     >
+      {/* Decorative background shape */}
+      <img
+        src="/images/concurrent-bg-shape.svg"
+        alt=""
+        className="pointer-events-none absolute"
+        style={{
+          left: "376px",
+          top: "216px",
+          width: "294px",
+          height: "141px",
+        }}
+      />
+
+      {/* Background gradient overlay */}
+      <div
+        className="pointer-events-none absolute rounded-[16px]"
+        style={{
+          left: "calc(50% - 52.5px)",
+          transform: "translateX(-50%)",
+          top: "166px",
+          width: "571px",
+          height: "293px",
+          background:
+            "linear-gradient(159.46deg, rgba(184,245,203,0.16) 6.7%, rgba(0,220,70,0.16) 57.64%)",
+        }}
+      />
+
       {/* Title block */}
-      <div className="px-8 pt-8">
-        <h3 className="text-[23.04px] font-semibold leading-[1.2] tracking-[-0.46px] text-chalk-green-500">
+      <div className="px-9 pt-9">
+        <h3 className="text-[21.67px] font-semibold leading-[1.2] tracking-[-0.43px] text-chalk-green-500">
           100,000+ concurrent users. Zero downtime
         </h3>
         <p className="mt-2 max-w-[411px] text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#71717a]">
@@ -19,56 +47,50 @@ export default function ConcurrentUsersCard() {
       </div>
 
       {/* Progress bars */}
-      <div className="relative mt-6 px-8 pb-8">
-        <div className="flex flex-col gap-4">
-          <BarRow label="10K" percent={95} />
-          <BarRow label="50K" percent={80} />
-          <BarRow label="100K+" percent={65} />
-        </div>
-
-        {/* Decorative sparkle stars — top right */}
-        <div className="absolute -top-2 right-4 flex flex-col items-end gap-3">
-          <SparkleIcon size={28} opacity={0.6} />
-          <SparkleIcon size={22} opacity={0.4} />
-          <SparkleIcon size={16} opacity={0.25} />
-        </div>
+      <div className="relative mt-13 flex w-[501px] flex-col gap-3 px-9">
+        <BarRow label="10K" rightInset="17.71%" />
+        <BarRow label="50K" rightInset="9.26%" />
+        <BarRow label="100K+" rightInset="3.27%" />
       </div>
+
+      {/* Sparkle stars illustration */}
+      <img
+        src="/images/sparkle-stars.svg"
+        alt=""
+        className="pointer-events-none absolute"
+        style={{
+          left: "504px",
+          top: "184px",
+          width: "60px",
+          height: "60px",
+        }}
+      />
     </div>
   );
 }
 
-function BarRow({ label, percent }: { label: string; percent: number }) {
+function BarRow({
+  label,
+  rightInset,
+}: {
+  label: string;
+  rightInset: string;
+}) {
   return (
-    <div className="flex items-center gap-4">
-      <span className="w-12 text-right text-[14px] font-semibold text-chalk-green-500">
+    <div className="flex w-full items-center justify-between">
+      <span className="w-[47px] text-right text-base font-medium leading-[1.5] tracking-[-0.16px] text-green-700">
         {label}
       </span>
-      <div className="h-[14px] flex-1 overflow-hidden rounded-full bg-green-500/10">
+      <div className="h-2 w-[367px] overflow-hidden rounded-full bg-green-50">
         <div
           className="h-full rounded-full"
           style={{
-            width: `${percent}%`,
-            background: "linear-gradient(90deg, #00dc46 0%, #00b63a 100%)",
+            marginRight: rightInset,
+            background:
+              "linear-gradient(170.43deg, #5ce989 0%, #1fca55 100%)",
           }}
         />
       </div>
     </div>
-  );
-}
-
-function SparkleIcon({ size, opacity }: { size: number; opacity: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      style={{ opacity }}
-    >
-      <path
-        d="M12 2C12 2 13.5 8.5 15.5 10.5C17.5 12.5 24 12 24 12C24 12 17.5 13.5 15.5 15.5C13.5 17.5 12 24 12 24C12 24 10.5 17.5 8.5 15.5C6.5 13.5 0 12 0 12C0 12 6.5 10.5 8.5 8.5C10.5 6.5 12 2 12 2Z"
-        fill="#00dc46"
-      />
-    </svg>
   );
 }

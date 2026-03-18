@@ -1,74 +1,99 @@
 export default function QuestionBankCard() {
   return (
     <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 p-9 md:h-[500px]">
+      {/* Green radial glow */}
+      <div
+        className="pointer-events-none absolute left-[-33px] top-[279px] h-[618px] w-[618px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,220,70,0.15) 0%, transparent 70%)",
+        }}
+      />
+
       {/* Title block */}
-      <h3 className="text-[23.04px] font-semibold leading-[1.2] tracking-[-0.46px] text-white">
+      <h3 className="relative z-10 text-[23.04px] font-semibold leading-[1.2] tracking-[-0.46px] text-creme-500">
         Organize 100K+ questions. Find any in seconds
       </h3>
-      <p className="mt-2 max-w-[411px] text-base font-medium leading-[1.5] tracking-[-0.16px] text-chalk-green-100">
+      <p className="relative z-10 mt-2 max-w-[411px] text-base font-medium leading-[1.5] tracking-[-0.16px] text-chalk-green-100">
         Tag by subject, topic, difficulty, and Bloom&apos;s level. Version
         control, review workflows, and duplicate detection. Import from Word,
         Excel, or PDF in bulk.
       </p>
 
-      {/* File/folder illustration */}
-      <div className="relative mt-8 flex items-end justify-center h-[220px]">
-        {/* Vertical columns (folder/file shapes) */}
-        {[
-          { h: 180, x: 0, opacity: 0.08 },
-          { h: 200, x: 48, opacity: 0.1 },
-          { h: 220, x: 96, opacity: 0.12 },
-          { h: 200, x: 144, opacity: 0.1 },
-          { h: 180, x: 192, opacity: 0.08 },
-          { h: 160, x: 240, opacity: 0.06 },
-          { h: 140, x: 288, opacity: 0.05 },
-        ].map((col, i) => (
-          <div
-            key={i}
-            className="absolute bottom-0 w-[40px] rounded-t-[6px]"
-            style={{
-              height: `${col.h}px`,
-              left: `calc(50% - 168px + ${col.x}px)`,
-              background: `rgba(255,255,255,${col.opacity})`,
-            }}
-          />
-        ))}
+      {/* File/folder columns illustration (SVG from Figma) */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        alt=""
+        src="/images/question-bank-columns.svg"
+        className="pointer-events-none absolute"
+        style={{
+          width: "814.254px",
+          height: "483px",
+          left: "calc(50% - 14.87px)",
+          top: "202.67px",
+          transform: "translateX(-50%)",
+        }}
+      />
 
-        {/* Active/highlighted folder */}
-        <div
-          className="absolute bottom-0 w-[40px] rounded-t-[6px] border-t border-l border-r border-green-500/40"
+      {/* Floating glass tags */}
+      <div className="absolute left-[325px] top-[354px] z-10 flex flex-col gap-2">
+        {/* Import tag */}
+        <span
+          className="rounded-lg px-4 py-2 text-[11.11px] font-semibold text-[#5ce989]"
           style={{
-            height: "220px",
-            left: "calc(50% - 72px)",
-            background: "rgba(0,220,70,0.05)",
+            backdropFilter: "blur(6.6px)",
+            WebkitBackdropFilter: "blur(6.6px)",
+            background: "rgba(26,184,84,0.1)",
+            border: "0.864px solid #00dc46",
           }}
         >
-          {/* Green top connector */}
-          <div className="absolute -top-px left-0 right-0 h-[2px] bg-green-500/60" />
-          <div className="absolute -top-[40px] left-1/2 -translate-x-1/2 w-px h-[40px] bg-green-500/40" />
-          <div className="absolute -top-[40px] left-1/2 -translate-x-1/2 w-px h-[40px] bg-green-500/40">
-            <div className="absolute -top-0 left-1/2 -translate-x-1/2 h-px w-[80px] bg-green-500/40" />
-          </div>
-        </div>
+          Import
+        </span>
 
-        {/* Floating tags */}
-        <div className="absolute bottom-[30%] right-[10%] flex flex-col gap-2">
-          <span className="rounded-lg border border-green-500/25 bg-chalk-green-400/40 px-3 py-1.5 text-[11px] font-semibold text-green-500">
-            Import
+        {/* Physics tag */}
+        <span
+          className="rounded-lg px-4 py-2 text-[11.11px] font-semibold text-[#5ce989]"
+          style={{
+            backdropFilter: "blur(6.6px)",
+            WebkitBackdropFilter: "blur(6.6px)",
+            background: "rgba(26,184,84,0.1)",
+            border: "0.864px solid #00dc46",
+          }}
+        >
+          Physics
+        </span>
+
+        {/* Level tag with mini bar chart */}
+        <span
+          className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-[11.11px] font-semibold text-[#5ce989]"
+          style={{
+            backdropFilter: "blur(6.6px)",
+            WebkitBackdropFilter: "blur(6.6px)",
+            background: "rgba(26,184,84,0.1)",
+            border: "0.864px solid #00dc46",
+          }}
+        >
+          Level:
+          {/* Mini orange bar chart built with divs */}
+          <span className="flex items-end gap-[2px]" style={{ height: "9px" }}>
+            <span
+              className="w-[1.5px] rounded-full bg-[#ff8a3b]"
+              style={{ height: "3.75px" }}
+            />
+            <span
+              className="w-[1.5px] rounded-full bg-[#ff8a3b]"
+              style={{ height: "5.25px" }}
+            />
+            <span
+              className="w-[1.5px] rounded-full bg-[#ff8a3b]"
+              style={{ height: "6.75px" }}
+            />
+            <span
+              className="w-[1.5px] rounded-full bg-[#ff8a3b]"
+              style={{ height: "9px" }}
+            />
           </span>
-          <span className="rounded-lg border border-green-500/25 bg-chalk-green-400/40 px-3 py-1.5 text-[11px] font-semibold text-green-500">
-            Physics
-          </span>
-          <span className="flex items-center gap-1.5 rounded-lg border border-green-500/25 bg-chalk-green-400/40 px-3 py-1.5 text-[11px] font-semibold text-green-500">
-            Level:
-            {/* Mini bar chart icon */}
-            <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-              <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#ff8a3b" />
-              <rect x="4.5" y="4" width="3" height="8" rx="0.5" fill="#ff8a3b" />
-              <rect x="9" y="0" width="3" height="12" rx="0.5" fill="#ff8a3b" />
-            </svg>
-          </span>
-        </div>
+        </span>
       </div>
     </div>
   );

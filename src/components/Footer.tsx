@@ -224,7 +224,7 @@ export default function Footer() {
             alt=""
             width={1280}
             height={303}
-            className="opacity-20"
+            className="opacity-50"
           />
         </div>
       </div>

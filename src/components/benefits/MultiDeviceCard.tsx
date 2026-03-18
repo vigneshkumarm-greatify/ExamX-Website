@@ -1,19 +1,28 @@
+/* eslint-disable @next/next/no-img-element */
+
 export default function MultiDeviceCard() {
   return (
     <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 md:h-[500px]">
       {/* Green glow ellipse — offset center-right */}
       <div
-        className="pointer-events-none absolute h-[348px] w-[348px]"
+        className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2"
         style={{
           left: "calc(50% + 45px)",
-          top: "calc(50% + 76px)",
-          transform: "translate(-50%, -50%)",
-          background:
-            "radial-gradient(circle, rgba(0,220,70,0.25) 0%, transparent 65%)",
+          top: "calc(50% + 75.67px)",
+          width: "348px",
+          height: "348px",
         }}
-      />
+      >
+        <div className="absolute inset-[-31.13%]">
+          <img
+            alt=""
+            className="block size-full max-w-none"
+            src="/images/multi-device-glow.svg"
+          />
+        </div>
+      </div>
 
-      {/* Title block — at x=36, y=35 */}
+      {/* Title block */}
       <div className="relative z-10 px-9 pt-9">
         <h3 className="text-[21.67px] font-semibold leading-normal tracking-[-0.43px] text-creme-500">
           Greatify Multi-device Compatibility
@@ -29,359 +38,391 @@ export default function MultiDeviceCard() {
 
       {/* Green gradient backdrop behind desktop */}
       <div
-        className="absolute h-[261px] w-[437px] rounded-[12px]"
+        className="absolute h-[261px] w-[437px] -translate-x-1/2 rounded-[12px]"
         style={{
-          left: "calc(50% - 57px)",
-          top: "221px",
-          transform: "translateX(-50%)",
-          background:
-            "linear-gradient(121deg, rgba(0,220,70,0.2) 4%, rgba(0,118,38,0.2) 92%)",
+          left: "calc(50% - 57.5px)",
+          top: "220.67px",
+          backgroundImage:
+            "linear-gradient(120.83deg, rgba(0,220,70,0.2) 3.78%, rgba(0,118,38,0.2) 92.35%)",
         }}
       />
 
       {/* ── DESKTOP (Windows) ── */}
       <div
-        className="absolute h-[246px] w-[423px] overflow-hidden rounded-[8px]"
+        className="absolute h-[246px] w-[423px] -translate-x-1/2 overflow-hidden rounded-[8px] bg-[#002b2d]"
         style={{
-          left: "calc(50% - 57px)",
-          top: "228px",
-          transform: "translateX(-50%)",
+          left: "calc(50% - 57.5px)",
+          top: "227.67px",
         }}
       >
-        {/* Background blobs inside desktop */}
+        {/* Desktop blob — large, top-right */}
         <div
-          className="absolute h-[334px] w-[334px] rounded-full"
+          className="absolute"
           style={{
-            left: "calc(75% + 15px)",
-            top: "-202px",
-            background:
-              "radial-gradient(circle, rgba(0,220,70,0.4) 0%, transparent 70%)",
+            left: "calc(75% + 14.94px)",
+            top: "-202.04px",
+            width: "333.911px",
+            height: "333.911px",
           }}
-        />
+        >
+          <div className="absolute inset-[-0.64%]">
+            <img
+              alt=""
+              className="block size-full max-w-none"
+              src="/images/multi-device-blob-lg.svg"
+            />
+          </div>
+        </div>
+
+        {/* Desktop blob — small, top-left */}
         <div
-          className="absolute h-[175px] w-[175px] rounded-full"
+          className="absolute"
           style={{
-            left: "-16px",
-            top: "-68px",
-            background:
-              "radial-gradient(circle, rgba(0,220,70,0.3) 0%, transparent 70%)",
+            left: "-15.51px",
+            top: "-67.97px",
+            width: "175.1px",
+            height: "175.1px",
           }}
-        />
+        >
+          <div className="absolute inset-[-1.22%]">
+            <img
+              alt=""
+              className="block size-full max-w-none"
+              src="/images/multi-device-blob-sm.svg"
+            />
+          </div>
+        </div>
+
+        {/* Desktop blob — small, bottom-center */}
         <div
-          className="absolute h-[175px] w-[175px] rounded-full"
+          className="absolute"
           style={{
-            left: "calc(25% + 28px)",
-            top: "160px",
-            background:
-              "radial-gradient(circle, rgba(0,220,70,0.3) 0%, transparent 70%)",
+            left: "calc(25% + 28.47px)",
+            top: "159.75px",
+            width: "175.1px",
+            height: "175.1px",
           }}
-        />
+        >
+          <div className="absolute inset-[-1.22%]">
+            <img
+              alt=""
+              className="block size-full max-w-none"
+              src="/images/multi-device-blob-sm.svg"
+            />
+          </div>
+        </div>
+
+        {/* Small decorative dot */}
+        <div
+          className="absolute"
+          style={{
+            left: "calc(41.67% + 1.99px)",
+            top: "51.22px",
+            width: "33.978px",
+            height: "33.978px",
+          }}
+        >
+          <img
+            alt=""
+            className="absolute block size-full max-w-none"
+            src="/images/multi-device-dot.svg"
+          />
+        </div>
 
         {/* Glass blur overlay */}
         <div
-          className="absolute inset-0"
+          className="absolute left-0 top-0 h-[246px] w-[455px] rounded-[8px]"
           style={{
-            backdropFilter: "blur(88px)",
-            WebkitBackdropFilter: "blur(88px)",
+            backdropFilter: "blur(87.706px)",
+            WebkitBackdropFilter: "blur(87.706px)",
             backgroundColor: "rgba(0,55,58,0.44)",
           }}
         />
 
         {/* Windows tag */}
-        <div className="absolute left-2 top-2 z-20 rounded bg-[rgba(230,252,237,0.2)] px-1 py-0.5">
-          <span className="text-[11.11px] font-semibold leading-[1.2] tracking-[-0.11px] text-white">
+        <div
+          className="absolute left-2 top-2 z-20 rounded px-2 border border-white/30 bg-white/10 shadow-[0_1.5px_8px_rgba(0,0,0,0.07)] backdrop-blur-[8px]"
+          style={{
+            WebkitBackdropFilter: "blur(8px)",
+            backdropFilter: "blur(8px)",
+            boxShadow: "0 2px 12px 0 rgba(0,0,0,0.10)",
+          }}
+        >
+          <span className="text-xs font-medium text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.18)]">
             Windows
           </span>
         </div>
 
-        {/* Green logo mark at bottom — large curved shape */}
-        <svg
-          className="absolute bottom-0 left-[35%] z-10"
-          width="300"
-          height="240"
-          viewBox="0 0 300 240"
-          fill="none"
-          style={{ transform: "translateX(-50%) scaleY(-1)" }}
-        >
-          <path
-            d="M150 0C67 0 0 67 0 150c0 30 10 58 25 80h250c15-22 25-50 25-80C300 67 233 0 150 0z"
-            fill="url(#logoGrad)"
-            opacity="0.6"
+        {/* Decorative lines overlay */}
+        <div className="absolute inset-[-44.95%_-49.53%_57.78%_86.45%]">
+          <img
+            alt=""
+            className="absolute block size-full max-w-none"
+            src="/images/multi-device-lines.svg"
           />
-          <defs>
-            <linearGradient id="logoGrad" x1="0" y1="0" x2="300" y2="240">
-              <stop offset="0%" stopColor="#00dc46" />
-              <stop offset="100%" stopColor="#00373a" />
-            </linearGradient>
-          </defs>
-        </svg>
+        </div>
+
+        {/* Green logo mark at bottom */}
+        <div className="absolute" style={{ inset: "65.59% -21.49% -63.15% 50.9%" }}>
+          <div className="flex size-full items-center justify-center">
+            <div className="h-[240.005px] w-[298.621px] -scale-y-100 flex-none">
+              <div className="relative size-full">
+                <img
+                  alt=""
+                  className="absolute block size-full max-w-none"
+                  src="/images/multi-device-logo-mark.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Content layout — centered */}
         <div
-          className="absolute z-20 flex items-center gap-6"
+          className="absolute z-20 flex w-[350.826px] items-center gap-[24.433px] -translate-x-1/2 -translate-y-1/2"
           style={{
-            left: "calc(54% - 3px)",
-            top: "calc(50% - 4px)",
-            transform: "translate(-50%, -50%)",
-            width: "351px",
+            left: "calc(54.17% - 3.13px)",
+            top: "calc(50% - 3.5px)",
           }}
         >
           {/* Left — branding + hero text */}
           <div className="w-[154px] shrink-0">
-            <div className="flex items-center gap-[2.5px]">
-              <div className="h-[23px] w-[23px] shrink-0 rounded-full bg-green-500/30" />
-              <div>
-                <p className="text-[10.6px] font-semibold leading-[1.2] tracking-[-0.21px] text-white">
+            <div className="flex flex-wrap items-start justify-center gap-[2.506px]">
+              <div className="flex shrink-0 items-center">
+                <img
+                  alt=""
+                  className="size-[22.71px]"
+                  src="/images/multi-device-logo-desktop.svg"
+                />
+              </div>
+              <div className="flex shrink-0 flex-col gap-[0.626px] ">
+                <p className=" text-[10.591px] font-semibold leading-[1.2] tracking-[-0.21px] text-white">
                   Greatify
                 </p>
-                <p className="text-[7.2px] font-semibold leading-[1.2] tracking-[-0.14px] text-green-500">
-                  ExamX Platform
+                <p className="text-center text-[7.217px] font-semibold leading-[1.2] tracking-[-0.14px] text-green-500">
+                  ExamX Platform{" "}
                 </p>
               </div>
             </div>
-            <p className="mt-[9px] w-[169px] text-[14.97px] font-semibold leading-[1.2] tracking-[-0.3px] text-white">
+            <p className="mt-[9.084px] w-[168.835px] text-[14.966px] font-semibold leading-[1.2] tracking-[-0.3px] text-white">
               Revolutionise your academic experience with Greatify
             </p>
           </div>
 
           {/* Right — popup form */}
-          <PopupForm
-            type="signup"
-            className="w-[158px] shrink-0 rounded-[3.8px] border-[0.31px] border-[#e4e4e7] bg-white p-[6.3px] shadow-[0_0.6px_7.8px_rgba(0,0,0,0.1)]"
-          />
+          <DesktopPopupForm />
         </div>
       </div>
 
       {/* ── TABLET ── */}
+      {/* Tablet outer frame (gradient border) */}
       <div
-        className="absolute z-20 w-[180px]"
-        style={{ left: "366px", top: "184px" }}
+        className="absolute -translate-x-1/2 rounded-[9.763px] shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
+        style={{
+          left: "calc(50% + 162px)",
+          top: "191.33px",
+          width: "180px",
+          height: "227px",
+          backgroundImage:
+            "linear-gradient(105.79deg, rgba(0,220,70,0.2) 3.78%, rgba(0,118,38,0.2) 92.35%)",
+        }}
+      />
+
+      {/* Tablet inner screen */}
+      <div
+        className="absolute z-20 -translate-x-1/2 overflow-hidden rounded-[7.137px]"
+        style={{
+          left: "calc(50% + 160.9px)",
+          top: "197.03px",
+          width: "168.419px",
+          height: "215.609px",
+          backgroundImage:
+            "linear-gradient(106.49deg, #00dc46 21.38%, #00373a 68.01%)",
+        }}
       >
-        {/* Tablet tag */}
-        <div className="absolute -top-2 right-0 z-30 rounded bg-[rgba(230,252,237,0.2)] px-1 py-0.5">
-          <span className="text-[11.11px] font-semibold leading-[1.2] tracking-[-0.11px] text-white">
-            Tablet
-          </span>
-        </div>
+        {/* Tablet decorative blobs */}
+        <TabletBlobs />
 
-        {/* Outer shadow */}
-        <div
-          className="rounded-[9.8px] p-[6px] shadow-[0_4px_15px_rgba(0,0,0,0.5)]"
-          style={{
-            background:
-              "linear-gradient(106deg, rgba(0,220,70,0.2) 4%, rgba(0,118,38,0.2) 92%)",
-          }}
-        >
-          {/* Screen */}
-          <div
-            className="relative overflow-hidden rounded-[7.1px]"
-            style={{
-              background: "linear-gradient(106deg, #00dc46 21%, #00373a 68%)",
-            }}
-          >
-            {/* Branding */}
-            <div className="flex items-center justify-center gap-[2px] pt-[26px]">
-              <div className="h-[18px] w-[18px] shrink-0 rounded-full bg-green-500/30" />
-              <div>
-                <p className="text-[8.4px] font-semibold leading-[1.2] tracking-[-0.17px] text-white">
-                  Greatify
-                </p>
-                <p className="text-[5.7px] font-semibold leading-[1.2] tracking-[-0.11px] text-creme-500">
-                  ExamX Platform
-                </p>
-              </div>
-            </div>
-
-            {/* Login form popup */}
-            <div className="relative mx-auto mt-[12px] w-[120px]">
-              {/* User icon circle */}
-              <div className="absolute -top-[17px] left-1/2 z-10 h-[23px] w-[23px] -translate-x-1/2 rounded-full bg-creme-500">
-                <svg
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-purple-400"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                >
-                  <circle cx="7" cy="5" r="2.5" stroke="currentColor" strokeWidth="1" />
-                  <path d="M3 12c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" strokeWidth="1" />
-                </svg>
-              </div>
-
-              <div className="rounded-[2.8px] border-[0.24px] border-[#e4e4e7] bg-white p-[4.7px] pt-[11px] shadow-[0_1.3px_6.7px_rgba(0,0,0,0.2)]">
-                <div className="text-center">
-                  <p className="text-[2.6px] font-bold uppercase tracking-[0.03px] text-green-500">
-                    Login
-                  </p>
-                  <div className="mx-auto mt-[1px] h-[1.3px] w-[30px] rounded-full bg-[#e7e7e7]" />
-                </div>
-
-                {/* School org row */}
-                <div className="mt-[4.7px] flex items-center gap-[1.9px]">
-                  <div className="flex h-[8.5px] w-[8.5px] items-center justify-center rounded-full bg-purple-50">
-                    <svg width="4.5" height="4.5" viewBox="0 0 10 10" fill="none">
-                      <path d="M5 1L1 4v5h3V7h2v2h3V4L5 1z" stroke="#7e62d2" strokeWidth="0.8" />
-                    </svg>
-                  </div>
-                  <div className="flex flex-col gap-[1.3px]">
-                    <div className="h-[1.3px] w-[17px] rounded-full bg-purple-50" />
-                    <div className="h-[1.3px] w-[10.7px] rounded-full bg-purple-50" />
-                  </div>
-                </div>
-
-                {/* Form fields */}
-                <div className="mt-[4.7px] space-y-[3px]">
-                  <TabletField label="User ID" />
-                  <TabletField label="Password" isPassword />
-                </div>
-
-                {/* Login button */}
-                <div
-                  className="mt-[4.7px] rounded-[1.9px] border-[0.24px] border-green-600 py-[1.9px] text-center"
-                  style={{
-                    background:
-                      "linear-gradient(119deg, #00dc46 0%, #00c13d 100%)",
-                  }}
-                >
-                  <span className="text-[3.8px] font-semibold text-white">
-                    Login
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Home indicator */}
-            <div className="mx-auto mb-[1.5px] mt-[5px] h-[0.9px] w-[52px] rounded-full bg-white" />
+        {/* Tablet branding */}
+        <div className="absolute -translate-x-1/2 flex flex-wrap items-start justify-center gap-[1.993px]" style={{ left: "calc(50% - 3.37px)", top: "33.01px" }}>
+          <div className="flex shrink-0 items-center">
+            <img
+              alt=""
+              className="size-[18.064px]"
+              src="/images/multi-device-logo-tablet.svg"
+            />
+          </div>
+          <div className="flex shrink-0 flex-col gap-[0.498px]">
+            <p className="text-[8.424px] font-semibold leading-[1.2] tracking-[-0.17px] text-white">
+              Greatify
+            </p>
+            <p className="text-center text-[5.741px] font-semibold leading-[1.2] tracking-[-0.11px] text-creme-500">
+              ExamX Platform{" "}
+            </p>
           </div>
         </div>
+
+        {/* Tablet login form */}
+        <div className="absolute -translate-x-1/2" style={{ left: "calc(50% - 3.03px)", top: "69.58px", width: "119.537px", height: "118.588px" }}>
+          <TabletPopupForm />
+        </div>
+
+        {/* Tablet home indicator */}
+        <div className="absolute -translate-x-1/2" style={{ left: "calc(50% - 3.03px)", bottom: "1.51px", width: "198.837px", height: "3.122px" }}>
+          <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 0.08px)", bottom: "1.15px", width: "51.763px", height: "0.904px" }}>
+            <div className="h-[0.904px] w-[51.763px] rounded-[100px] bg-white" />
+          </div>
+        </div>
+      </div>
+
+      {/* Tablet tag — absolute on the card level */}
+      <div
+        className="absolute z-30 rounded backdrop-blur-sm bg-white/20 border border-white/30 shadow-[0_1px_8px_0_rgba(0,0,0,0.12)] px-1 "
+        style={{
+          left: "434px",
+          top: "184.33px",
+          boxShadow: "0 4px 24px 0 rgba(108, 255, 188, 0.20)",
+        }}
+      >
+        <span className="text-xs text-white font-medium">
+          Tablet
+        </span>
       </div>
 
       {/* ── MOBILE ── */}
+      {/* Mobile outer frame (gradient border) */}
       <div
-        className="absolute z-20"
-        style={{ left: "481px", top: "320px" }}
+        className="absolute -translate-x-1/2 rounded-[6.065px] shadow-[0_2.485px_9.317px_rgba(0,0,0,0.5)]"
+        style={{
+          left: "calc(50% + 227.5px)",
+          top: "319.67px",
+          width: "81px",
+          height: "139px",
+          backgroundImage:
+            "linear-gradient(101.74deg, rgba(0,220,70,0.2) 3.78%, rgba(0,118,38,0.2) 92.35%)",
+        }}
+      />
+
+      {/* Mobile inner screen */}
+      <div
+        className="absolute z-20 -translate-x-1/2 overflow-hidden rounded-[4.433px]"
+        style={{
+          left: "calc(50% + 227.5px)",
+          top: "322.67px",
+          width: "75px",
+          height: "133px",
+          backgroundImage:
+            "linear-gradient(102.06deg, #00dc46 21.38%, #00373a 68.01%)",
+        }}
       >
-        {/* Mobile tag */}
-        <div className="absolute -top-2 right-0 z-30 rounded-[2.5px] bg-[rgba(230,252,237,0.2)] px-1 py-0.5">
-          <span className="text-[6.9px] font-semibold leading-[1.2] tracking-[-0.07px] text-white">
-            Mobile
-          </span>
+        {/* Mobile decorative blobs */}
+        <MobileBlobs />
+
+        {/* Mobile branding */}
+        <div className="absolute -translate-x-1/2 flex flex-wrap items-start justify-center gap-[1.238px]" style={{ left: "calc(50% - 2.27px)", top: "20.04px" }}>
+          <div className="flex shrink-0 items-center">
+            <img
+              alt=""
+              className="size-[11.221px]"
+              src="/images/multi-device-logo-mobile.svg"
+            />
+          </div>
+          <div className="flex shrink-0 flex-col gap-[0.31px]">
+            <p className=" text-[5.233px] font-semibold leading-[1.2] tracking-[-0.1px] text-white">
+              Greatify
+            </p>
+            <p className="text-center text-[3.566px] font-semibold leading-[1.2] tracking-[-0.07px] text-creme-500">
+              ExamX Platform{" "}
+            </p>
+          </div>
         </div>
 
-        {/* Outer shadow */}
-        <div
-          className="w-[81px] rounded-[6.1px] p-[3px] shadow-[0_2.5px_9.3px_rgba(0,0,0,0.5)]"
-          style={{
-            background:
-              "linear-gradient(102deg, rgba(0,220,70,0.2) 4%, rgba(0,118,38,0.2) 92%)",
-          }}
-        >
-          <div
-            className="relative overflow-hidden rounded-[4.4px]"
-            style={{
-              background: "linear-gradient(102deg, #00dc46 21%, #00373a 68%)",
-            }}
-          >
-            {/* Branding */}
-            <div className="flex items-center justify-center gap-[1.2px] pt-[14px]">
-              <div className="h-[11px] w-[11px] shrink-0 rounded-full bg-green-500/30" />
-              <div>
-                <p className="text-[5.2px] font-semibold leading-[1.2] tracking-[-0.1px] text-white">
-                  Greatify
-                </p>
-                <p className="text-[3.6px] font-semibold leading-[1.2] tracking-[-0.07px] text-creme-500">
-                  ExamX Platform
-                </p>
-              </div>
-            </div>
+        {/* Mobile login form */}
+        <div className="absolute -translate-x-1/2" style={{ left: "calc(50% - 0.5px)", top: "46.42px", width: "58px", height: "66.156px" }}>
+          <MobilePopupForm />
+        </div>
 
-            {/* Mini popup form */}
-            <div className="relative mx-auto mt-[8px] w-[58px]">
-              {/* User icon */}
-              <div className="absolute -top-[9.5px] left-1/2 z-10 h-[12.8px] w-[12.8px] -translate-x-1/2 rounded-full bg-creme-500">
-                <svg
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-purple-400"
-                  width="8"
-                  height="8"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                >
-                  <circle cx="7" cy="5" r="2.5" stroke="currentColor" strokeWidth="1.2" />
-                  <path d="M3 12c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" strokeWidth="1.2" />
-                </svg>
-              </div>
-
-              <div className="rounded-[1.6px] border-[0.13px] border-[#e4e4e7] bg-white p-[2.7px] pt-[6px] shadow-[0_0.75px_3.8px_rgba(0,0,0,0.2)]">
-                <div className="text-center">
-                  <p className="text-[1.5px] font-bold uppercase text-green-500">
-                    Login
-                  </p>
-                  <div className="mx-auto mt-px h-[0.75px] w-[17px] rounded-full bg-[#e7e7e7]" />
-                </div>
-                <div className="mt-[2.7px] space-y-[1.5px]">
-                  <MobileField label="User ID" />
-                  <MobileField label="Password" isPassword />
-                </div>
-                <div
-                  className="mt-[2.7px] rounded-[1px] border-[0.13px] border-green-600 py-[1px] text-center"
-                  style={{
-                    background:
-                      "linear-gradient(119deg, #00dc46 0%, #00c13d 100%)",
-                  }}
-                >
-                  <span className="text-[2.1px] font-semibold text-white">
-                    Login
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Home indicator */}
-            <div className="mx-auto mb-[1px] mt-[3px] h-[0.56px] w-[32px] rounded-full bg-white" />
+        {/* Mobile home indicator */}
+        <div className="absolute -translate-x-1/2" style={{ left: "calc(50% - 2.06px)", bottom: "2.48px", width: "123.507px", height: "1.939px" }}>
+          <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 0.05px)", bottom: "0.71px", width: "32.153px", height: "0.561px" }}>
+            <div className="h-[0.561px] w-[32.153px] rounded-[100px] bg-white" />
           </div>
         </div>
       </div>
+
+
+
+
+      <div
+        className="absolute z-30 rounded backdrop-blur-sm bg-white/20 border border-white/30 shadow-[0_1px_8px_0_rgba(0,0,0,0.12)] px-1  "
+        style={{
+          left: "calc(50% + 207.48px)",
+          top: "315.67px",
+          boxShadow: "0 4px 24px 0 rgba(108, 255, 188, 0.20)",
+        }}
+      >
+        <span className="text-xs text-white font-medium">
+          Mobile
+        </span>
+      </div>
+
+      
+
+
+      
     </div>
   );
 }
 
-/* ── Popup form for Desktop (signup) ── */
-function PopupForm({ type, className }: { type: "signup"; className: string }) {
+/* ── Desktop signup popup form ── */
+function DesktopPopupForm() {
   return (
-    <div className={className}>
-      {/* Green wave decoration at top */}
-      <svg
-        className="absolute left-0 top-0 w-full opacity-10"
-        viewBox="0 0 158 50"
-        fill="none"
-        preserveAspectRatio="none"
-      >
-        <path d="M0 50C40 20 80 40 120 10L158 30V0H0z" fill="#00dc46" />
-      </svg>
+    <div className="relative h-[167.582px] w-[157.872px] shrink-0">
+      <div className="absolute left-0 top-0 flex w-[157.872px] flex-col items-center gap-[6.265px] rounded-[3.759px] border-[0.313px] border-[#e4e4e7] bg-white p-[6.265px] shadow-[0_0.626px_7.831px_rgba(0,0,0,0.1)]">
+        {/* Union wave decoration */}
+        <img
+          alt=""
+          className="absolute left-[-0.31px] top-[-0.31px] block h-[116.838px] w-[157.559px] max-w-none"
+          src="/images/multi-device-union-desktop.svg"
+        />
 
-      <div className="relative text-center">
-        <p className="text-[3.5px] font-bold uppercase tracking-[0.03px] text-green-600">
-          Create Profile
-        </p>
-        <p className="text-[6px] font-semibold tracking-[-0.12px] text-chalk-green-500">
-          Welcome!
-        </p>
-      </div>
-      <div className="mt-[6.3px] space-y-[6.3px]">
-        <DesktopField placeholder="Enter" />
-        <DesktopField placeholder="Select" hasDropdown />
-        <DesktopField isPassword />
-        <DesktopField isPassword />
-      </div>
-      <div
-        className="mt-[6.3px] rounded-[2.5px] border-[0.31px] border-green-600 py-[2.5px] text-center"
-        style={{
-          background: "linear-gradient(119deg, #00dc46 0%, #00c13d 100%)",
-        }}
-      >
-        <span className="text-[5px] font-semibold tracking-[-0.1px] text-white">
-          Sign up
-        </span>
+        {/* Form content */}
+        <div className="relative flex w-full shrink-0 flex-col items-center gap-[6.265px]">
+          {/* Heading */}
+          <div className="flex shrink-0 flex-col items-center gap-[1.253px]">
+            <p className="text-[3.48px] font-bold uppercase leading-[1.2] tracking-[0.035px] text-green-600">
+              Create Profile
+            </p>
+            <p className="text-[6.014px] font-semibold leading-[1.2] tracking-[-0.12px] text-chalk-green-500">
+              Welcome!
+            </p>
+          </div>
+
+          {/* Field: Enter */}
+          <DesktopField placeholder="Enter" />
+
+          {/* Field: Select with dropdown */}
+          <DesktopField placeholder="Select" hasDropdown />
+
+          {/* Two password fields */}
+          <div className="flex w-full shrink-0 flex-col items-center gap-[3.759px]">
+            <DesktopPasswordField />
+            <DesktopPasswordField />
+          </div>
+        </div>
+
+        {/* Sign up button */}
+        <div
+          className="flex h-[13.469px] w-[145.342px] shrink-0 items-center justify-center rounded-[2.506px] border-[0.313px] border-green-600 px-[3.132px] py-[2.506px]"
+          style={{
+            backgroundImage:
+              "linear-gradient(118.82deg, #00dc46 0.45%, #00c13d 100.96%)",
+          }}
+        >
+          <span className="text-[5.01px] font-semibold leading-[1.2] tracking-[-0.1px] text-white">
+            Sign up
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -390,109 +431,401 @@ function PopupForm({ type, className }: { type: "signup"; className: string }) {
 function DesktopField({
   placeholder,
   hasDropdown,
-  isPassword,
 }: {
-  placeholder?: string;
+  placeholder: string;
   hasDropdown?: boolean;
-  isPassword?: boolean;
 }) {
   return (
-    <div>
-      <div className="h-[3px] w-[33px] rounded-full bg-[#e4e4e7]" />
-      <div className="mt-[1px] flex h-[13.8px] items-center justify-between rounded-[2.5px] border-[0.31px] border-[#e4e4e7] bg-white px-[2.5px]">
-        {isPassword ? (
-          <>
-            <div className="flex gap-[2.5px]">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="h-[2.5px] w-[2.5px] rounded-full bg-[#000606]"
-                />
-              ))}
-            </div>
-            <svg width="6" height="6" viewBox="0 0 10 10" fill="none">
-              <rect x="1" y="2.5" width="8" height="5.5" rx="1.2" stroke="#00373a" strokeWidth="0.6" />
-              <circle cx="5" cy="5.3" r="1" stroke="#00373a" strokeWidth="0.5" />
-            </svg>
-          </>
-        ) : (
-          <>
-            <span className="text-[4.2px] font-medium text-[#a1a1aa]">
-              {placeholder}
-            </span>
-            {hasDropdown && (
-              <svg width="5" height="5" viewBox="0 0 5 5" fill="none">
-                <path
-                  d="M1.5 2L2.5 3L3.5 2"
-                  stroke="#a1a1aa"
-                  strokeWidth="0.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            )}
-          </>
-        )}
+    <div className="flex w-full shrink-0 flex-col items-start gap-[2.506px]">
+      <div className="h-[3px] w-[33px] shrink-0 rounded-[8px] bg-[#e4e4e7]" />
+      {hasDropdown ? (
+        <div className="flex w-full shrink-0 items-center justify-between rounded-[2.506px] border-[0.313px] border-[#e4e4e7] bg-white px-[2.506px] py-[3.759px]">
+          <span className="text-[4.175px] font-medium leading-[1.5] tracking-[-0.04px] text-[#a1a1aa]">
+            {placeholder}
+          </span>
+          <div className="relative size-[5.012px] shrink-0">
+            <img
+              alt=""
+              className="absolute block size-full max-w-none"
+              src="/images/multi-device-arrow-down.svg"
+              style={{ inset: "40.01% 27.6% 37.5% 27.6%", width: "auto", height: "auto" }}
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="flex h-[13.782px] w-full shrink-0 items-center rounded-[2.506px] border-[0.313px] border-[#e4e4e7] bg-white p-[2.506px]">
+          <span className="text-[4.175px] font-medium leading-[1.5] tracking-[-0.04px] text-[#a1a1aa]">
+            {placeholder}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DesktopPasswordField() {
+  return (
+    <div className="flex h-[20.36px] w-full shrink-0 flex-col items-start gap-[2.506px]">
+      <div className="h-[3px] w-[33px] shrink-0 rounded-[8px] bg-[#e4e4e7]" />
+      <div className="flex w-full shrink-0 items-center justify-between rounded-[2.506px] border-[0.313px] border-[#e4e4e7] bg-white py-[3.759px] pl-[2.506px] pr-[3.759px]">
+        <div className="flex min-h-px min-w-px flex-1 items-center gap-[2.506px]">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} className="size-[2.506px] shrink-0 rounded-full bg-[#000606]" />
+          ))}
+        </div>
+        <div className="relative size-[5.952px] shrink-0 overflow-hidden">
+          <img
+            alt=""
+            className="absolute block size-full max-w-none"
+            src="/images/multi-device-iris-scan.svg"
+            style={{ inset: "17.43% 7.14%" }}
+          />
+        </div>
       </div>
     </div>
   );
 }
 
-function TabletField({ label, isPassword }: { label: string; isPassword?: boolean }) {
+/* ── Tablet login popup form ── */
+function TabletPopupForm() {
   return (
-    <div>
-      <p className="px-[1.9px] text-[2.6px] font-bold uppercase tracking-[0.03px] text-[#71717a]">
-        {label}
-      </p>
-      <div className="mt-[1px] flex h-[10.4px] items-center justify-between rounded-[1.9px] border-[0.24px] border-[#e4e4e7] bg-white px-[1.9px]">
-        {isPassword ? (
-          <>
-            <div className="flex gap-[1.9px]">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="h-[1.9px] w-[1.9px] rounded-full bg-[#e7e7e7]"
-                />
-              ))}
+    <div
+      className="absolute flex w-[119.537px] flex-col items-center gap-[4.744px] rounded-[2.846px] border-[0.237px] border-[#e4e4e7] bg-white pb-[4.744px] pt-[11.384px] px-[4.744px] shadow-[0_1.338px_6.691px_rgba(0,0,0,0.2)]"
+      style={{ left: "0px", top: "16.6px" }}
+    >
+      {/* Union wave decoration */}
+      <img
+        alt=""
+        className="absolute left-[-0.24px] top-[-16.84px] block h-[105.069px] w-[119.3px] max-w-none"
+        src="/images/multi-device-union-tablet.svg"
+      />
+
+      {/* User avatar circle */}
+      <div
+        className="absolute -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-[#f9f7e8] p-[6px]"
+        style={{
+          left: "calc(50% + 0.68px)",
+          top: "calc(50% - 50.91px)",
+          width: "22.769px",
+          height: "22.769px",
+        }}
+      >
+     
+          <img
+            alt=""
+            className="w-full h-full object-cover"
+            src="/images/multi-device-user-sync-tablet.svg"
+            style={{ inset: "22.63% 25.01% 25% 24.97%" }}
+          />
+        </div>
+
+
+      <div className="relative flex w-full shrink-0 flex-col items-center gap-[4.744px]">
+        {/* Heading */}
+        <div className="flex shrink-0 flex-col items-center gap-[0.949px]">
+          <p className="text-[2.635px] font-bold uppercase leading-[1.2] tracking-[0.026px] text-green-500">
+            Login
+          </p>
+          <div className="h-[1.338px] w-[30.33px] shrink-0 rounded-[3.568px] bg-[#e7e7e7]" />
+        </div>
+
+        {/* School org row */}
+        <div className="flex shrink-0 items-center gap-[1.897px]">
+          <div className="relative size-[8.538px] shrink-0 rounded-full bg-[#d3caf0]">
+            <div className="absolute left-[2.1px] top-[2px] size-[4.46px] overflow-hidden">
+              <img
+                alt=""
+                className="absolute block size-full max-w-none"
+                src="/images/multi-device-school.svg"
+                style={{ inset: "3.57%" }}
+              />
             </div>
-            <svg width="4.5" height="4.5" viewBox="0 0 10 10" fill="none">
-              <rect x="1" y="2.5" width="8" height="5.5" rx="1.2" stroke="#00373a" strokeWidth="0.7" />
-              <circle cx="5" cy="5.3" r="1" stroke="#00373a" strokeWidth="0.5" />
-            </svg>
-          </>
-        ) : (
-          <div className="h-[1.3px] w-[10.7px] rounded-full bg-[#e7e7e7]" />
-        )}
+          </div>
+          <div className="flex shrink-0 flex-col gap-[1.338px]">
+            <div className="h-[1.338px] w-[16.949px] shrink-0 rounded-[3.568px] bg-[#efecfa]" />
+            <div className="h-[1.338px] w-[10.705px] shrink-0 rounded-[3.568px] bg-[#efecfa]" />
+          </div>
+        </div>
+
+        {/* User ID field */}
+        <TabletField label="User ID" />
+
+        {/* Password field + forgot password line */}
+        <div className="flex w-full shrink-0 flex-col items-end gap-[2.846px]">
+          <TabletPasswordField />
+          <div className="h-[1.338px] w-[10.705px] shrink-0 rounded-[3.568px] bg-[#e7e7e7]" />
+        </div>
+      </div>
+
+      {/* Login button */}
+      <div
+        className="flex h-[10.199px] w-[110.05px] shrink-0 items-center justify-center rounded-[1.897px] border-[0.237px] border-green-600 px-[2.372px] py-[1.897px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(118.82deg, #00dc46 0.45%, #00c13d 100.96%)",
+        }}
+      >
+        <span className="text-[3.79px] font-semibold leading-[1.2] tracking-[-0.076px] text-white">
+          Login
+        </span>
       </div>
     </div>
   );
 }
 
-function MobileField({ label, isPassword }: { label: string; isPassword?: boolean }) {
+function TabletField({ label }: { label: string }) {
   return (
-    <div>
-      <p className="px-[1px] text-[1.5px] font-bold uppercase tracking-[0.01px] text-[#71717a]">
-        {label}
-      </p>
-      <div className="mt-px flex h-[5.9px] items-center justify-between rounded-[1px] border-[0.13px] border-[#e4e4e7] bg-white px-[1px]">
-        {isPassword ? (
-          <>
-            <div className="flex gap-[1px]">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="h-[1px] w-[1px] rounded-full bg-[#e7e7e7]"
-                />
-              ))}
-            </div>
-            <svg width="2.5" height="2.5" viewBox="0 0 10 10" fill="none">
-              <rect x="1" y="2.5" width="8" height="5.5" rx="1.2" stroke="#00373a" strokeWidth="1" />
-              <circle cx="5" cy="5.3" r="1" stroke="#00373a" strokeWidth="0.7" />
-            </svg>
-          </>
-        ) : (
-          <div className="h-[0.75px] w-[6px] rounded-full bg-[#e7e7e7]" />
-        )}
+    <div className="flex w-full shrink-0 flex-col items-start gap-[1.897px]">
+      <div className="flex shrink-0 items-center justify-center px-[1.897px]">
+        <p className="text-[2.635px] font-bold uppercase leading-[1.2] tracking-[0.026px] text-[#71717a]">
+          {label}
+        </p>
+      </div>
+      <div className="flex h-[10.436px] w-full shrink-0 items-center rounded-[1.897px] border-[0.237px] border-[#e4e4e7] bg-white p-[1.897px]">
+        <div className="h-[1.338px] w-[10.705px] shrink-0 rounded-[3.568px] bg-[#e7e7e7]" />
       </div>
     </div>
+  );
+}
+
+function TabletPasswordField() {
+  return (
+    <div className="flex h-[15.416px] w-full shrink-0 flex-col items-start gap-[1.897px]">
+      <div className="flex shrink-0 items-center justify-center px-[1.897px]">
+        <p className="text-[2.635px] font-bold uppercase leading-[1.2] tracking-[0.026px] text-[#71717a]">
+          Password
+        </p>
+      </div>
+      <div className="flex w-full shrink-0 items-center justify-between rounded-[1.897px] border-[0.237px] border-[#e4e4e7] bg-white py-[2.846px] pl-[1.897px] pr-[2.846px]">
+        <div className="flex min-h-px min-w-px flex-1 items-center gap-[1.897px]">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} className="size-[1.897px] shrink-0 rounded-full bg-[#e7e7e7]" />
+          ))}
+        </div>
+        <div className="relative size-[4.506px] shrink-0 overflow-hidden">
+          <img
+            alt=""
+            className="absolute block size-full max-w-none"
+            src="/images/multi-device-iris-scan-tablet.svg"
+            style={{ inset: "17.43% 7.14%" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Mobile login popup form ── */
+function MobilePopupForm() {
+  return (
+    <div
+      className="absolute flex w-[67.289px] flex-col items-center gap-[2.67px] rounded-[1.602px] border-[0.134px] border-[#e4e4e7] bg-white pb-[2.67px] pt-[6.408px] px-[2.67px] shadow-[0_0.753px_3.766px_rgba(0,0,0,0.2)]"
+      style={{ left: "-4.53px", top: "9.13px" }}
+    >
+      {/* Union wave decoration */}
+      <img
+        alt=""
+        className="absolute left-[-0.13px] top-[-9.48px] block h-[59.145px] w-[67.155px] max-w-none"
+        src="/images/multi-device-union-mobile.svg"
+      />
+
+      {/* User avatar circle */}
+      <div
+        className="absolute -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-[#f9f7e8] w-[13.95px] h-[13.95px]  p-[4px] "
+        style={{
+          left: "calc(50% + 0.88px)",
+          top: "calc(50% - 28px)",
+        }}
+      >
+
+          <img
+            alt=""
+            className="w-full h-full object-cover"
+            src="/images/multi-device-user-sync-mobile.svg"
+            
+          />
+
+      </div>
+
+      <div className="relative flex w-full shrink-0 flex-col items-center gap-[2.67px]">
+        {/* Heading */}
+        <div className="flex shrink-0 flex-col items-center gap-[0.534px]">
+          <p className="text-[1.483px] font-bold uppercase leading-[1.2] tracking-[0.015px] text-green-500">
+            Login
+          </p>
+          <div className="h-[0.753px] w-[17.073px] shrink-0 rounded-[2.009px] bg-[#e7e7e7]" />
+        </div>
+
+        {/* School org row */}
+        <div className="flex shrink-0 items-center gap-[1.068px]">
+          <div className="relative size-[4.806px] shrink-0 rounded-full bg-[#d3caf0]">
+            <div className="absolute left-[1.18px] top-[1.13px] size-[2.511px] overflow-hidden">
+              <img
+                alt=""
+                className="absolute block size-full max-w-none"
+                src="/images/multi-device-school-mobile.svg"
+                style={{ inset: "3.57%" }}
+              />
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-col gap-[0.753px]">
+            <div className="h-[0.753px] w-[9.541px] shrink-0 rounded-[2.009px] bg-[#efecfa]" />
+            <div className="h-[0.753px] w-[6.026px] shrink-0 rounded-[2.009px] bg-[#efecfa]" />
+          </div>
+        </div>
+
+        {/* User ID field */}
+        <MobileField label="User ID" />
+
+        {/* Password field + forgot password line */}
+        <div className="flex w-full shrink-0 flex-col items-end gap-[1.602px]">
+          <MobilePasswordField />
+          <div className="h-[0.753px] w-[6.026px] shrink-0 rounded-[2.009px] bg-[#e7e7e7]" />
+        </div>
+      </div>
+
+      {/* Login button */}
+      <div
+        className="flex h-[5.741px] w-[61.949px] shrink-0 items-center justify-center rounded-[1.068px] border-[0.134px] border-green-600 px-[1.335px] py-[1.068px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(118.82deg, #00dc46 0.45%, #00c13d 100.96%)",
+        }}
+      >
+        <span className="text-[2.14px] font-semibold leading-[1.2] tracking-[-0.043px] text-white">
+          Login
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function MobileField({ label }: { label: string }) {
+  return (
+    <div className="flex w-full shrink-0 flex-col items-start gap-[1.068px]">
+      <div className="flex shrink-0 items-center justify-center px-[1.068px]">
+        <p className="text-[1.483px] font-bold uppercase leading-[1.2] tracking-[0.015px] text-[#71717a]">
+          {label}
+        </p>
+      </div>
+      <div className="flex h-[5.874px] w-full shrink-0 items-center rounded-[1.068px] border-[0.134px] border-[#e4e4e7] bg-white p-[1.068px]">
+        <div className="h-[0.753px] w-[6.026px] shrink-0 rounded-[2.009px] bg-[#e7e7e7]" />
+      </div>
+    </div>
+  );
+}
+
+function MobilePasswordField() {
+  return (
+    <div className="flex h-[8.678px] w-full shrink-0 flex-col items-start gap-[1.068px]">
+      <div className="flex shrink-0 items-center justify-center px-[1.068px]">
+        <p className="text-[1.483px] font-bold uppercase leading-[1.2] tracking-[0.015px] text-[#71717a]">
+          Password
+        </p>
+      </div>
+      <div className="flex w-full shrink-0 items-center justify-between rounded-[1.068px] border-[0.134px] border-[#e4e4e7] bg-white py-[1.602px] pl-[1.068px] pr-[1.602px]">
+        <div className="flex min-h-px min-w-px flex-1 items-center gap-[1.068px]">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} className="size-[1.068px] shrink-0 rounded-full bg-[#e7e7e7]" />
+          ))}
+        </div>
+        <div className="relative size-[2.537px] shrink-0 overflow-hidden">
+          <img
+            alt=""
+            className="absolute block size-full max-w-none"
+            src="/images/multi-device-iris-scan-mobile.svg"
+            style={{ inset: "17.43% 7.14%" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Tablet decorative blobs (rotated 42.8deg) ── */
+function TabletBlobs() {
+  return (
+    <>
+      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% - 94.55px)", bottom: "-41.79px", width: "118.486px", height: "124.927px" }}>
+        <div className="flex-none rotate-[42.8deg]">
+          <div className="relative h-[145.452px] w-[26.794px]">
+            <div className="absolute inset-[-15.33%_-83.23%]">
+              <img alt="" className="block size-full max-w-none" src="/images/multi-device-tablet-blob-1.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 63.79px)", bottom: "167.85px", width: "118.486px", height: "124.927px" }}>
+        <div className="flex-none rotate-[42.8deg]">
+          <div className="relative h-[145.452px] w-[26.794px]">
+            <div className="absolute inset-[-15.33%_-83.23%]">
+              <img alt="" className="block size-full max-w-none" src="/images/multi-device-tablet-blob-2.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% - 52.09px)", bottom: "-62.23px", width: "118.486px", height: "124.927px" }}>
+        <div className="flex-none rotate-[42.8deg]">
+          <div className="relative h-[145.452px] w-[26.794px]">
+            <div className="absolute inset-[-15.33%_-83.23%]">
+              <img alt="" className="block size-full max-w-none" src="/images/multi-device-tablet-blob-1.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 73.61px)", bottom: "113.88px", width: "118.486px", height: "124.927px" }}>
+        <div className="flex-none rotate-[42.8deg]">
+          <div className="relative h-[145.452px] w-[26.794px]">
+            <div className="absolute inset-[-15.33%_-83.23%]">
+              <img alt="" className="block size-full max-w-none" src="/images/multi-device-tablet-blob-2.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ── Mobile decorative blobs (rotated 42.8deg) ── */
+function MobileBlobs() {
+  return (
+    <>
+      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% - 58.91px)", bottom: "-26.42px", width: "73.597px", height: "77.598px" }}>
+        <div className="flex-none rotate-[42.8deg]">
+          <div className="relative h-[90.347px] w-[16.643px]">
+            <div className="absolute inset-[-15.33%_-83.23%]">
+              <img alt="" className="block size-full max-w-none" src="/images/multi-device-mobile-blob-1.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 39.45px)", bottom: "103.79px", width: "73.597px", height: "77.598px" }}>
+        <div className="flex-none rotate-[42.8deg]">
+          <div className="relative h-[90.347px] w-[16.643px]">
+            <div className="absolute inset-[-15.33%_-83.23%]">
+              <img alt="" className="block size-full max-w-none" src="/images/multi-device-mobile-blob-2.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% - 32.54px)", bottom: "-39.12px", width: "73.597px", height: "77.598px" }}>
+        <div className="flex-none rotate-[42.8deg]">
+          <div className="relative h-[90.347px] w-[16.643px]">
+            <div className="absolute inset-[-15.33%_-83.23%]">
+              <img alt="" className="block size-full max-w-none" src="/images/multi-device-mobile-blob-1.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 45.54px)", bottom: "70.27px", width: "73.597px", height: "77.598px" }}>
+        <div className="flex-none rotate-[42.8deg]">
+          <div className="relative h-[90.347px] w-[16.643px]">
+            <div className="absolute inset-[-15.33%_-83.23%]">
+              <img alt="" className="block size-full max-w-none" src="/images/multi-device-mobile-blob-2.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

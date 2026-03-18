@@ -56,14 +56,15 @@ const stages = [
 export default function FiveStages() {
   return (
     <section className="relative overflow-hidden bg-white px-6 pb-[120px] pt-24 md:px-12 lg:px-[120px]">
-      {/* Decorative wave */}
-      <Image
-        src="/images/stages-wave.svg"
-        alt=""
-        width={1811}
-        height={478}
-        className="pointer-events-none absolute -left-[264px] bottom-0 w-[1811px] max-w-none"
-      />
+      {/* Decorative wave — image, always full-width */}
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[50%] w-full">
+        <Image
+          src="/images/stages-wave.svg"
+          alt=""
+          fill
+          className="object-cover object-top"
+        />
+      </div>
 
       <div className="relative mx-auto max-w-[1200px]">
         {/* Header */}

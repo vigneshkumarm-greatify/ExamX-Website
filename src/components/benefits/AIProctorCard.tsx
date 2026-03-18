@@ -1,16 +1,15 @@
 export default function AIProctorCard() {
   return (
     <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 md:h-[313px]">
-      {/* Horizontal grid lines */}
+      {/* Horizontal grid lines — dashed */}
       <div className="pointer-events-none absolute inset-x-0 top-[156px]">
         {[0, 40.44, 80.89, 121.33, 161.78].map((offset) => (
           <div
             key={offset}
-            className="absolute left-0 h-px w-full opacity-10"
+            className="absolute left-0 w-full"
             style={{
               top: `${offset}px`,
-              background:
-                "linear-gradient(90deg, transparent 0%, #00dc46 30%, #00dc46 70%, transparent 100%)",
+              borderTop: "1px dashed rgba(0,220,70,0.10)",
             }}
           />
         ))}
@@ -74,11 +73,11 @@ export default function AIProctorCard() {
 
       {/* Decorative green dots */}
       <span
-        className="absolute left-[132px] top-[229px] h-[6px] w-[6px] rounded-full bg-green-500"
+        className="absolute left-[103px] top-[229px] h-[6px] w-[6px] rounded-full bg-green-500"
         style={{ boxShadow: "0 0 6px 2px rgba(0,220,70,0.5)" }}
       />
       <span
-        className="absolute left-[229px] top-[252px] h-[6px] w-[6px] rounded-full bg-green-500"
+        className="absolute left-[200px] top-[248px] h-[6px] w-[6px] rounded-full bg-green-500"
         style={{ boxShadow: "0 0 6px 2px rgba(0,220,70,0.5)" }}
       />
       <span
@@ -86,26 +85,20 @@ export default function AIProctorCard() {
         style={{ boxShadow: "0 0 6px 2px rgba(0,220,70,0.5)" }}
       />
 
-      {/* Connecting line — decorative path from iris to stats */}
-      <svg
-        className="pointer-events-none absolute left-[80px] top-[200px] z-0 opacity-20"
-        width="200"
-        height="100"
-        fill="none"
-      >
-        <path
-          d="M0 50 C30 50, 40 10, 80 10 L180 10"
-          stroke="#00dc46"
-          strokeWidth="1.5"
-          strokeDasharray="4 4"
-        />
-        <path
-          d="M0 50 C30 50, 40 80, 80 80 L180 80"
-          stroke="#00dc46"
-          strokeWidth="1.5"
-          strokeDasharray="4 4"
-        />
-      </svg>
+      {/* Chart line — CSS polygon (avoids SVG sub-pixel aliasing) */}
+      <div
+        className="pointer-events-none absolute z-0"
+        style={{
+          left: "-3px",
+          top: "126px",
+          width: "592px",
+          height: "157px",
+          background: "#00DC46",
+          opacity: 0.5,
+          clipPath:
+            "polygon(0.02% 100%, 18.4% 67.5%, 34.8% 79.6%, 60.14% 29.0%, 78.88% 31.19%, 99.98% 0.21%, 99.98% 0.85%, 78.88% 31.83%, 60.14% 29.64%, 34.8% 80.24%, 18.4% 68.14%, 0.02% 100%)",
+        }}
+      />
     </div>
   );
 }

@@ -5,16 +5,14 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[1090px] overflow-hidden">
       {/* Union Pattern - isometric grid background */}
-      <div
-        className="pointer-events-none absolute left-[-680px] top-[127px] flex h-[1616px] w-[2800px] items-center justify-center"
-      >
+      <div className="pointer-events-none absolute left-[-680px] top-[127px] flex h-[1616px] w-[2800px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87]">
           <Image
             src="/images/union-pattern.svg"
             alt=""
             width={1889}
             height={1343}
-            className="opacity-[0.06]"
+            className="opacity-[0.5]"
             priority
           />
         </div>
@@ -53,40 +51,74 @@ export default function HeroSection() {
               {/* Attempted Tests */}
               <div className="w-[133px] rounded-[10px] border border-dashed border-white/30 bg-[rgba(0,55,58,0.1)] p-[17px]">
                 <div className="mb-[10px] opacity-0">
-                  <div className="mb-[7px] h-[17px] w-[17px]" />
-                  <p className="text-[9.3px] text-chalk-green-100">Attempted Tests</p>
+                  <Image
+                    src="/images/hero-icon-attempted.svg"
+                    alt=""
+                    width={17}
+                    height={17}
+                    className="mb-[7px]"
+                  />
+                  <p className="text-[9.3px] text-chalk-green-100">
+                    Attempted Tests
+                  </p>
                 </div>
                 <div className="h-[7px] w-[70px] rounded-full bg-white/0" />
               </div>
               {/* Unattempted Tests */}
-              <div className="w-[133px] rounded-[10px] border border-white bg-[rgba(0,55,58,0.5)] p-[17px]">
+              <div className="w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                 <div className="mb-[10px]">
-                  <div className="mb-[7px] h-[17px] w-[17px]" />
-                  <p className="text-[9.3px] font-medium text-chalk-green-100">Unattempted Tests</p>
+                  <Image
+                    src="/images/hero-icon-failed.svg"
+                    alt=""
+                    width={17}
+                    height={17}
+                    className="mb-[7px]"
+                  />
+                  <p className="text-[9.3px] font-medium text-chalk-green-100">
+                    Unattempted Tests
+                  </p>
                 </div>
                 <div className="h-[7px] w-[70px] rounded-full bg-white/20" />
               </div>
               {/* Reattempted Tests */}
-              <div className="w-[133px] rounded-[10px] border border-white bg-[rgba(0,55,58,0.5)] p-[17px]">
+              <div className="w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                 <div className="mb-[10px]">
-                  <div className="mb-[7px] h-[17px] w-[17px]" />
-                  <p className="text-[9.3px] font-medium text-chalk-green-100">Reattempted Tests</p>
+                  <Image src="/images/hero-icon-reattempted.svg" alt="" width={17} height={17} className="mb-[7px]" />
+                  <p className="text-[9.3px] font-medium text-chalk-green-100">
+                    Reattempted Tests
+                  </p>
                 </div>
                 <div className="h-[7px] w-[70px] rounded-full bg-white/20" />
               </div>
               {/* Passed Tests */}
-              <div className="relative w-[133px] rounded-[10px] border border-white bg-[rgba(0,55,58,0.5)] p-[17px]">
+              <div className="relative w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                 <div className="mb-[10px]">
-                  <div className="mb-[7px] h-[17px] w-[17px]" />
-                  <p className="text-[9.3px] font-medium text-chalk-green-100">Passed Tests</p>
+                  <Image
+                    src="/images/hero-icon-passed.svg"
+                    alt=""
+                    width={17}
+                    height={17}
+                    className="mb-[7px]"
+                  />
+                  <p className="text-[9.3px] font-medium text-chalk-green-100">
+                    Passed Tests
+                  </p>
                 </div>
                 <div className="h-[7px] w-[70px] rounded-full bg-white/20" />
               </div>
               {/* Failed Tests (hidden) */}
-              <div className="w-[133px] rounded-[10px] border border-white bg-[rgba(0,55,58,0.5)] p-[17px] opacity-0">
+              <div className="w-[133px] rounded-[10px] border border-white/20 bg-[rgba(0,55,58,0.5)] p-[17px] opacity-0">
                 <div className="mb-[10px]">
-                  <div className="mb-[7px] h-[17px] w-[17px]" />
-                  <p className="text-[9.3px] font-medium text-chalk-green-100">Failed Tests</p>
+                  <Image
+                    src="/images/hero-icon-failed.svg"
+                    alt=""
+                    width={17}
+                    height={17}
+                    className="mb-[7px]"
+                  />
+                  <p className="text-[9.3px] font-medium text-chalk-green-100">
+                    Failed Tests
+                  </p>
                 </div>
                 <div className="h-[7px] w-[70px] rounded-full bg-white/20" />
               </div>
@@ -95,25 +127,29 @@ export default function HeroSection() {
             {/* Middle Row - Skills to Focus + AI Card */}
             <div className="flex gap-[13px] px-[14px]">
               {/* Skills to Focus Card */}
-              <div className="w-[370px] rounded-[10px] border border-white bg-[rgba(0,55,58,0.5)] p-[17px]">
+              <div className="w-[370px] rounded-[10px] border border-white/20 bg-[rgba(0,55,58,0.5)] p-[17px]">
                 <div className="mb-[10px] flex items-center justify-between">
-                  <p className="text-[16px] font-semibold text-white">Skills to focus</p>
+                  <p className="text-[16px] font-semibold text-white">
+                    Skills to focus
+                  </p>
                   <div className="rounded-[7px] border border-white/10 px-[7px] py-[7px]">
-                    <span className="text-[9.3px] font-semibold text-[#71717a]">All</span>
+                    <span className="text-[9.3px] font-semibold text-[#71717a]">
+                      All
+                    </span>
                   </div>
                 </div>
                 {/* Indicators */}
                 <div className="mb-5 flex gap-[13px]">
                   <div className="flex items-center gap-[3px]">
-                    <div className="h-[8px] w-[8px] rounded-sm bg-green-500" />
+                    <div className="h-[8px] w-[8px] rounded-[2px] bg-green-500" />
                     <div className="h-[5px] w-[70px] rounded-full bg-white/20" />
                   </div>
                   <div className="flex items-center gap-[3px]">
-                    <div className="h-[8px] w-[8px] rounded-sm bg-purple-500" />
+                    <div className="h-[8px] w-[8px] rounded-[2px] bg-purple-500" />
                     <div className="h-[5px] w-[70px] rounded-full bg-white/20" />
                   </div>
                   <div className="flex items-center gap-[3px]">
-                    <div className="h-[8px] w-[8px] rounded-sm bg-orange-600" />
+                    <div className="h-[8px] w-[8px] rounded-[2px] bg-orange-600" />
                     <div className="h-[7px] w-[70px] rounded-full bg-white/20" />
                   </div>
                 </div>
@@ -124,7 +160,9 @@ export default function HeroSection() {
                     <div className="mb-[7px] h-[7px] w-[70px] rounded-full bg-white/20" />
                     <div className="h-[18px] w-full overflow-hidden rounded-[3px] bg-white/20">
                       <div className="flex h-full w-[74px] items-center justify-end rounded-[3px] bg-orange-600 p-[3px]">
-                        <span className="text-[9.3px] font-bold uppercase tracking-wide text-white">30%</span>
+                        <span className="text-[9.3px] font-bold uppercase tracking-wide text-white">
+                          30%
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -133,16 +171,20 @@ export default function HeroSection() {
                     <div className="mb-[7px] h-[7px] w-[70px] rounded-full bg-white/20" />
                     <div className="h-[18px] w-full overflow-hidden rounded-[3px] bg-white/20">
                       <div className="flex h-full w-[176px] items-center justify-end rounded-[3px] bg-purple-400 p-[3px]">
-                        <span className="text-[9.3px] font-bold uppercase tracking-wide text-white">61%</span>
+                        <span className="text-[9.3px] font-bold uppercase tracking-wide text-white">
+                          61%
+                        </span>
                       </div>
                     </div>
                   </div>
                   {/* Bar 3 - 89% green (hidden) */}
                   <div className="opacity-0">
                     <div className="mb-[7px] h-[7px] w-[70px] rounded-full bg-white/20" />
-                    <div className="h-[18px] w-full overflow-hidden rounded-[3px] bg-white/20">
+                    <div className="h-[18px] w-full overflow-hidden rounded-[3px] ">
                       <div className="flex h-full w-[271px] items-center justify-end rounded-[3px] bg-green-600 p-[3px]">
-                        <span className="text-[9.3px] font-bold uppercase tracking-wide text-chalk-green-500">89%</span>
+                        <span className="text-[9.3px] font-bold uppercase tracking-wide text-chalk-green-500">
+                          89%
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -193,6 +235,12 @@ export default function HeroSection() {
                         <div className="flex h-[19px] items-center rounded-[7px] border border-green-700 bg-green-800 px-[7px]">
                           <div className="h-[5px] w-[78px] rounded-full bg-white/20" />
                         </div>
+                        <div className="flex h-[19px] items-center rounded-[7px] border border-green-700 bg-green-800 px-[7px]">
+                          <div className="h-[5px] w-[78px] rounded-full bg-white/20" />
+                        </div>
+                        <div className="flex h-[17px] items-center rounded-[7px] border border-creme-800 bg-creme-900 px-[7px]">
+                          <div className="h-[5px] w-[50px] rounded-full bg-white/20" />
+                        </div>
                       </div>
                       {/* Gradient fade overlay */}
                       <div
@@ -209,7 +257,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bottom Row - Test Performance */}
-            <div className="mx-[14px] mt-[13px] flex overflow-hidden rounded-[10px] border border-white bg-[rgba(0,55,58,0.5)]">
+            <div className="mx-[14px] mt-[13px] flex overflow-hidden rounded-[10px] border border-white/20 bg-[rgba(0,55,58,0.5)]">
               {/* Pie Chart Section */}
               <div className="flex w-[339px] flex-col items-center gap-5 px-[17px] pb-[27px] pt-[17px]">
                 <div className="w-full">
@@ -218,15 +266,70 @@ export default function HeroSection() {
                   </div>
                   {/* Pie chart placeholder */}
                   <div className="relative mx-auto h-[189px] w-[189px]">
-                    <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
-                      <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="8" />
-                      <circle cx="50" cy="50" r="42" fill="none" stroke="#00dc46" strokeWidth="8" strokeDasharray="132 264" strokeDashoffset="0" />
-                      <circle cx="50" cy="50" r="42" fill="none" stroke="#6240c8" strokeWidth="8" strokeDasharray="66 264" strokeDashoffset="-132" />
-                      <circle cx="50" cy="50" r="42" fill="none" stroke="#ff8a3b" strokeWidth="8" strokeDasharray="40 264" strokeDashoffset="-198" />
-                      <circle cx="50" cy="50" r="42" fill="none" stroke="#cc6e2f" strokeWidth="8" strokeDasharray="26 264" strokeDashoffset="-238" />
-                    </svg>
+                    {/* Outer circle */}
+                    <Image
+                      src="/images/hero-piechart.svg"
+                      alt=""
+                      width={189}
+                      height={189}
+                      className="absolute inset-0 h-full w-full"
+                    />
+                    {/* Inner ring */}
+                    <div className="absolute inset-[21.24%]">
+                      <Image
+                        src="/images/hero-pie-ring.svg"
+                        alt=""
+                        width={109}
+                        height={109}
+                        className="h-full w-full"
+                      />
+                    </div>
+                    {/* Orange segment */}
+                    <div className="absolute inset-[2.65%]">
+                      <div className="absolute inset-[0_15.42%_0_0]">
+                        <Image
+                          src="/images/hero-pie-seg1.svg"
+                          alt=""
+                          width={151}
+                          height={179}
+                          className="h-full w-full"
+                        />
+                      </div>
+                    </div>
+                    {/* Purple segment */}
+                    <div className="absolute inset-[2.65%]">
+                      <div
+                        className="absolute"
+                        style={{ inset: "49.69% 0 3.15% 60.91%" }}
+                      >
+                        <Image
+                          src="/images/hero-pie-seg2.svg"
+                          alt=""
+                          width={70}
+                          height={84}
+                          className="h-full w-full"
+                        />
+                      </div>
+                    </div>
+                    {/* Green segment */}
+                    <div className="absolute inset-[2.65%]">
+                      <div
+                        className="absolute"
+                        style={{ inset: "17.01% 0.17% 51.63% 74.73%" }}
+                      >
+                        <Image
+                          src="/images/hero-pie-seg3.svg"
+                          alt=""
+                          width={45}
+                          height={56}
+                          className="h-full w-full"
+                        />
+                      </div>
+                    </div>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-[23px] font-semibold text-white">20</span>
+                      <span className="text-[23px] font-semibold text-white">
+                        20
+                      </span>
                       <div className="h-[5px] w-[30px] rounded-full bg-white/20" />
                     </div>
                   </div>
@@ -248,31 +351,42 @@ export default function HeroSection() {
               </div>
 
               {/* Divider */}
-              <div className="my-auto h-[271px] w-px bg-white/10" />
+              <div className="my-auto h-[271px] w-px bg-white/20" />
 
               {/* Test List Section */}
               <div className="flex flex-1 flex-col">
                 <div className="flex justify-end gap-[3px] px-[23px] pb-[17px] pt-[17px]">
-                  <div className="rounded-[7px] border border-white/10 px-[7px] py-[7px]">
-                    <span className="text-[9.3px] font-semibold text-white/50">First year</span>
+                  <div className="rounded-[7px] border border-white/10 px-[7px] ">
+                    <span className="text-[9.3px] font-semibold text-white/50">
+                      First year
+                    </span>
                   </div>
-                  <div className="rounded-[7px] border border-white/10 px-[7px] py-[7px]">
-                    <span className="text-[9.3px] font-semibold text-white/50">Average</span>
+                  <div className="rounded-[7px] border border-white/10 px-[7px] ">
+                    <span className="text-[9.3px] font-semibold text-white/50">
+                      Average
+                    </span>
                   </div>
                 </div>
                 <div className="flex-1 space-y-[7px] px-[23px]">
                   {[0, 1, 2, 3, 4, 5].map((i) => (
-                    <div key={i} className="flex items-center justify-between rounded-[7px] border border-white/10 bg-white/10 px-[7px] py-[7px]">
+                    <div
+                      key={i}
+                      className="flex items-center justify-between rounded-[7px] border border-white/10 bg-white/10 px-[7px] py-[7px]"
+                    >
                       <div className="h-[5px] w-[30px] rounded-full bg-chalk-green-300/50" />
                       <div className="h-[5px] w-[30px] rounded-full bg-chalk-green-300/50" />
-                      <span className="text-[9.3px] font-medium text-orange-500">Average</span>
+                      <span className="text-[9.3px] font-medium text-orange-500">
+                        Average
+                      </span>
                     </div>
                   ))}
                   {/* Last row - dashed border */}
                   <div className="flex items-center justify-between rounded-[7px] border border-dashed border-white/10 bg-white/[0.02] px-[7px] py-[7px]">
                     <div className="h-[5px] w-[30px] rounded-full bg-chalk-green-300/50 opacity-0" />
                     <div className="h-[5px] w-[30px] rounded-full bg-chalk-green-300/50 opacity-0" />
-                    <span className="text-[9.3px] font-medium text-orange-500 opacity-0">Average</span>
+                    <span className="text-[9.3px] font-medium text-orange-500 opacity-0">
+                      Average
+                    </span>
                   </div>
                 </div>
                 {/* Scrollbar */}
@@ -302,17 +416,19 @@ export default function HeroSection() {
             <div className="absolute -bottom-8 right-4 h-[152px] w-[28px] rotate-[42.8deg] opacity-30">
               <div className="h-full w-full rounded-full bg-green-500/30" />
             </div>
-            <div className="p-5">
-              <Image
-                src="/images/ai-proctored-graphic.svg"
-                alt=""
-                width={38}
-                height={38}
-                className="mb-2"
-              />
-              <p className="text-[16px] font-medium leading-[1.5] text-chalk-green-50 opacity-80">
-                AI Proctored
-              </p>
+            <div className="p-4">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/images/ai-proctored-graphic.svg"
+                  alt=""
+                  width={38}
+                  height={38}
+                  className="mb-2"
+                />
+                <p className="text-[16px] font-medium leading-[1.5] text-chalk-green-50 opacity-80">
+                  AI Proctored
+                </p>
+              </div>
               <p className="text-[33.81px] font-semibold leading-[1.2] tracking-[-0.02em] text-white opacity-80">
                 2,847
               </p>
@@ -328,7 +444,7 @@ export default function HeroSection() {
       <div className="pointer-events-none absolute left-[68px] top-[666px] flex h-[175px] w-[303px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87]">
           <div
-            className="relative h-[130px] w-[219px] overflow-hidden rounded-xl shadow-[0px_4px_15px_rgba(0,55,58,0.25)]"
+            className="relative h-[130px] w-[219px] overflow-hidden rounded-xl shadow-[0px_4px_15px_rgba(0,55,58,0.25)] border border-white/10"
             style={{
               backgroundImage:
                 "linear-gradient(121deg, rgba(0,220,70,0.2) 3.78%, rgba(0,118,38,0.2) 92.35%)",
@@ -342,9 +458,18 @@ export default function HeroSection() {
               <div className="h-full w-full rounded-full bg-green-500/20" />
             </div>
             <div className="p-4">
-              <p className="text-[16px] font-medium leading-[1.5] text-green-50 opacity-70">
-                Cheating blocked
-              </p>
+              <div className="flex gap-2">
+                <Image
+                  src="/images/hero-icon-failed.svg"
+                  alt=""
+                  width={17}
+                  height={17}
+                  className="mb-[7px]"
+                />
+                <p className="text-[16px] font-medium leading-[1.5] text-green-50 opacity-70">
+                  Cheating blocked
+                </p>
+              </div>
               <p className="text-[33.81px] font-semibold leading-[1.2] tracking-[-0.02em] text-white opacity-80">
                 99.2%
               </p>
@@ -360,15 +485,22 @@ export default function HeroSection() {
       <div className="pointer-events-none absolute left-[89px] top-[905px] flex h-[110px] w-[190px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87]">
           <div
-            className="flex h-[86px] w-[133px] flex-col justify-between rounded-[7px] p-4 shadow-[0px_4px_15px_rgba(0,55,58,0.25)]"
+            className="flex h-[86px] w-[133px] flex-col justify-between rounded-[7px] p-4 shadow-[0px_4px_15px_rgba(0,55,58,0.25)] border border-white/20" 
             style={{
               backgroundImage:
                 "linear-gradient(118.8deg, rgba(0,220,70,0.2) 3.78%, rgba(0,118,38,0.2) 92.35%)",
             }}
           >
             <div className="space-y-[7px]">
-              <div className="h-[17px] w-[17px]" />
-              <p className="text-[9.3px] font-medium text-creme-500">Attempted Tests</p>
+              <Image
+                src="/images/hero-icon-attempted.svg"
+                alt=""
+                width={17}
+                height={17}
+              />
+              <p className="text-[9.3px] font-medium text-creme-500">
+                Attempted Tests
+              </p>
             </div>
             <div className="h-[7px] w-[70px] rounded-full bg-white/20" />
           </div>
@@ -378,10 +510,17 @@ export default function HeroSection() {
       {/* Floating Card - Failed Tests (right) */}
       <div className="pointer-events-none absolute left-[707px] top-[594px] flex h-[110px] w-[190px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87]">
-          <div className="w-[133px] rounded-[10px] border border-white bg-gradient-to-b from-green-500/20 to-green-700/20 p-[17px] shadow-[0px_4px_15px_rgba(0,0,0,0.15)]">
+          <div className="w-[133px] rounded-[10px] border border-white/20 bg-gradient-to-b from-green-500/20 to-green-700/20 p-[17px] shadow-[0px_4px_15px_rgba(0,0,0,0.15)] border border-white/10">
             <div className="space-y-[7px]">
-              <div className="h-[17px] w-[17px]" />
-              <p className="text-[9.3px] font-medium text-chalk-green-100">Failed Tests</p>
+              <Image
+                src="/images/hero-icon-failed.svg"
+                alt=""
+                width={17}
+                height={17}
+              />
+              <p className="text-[9.3px] font-medium text-chalk-green-100">
+                Failed Tests
+              </p>
             </div>
             <div className="mt-[10px] h-[7px] w-[70px] rounded-full bg-white/20" />
           </div>
@@ -391,11 +530,13 @@ export default function HeroSection() {
       {/* Floating Bar - 89% (bottom center) */}
       <div className="pointer-events-none absolute left-[541px] top-[847px] flex h-[196px] w-[340px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87]">
-          <div className="w-[337px] space-y-[7px] rounded-xl bg-white/10 p-3 shadow-[0px_4px_25px_rgba(0,0,0,0.15)]">
+          <div className="w-[337px] space-y-[7px] rounded-xl bg-white/10 p-3 shadow-[0px_4px_25px_rgba(0,0,0,0.15)]  border border-white/20">
             <div className="h-[7px] w-[70px] rounded-full bg-white/20" />
             <div className="h-[18px] w-full overflow-hidden rounded-[3px] bg-white/20">
               <div className="flex h-full w-[271px] items-center justify-end rounded-[3px] bg-green-600 p-[3px]">
-                <span className="text-[9.3px] font-bold uppercase tracking-wide text-chalk-green-500">89%</span>
+                <span className="text-[9.3px] font-bold uppercase tracking-wide text-chalk-green-500">
+                  89%
+                </span>
               </div>
             </div>
           </div>
@@ -403,18 +544,20 @@ export default function HeroSection() {
       </div>
 
       {/* Floating Card - Pass (bottom right) */}
-      <div className="pointer-events-none absolute left-[1166px] top-[825px] flex h-[152px] w-[263px] items-center justify-center">
+      <div className="pointer-events-none absolute left-[1166px] top-[832px] flex h-[152px] w-[263px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87]">
           <div
-            className="flex h-[32px] w-[271px] items-center rounded-[7px] px-2"
+            className="flex h-[32px] w-[271px] items-center rounded-[7px] px-2 border border-white/20"
             style={{
               backgroundImage:
                 "linear-gradient(161.5deg, rgba(0,220,70,0.2) 3.78%, rgba(0,118,38,0.2) 92.35%)",
             }}
           >
-            <div className="h-[5px] w-[30px] rounded-full bg-white/30" />
+            <div className="h-[5px] w-[30px] rounded-full bg-white/30 " />
             <div className="ml-[86px] h-[5px] w-[30px] rounded-full bg-white/30" />
-            <p className="ml-auto text-[9.3px] font-medium text-green-300">Pass</p>
+            <p className="ml-auto text-[9.3px] font-medium text-green-300">
+              Pass
+            </p>
           </div>
         </div>
       </div>
@@ -425,12 +568,7 @@ export default function HeroSection() {
         <div className="flex flex-col gap-3">
           <div className="flex items-start">
             <span className="inline-flex items-center gap-1 rounded-lg border border-[rgba(0,220,70,0.4)] bg-[rgba(0,220,70,0.2)] px-2 py-1.5">
-              <Image
-                src="/images/sparkle.svg"
-                alt=""
-                width={15}
-                height={15}
-              />
+              <Image src="/images/sparkle.svg" alt="" width={15} height={15} />
               <span className="text-[11.11px] font-semibold leading-[1.2] tracking-[-0.01em] text-green-500">
                 AI Empowered
               </span>
@@ -476,25 +614,45 @@ export default function HeroSection() {
         {/* Trust Badges */}
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-1">
-            <Image src="/images/star-circle.svg" alt="" width={14} height={14} />
+            <Image
+              src="/images/star-circle.svg"
+              alt=""
+              width={14}
+              height={14}
+            />
             <span className="text-[13.33px] font-medium leading-[1.5] tracking-[-0.01em] text-chalk-green-100">
               SOC 2
             </span>
           </div>
           <div className="flex items-center gap-1">
-            <Image src="/images/star-circle.svg" alt="" width={14} height={14} />
+            <Image
+              src="/images/star-circle.svg"
+              alt=""
+              width={14}
+              height={14}
+            />
             <span className="text-[13.33px] font-medium leading-[1.5] tracking-[-0.01em] text-chalk-green-100">
               GDPR
             </span>
           </div>
           <div className="flex items-center gap-1">
-            <Image src="/images/star-circle.svg" alt="" width={14} height={14} />
+            <Image
+              src="/images/star-circle.svg"
+              alt=""
+              width={14}
+              height={14}
+            />
             <span className="text-[13.33px] font-medium leading-[1.5] tracking-[-0.01em] text-chalk-green-100">
               ISO 27001
             </span>
           </div>
           <div className="flex items-center gap-1">
-            <Image src="/images/countdown-timer.svg" alt="" width={14} height={14} />
+            <Image
+              src="/images/countdown-timer.svg"
+              alt=""
+              width={14}
+              height={14}
+            />
             <span className="text-[13.33px] font-medium leading-[1.5] tracking-[-0.01em] text-chalk-green-100">
               99.9% Uptime
             </span>

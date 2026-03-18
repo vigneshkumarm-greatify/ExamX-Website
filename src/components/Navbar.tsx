@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { ChevronDownIcon } from "@heroicons/react/16/solid";
 
 const navLinks = [
   { label: "Solutions", hasDropdown: true },
@@ -19,19 +20,11 @@ export default function Navbar() {
       <div className="flex shrink-0 items-center">
         <a href="/" className="flex h-[49px] items-center gap-0">
           <Image
-            src="/images/logo-icon.svg"
+            src="/images/examx/greatify-logo.svg"
             alt="Greatify"
-            width={60}
+            width={0}
             height={48}
             className="h-12 w-auto"
-            priority
-          />
-          <Image
-            src="/images/logo-wordmark.svg"
-            alt="Greatify"
-            width={140}
-            height={37}
-            className="h-[37px] w-auto"
             priority
           />
         </a>
@@ -47,13 +40,8 @@ export default function Navbar() {
           >
             {link.label}
             {link.hasDropdown && (
-              <Image
-                src="/images/arrow-right.svg"
-                alt=""
-                width={11}
-                height={11}
-                className="ml-0.5"
-              />
+              <ChevronDownIcon className="h-4 w-4" />
+ 
             )}
           </a>
         ))}

@@ -56,15 +56,35 @@ const stages = [
 export default function FiveStages() {
   return (
     <section className="relative overflow-hidden bg-white px-6 pb-[120px] pt-24 md:px-12 lg:px-[120px]">
-      {/* Decorative wave — image, always full-width */}
-      <div className="pointer-events-none absolute bottom-0 left-0 h-[50%] w-full">
-        <Image
-          src="/images/stages-wave.svg"
-          alt=""
-          fill
-          className="object-cover object-top"
+      {/* Decorative wave — inline SVG arc, scales to full width */}
+      <svg
+        className="pointer-events-none absolute bottom-0 left-0 w-full"
+        viewBox="0 0 1440 480"
+        fill="none"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        style={{ height: "clamp(200px, 50%, 480px)" }}
+      >
+        <path
+          d="M-120 460C180 50 700 -80 1560 380"
+          stroke="url(#stages-wave-grad)"
+          strokeWidth="160"
+          strokeLinecap="round"
         />
-      </div>
+        <defs>
+          <linearGradient
+            id="stages-wave-grad"
+            x1="200"
+            y1="280"
+            x2="1400"
+            y2="260"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#00DC46" />
+            <stop offset="1" stopColor="#00373A" />
+          </linearGradient>
+        </defs>
+      </svg>
 
       <div className="relative mx-auto max-w-[1200px]">
         {/* Header */}

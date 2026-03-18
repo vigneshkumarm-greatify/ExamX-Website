@@ -3,159 +3,163 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-// ── Particle type & helpers ──────────────────────────────────────────────────
+// ── Spark particle pool ──────────────────────────────────────────────────────
 
-interface Particle {
+const POOL_SIZE = 60;
+
+interface Spark {
+  el: SVGCircleElement;
   x: number;
   y: number;
   vx: number;
   vy: number;
-  life: number;       // 0→1 fraction of lifetime elapsed
-  maxLife: number;     // total lifetime in seconds
-  size: number;        // radius in px
-  baseOpacity: number; // starting opacity
+  life: number;
+  maxLife: number;
+  radius: number;
+  alive: boolean;
 }
 
-function deadParticle(): Particle {
-  return { x: 0, y: 0, vx: 0, vy: 0, life: 1, maxLife: 1, size: 0, baseOpacity: 0 };
+function createSparkPool(svg: SVGSVGElement, filterId: string): Spark[] {
+  const NS = "http://www.w3.org/2000/svg";
+
+  // Soft glow filter for sparks
+  const filter = document.createElementNS(NS, "filter");
+  filter.setAttribute("id", filterId);
+  filter.setAttribute("x", "-200%");
+  filter.setAttribute("y", "-200%");
+  filter.setAttribute("width", "500%");
+  filter.setAttribute("height", "500%");
+  const blur = document.createElementNS(NS, "feGaussianBlur");
+  blur.setAttribute("stdDeviation", "2");
+  blur.setAttribute("result", "glow");
+  const merge = document.createElementNS(NS, "feMerge");
+  const m1 = document.createElementNS(NS, "feMergeNode");
+  m1.setAttribute("in", "glow");
+  const m2 = document.createElementNS(NS, "feMergeNode");
+  m2.setAttribute("in", "SourceGraphic");
+  merge.appendChild(m1);
+  merge.appendChild(m2);
+  filter.appendChild(blur);
+  filter.appendChild(merge);
+  let defs = svg.querySelector("defs");
+  if (!defs) {
+    defs = document.createElementNS(NS, "defs");
+    svg.prepend(defs);
+  }
+  defs.appendChild(filter);
+
+  const sparks: Spark[] = [];
+  for (let i = 0; i < POOL_SIZE; i++) {
+    const el = document.createElementNS(NS, "circle");
+    el.setAttribute("r", "0");
+    el.setAttribute("fill", "#01ff80");
+    el.setAttribute("filter", `url(#${filterId})`);
+    el.setAttribute("opacity", "0");
+    svg.appendChild(el);
+    sparks.push({
+      el,
+      x: 0, y: 0, vx: 0, vy: 0,
+      life: 1, maxLife: 1, radius: 0,
+      alive: false,
+    });
+  }
+  return sparks;
 }
 
-/** Find the first dead particle in the pool and recycle it */
-function spawnParticleAt(
-  pool: Particle[],
+const SPARK_COLORS = ["#01ff80", "#00ff66", "#aaffcc", "#00DC46", "#66ffaa"];
+
+function spawnSpark(
+  pool: Spark[],
   pathEl: SVGPathElement,
-  headDistance: number,
+  headDist: number,
   totalLength: number,
 ) {
-  // Find a dead slot
-  const slot = pool.find((p) => p.life >= 1);
-  if (!slot) return;
+  const spark = pool.find((s) => !s.alive);
+  if (!spark) return;
 
-  // Clamp head distance to valid range
-  const d = Math.max(0, Math.min(headDistance, totalLength));
-
-  // Get position and tangent at head
+  // Spawn along bright segment (20% behind head)
+  const behind = Math.random() * totalLength * 0.20;
+  const d = Math.max(0, Math.min(headDist - behind, totalLength));
   const pt = pathEl.getPointAtLength(d);
-  const ptAhead = pathEl.getPointAtLength(Math.min(d + 2, totalLength));
-  const ptBehind = pathEl.getPointAtLength(Math.max(d - 2, 0));
 
-  const dx = ptAhead.x - ptBehind.x;
-  const dy = ptAhead.y - ptBehind.y;
+  // Path tangent for perpendicular offset direction
+  const ptA = pathEl.getPointAtLength(Math.min(d + 2, totalLength));
+  const ptB = pathEl.getPointAtLength(Math.max(d - 2, 0));
+  const dx = ptA.x - ptB.x;
+  const dy = ptA.y - ptB.y;
   const len = Math.sqrt(dx * dx + dy * dy) || 1;
-  const tx = dx / len; // tangent
-  const ty = dy / len;
-  const nx = -ty;      // normal (perpendicular)
-  const ny = tx;
+  const nx = -dy / len;
+  const ny = dx / len;
 
-  // Random side: +1 or -1
+  // Wider spawn offset (0-15px from path center)
   const side = Math.random() > 0.5 ? 1 : -1;
+  const perpOffset = Math.random() * 15;
 
-  // Perpendicular drift speed 15-40 px/s
-  const perpSpeed = 15 + Math.random() * 25;
-  // Backward drift (opposite to flow) 5-15 px/s
-  const backSpeed = 5 + Math.random() * 10;
+  spark.x = pt.x + nx * perpOffset * side;
+  spark.y = pt.y + ny * perpOffset * side;
 
-  // Small random offset from the path center (0-4px)
-  const offset = Math.random() * 4;
+  // Random 360° velocity — electricity scatters freely
+  const angle = Math.random() * Math.PI * 2;
+  const speed = 20 + Math.random() * 40; // 20-60 px/s
+  spark.vx = Math.cos(angle) * speed;
+  spark.vy = Math.sin(angle) * speed;
 
-  slot.x = pt.x + nx * offset * side;
-  slot.y = pt.y + ny * offset * side;
-  slot.vx = nx * perpSpeed * side - tx * backSpeed;
-  slot.vy = ny * perpSpeed * side - ty * backSpeed;
-  slot.life = 0;
-  slot.maxLife = 0.6 + Math.random() * 0.6; // 0.6-1.2s
-  slot.size = 1 + Math.random() * 2;        // 1-3px
-  slot.baseOpacity = 0.4 + Math.random() * 0.4; // 0.4-0.8
+  // Mix of spark types for electric feel
+  const type = Math.random();
+  if (type < 0.4) {
+    // Fast flashes — tiny, short-lived
+    spark.maxLife = 0.15 + Math.random() * 0.15;
+    spark.radius = 0.5 + Math.random() * 1.0;
+  } else if (type < 0.8) {
+    // Medium sparks
+    spark.maxLife = 0.3 + Math.random() * 0.3;
+    spark.radius = 1.5 + Math.random() * 1.5;
+  } else {
+    // Large flares — bigger, longer-lived
+    spark.maxLife = 0.5 + Math.random() * 0.5;
+    spark.radius = 2.5 + Math.random() * 2.0;
+  }
+
+  spark.life = 0;
+  spark.alive = true;
+
+  spark.el.setAttribute("fill", SPARK_COLORS[Math.floor(Math.random() * SPARK_COLORS.length)]);
 }
 
-const POOL_SIZE = 50;
+function updateSparks(pool: Spark[], dt: number) {
+  for (const s of pool) {
+    if (!s.alive) continue;
+    s.life += dt / s.maxLife;
+    if (s.life >= 1) {
+      s.alive = false;
+      s.el.setAttribute("opacity", "0");
+      s.el.setAttribute("r", "0");
+      continue;
+    }
+    s.x += s.vx * dt;
+    s.y += s.vy * dt;
+    s.vx *= 0.97;
+    s.vy *= 0.97;
 
-function createParticleSystem(
-  canvas: HTMLCanvasElement,
-  pathEl: SVGPathElement,
-  totalLength: number,
-) {
-  const ctx = canvas.getContext("2d")!;
-  const particles: Particle[] = Array.from({ length: POOL_SIZE }, () => deadParticle());
-  let spawnAccum = 0;
+    // Smooth fade with gentle brightness variation
+    const fade = s.life < 0.2 ? s.life / 0.2 : 1 - (s.life - 0.2) / 0.8;
+    const opacity = fade * (0.7 + Math.random() * 0.1);
 
-  return {
-    update(dt: number, headDistance: number) {
-      // Spawn ~8-12 particles per second (one every ~0.08-0.12s)
-      spawnAccum += dt;
-      while (spawnAccum > 0.09) {
-        spawnParticleAt(particles, pathEl, headDistance, totalLength);
-        spawnAccum -= 0.09;
-      }
-
-      // Update living particles
-      for (const p of particles) {
-        if (p.life >= 1) continue;
-        p.x += p.vx * dt;
-        p.y += p.vy * dt;
-        p.vx *= 0.96;
-        p.vy *= 0.96;
-        p.life += dt / p.maxLife;
-      }
-    },
-
-    draw(dpr: number) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.save();
-      ctx.scale(dpr, dpr);
-      ctx.globalCompositeOperation = "screen";
-
-      for (const p of particles) {
-        if (p.life >= 1) continue;
-        const alpha = p.baseOpacity * Math.pow(1 - p.life, 1.5);
-
-        // Core dot
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 220, 70, ${alpha})`;
-        ctx.fill();
-
-        // Soft glow halo
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size * 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 220, 70, ${alpha * 0.25})`;
-        ctx.fill();
-      }
-
-      ctx.restore();
-    },
-
-    dispose() {
-      // Mark all particles dead
-      for (const p of particles) p.life = 1;
-    },
-  };
+    s.el.setAttribute("cx", String(s.x));
+    s.el.setAttribute("cy", String(s.y));
+    s.el.setAttribute("r", String(s.radius * (1 - s.life * 0.3)));
+    s.el.setAttribute("opacity", String(Math.max(0, opacity)));
+  }
 }
 
-/**
- * Convert the current strokeDashoffset value into the "head distance" along the path.
- *
- * The GSAP tween goes:  offset = (totalLength + brightLength) → -(totalLength + brightLength)
- * The bright segment is drawn by stroke-dasharray: `brightLength gapLength`
- *
- * At offset = totalLength + brightLength → head is at distance 0 (off-screen start)
- * At offset = 0 → head is at distance (totalLength + brightLength) which wraps
- * At offset = -(totalLength + brightLength) → head has fully passed
- *
- * The "head" of the bright segment (leading edge) is at:
- *   headDistance = (totalLength + brightLength) - offset
- * But we need to clamp to [0, totalLength].
- */
-function offsetToHeadDistance(
-  offset: number,
-  totalLength: number,
-  brightLength: number,
-): number {
-  const head = (totalLength + brightLength) - offset;
-  return Math.max(0, Math.min(head, totalLength));
+function disposeSparks(pool: Spark[]) {
+  for (const s of pool) {
+    s.el.remove();
+    s.alive = false;
+  }
 }
 
-// ── Tube configuration (unchanged) ──────────────────────────────────────────
+// ── Tube configuration ──────────────────────────────────────────────────────
 
 const TUBES = [
   {
@@ -196,79 +200,47 @@ const TUBES = [
   },
 ];
 
-// ── Canvas dimensions matching SVG sizes ─────────────────────────────────────
+const LEFT_SVG = { w: 77, h: 1150 };
+const RIGHT_SVG = { w: 477, h: 1183 };
 
-const LEFT_CANVAS = { w: 77, h: 1150 };
-const RIGHT_CANVAS = { w: 477, h: 1183 };
+const LEFT_PATH_D = "M17.4938 10.3047L64.2317 1159.84";
+const RIGHT_PATH_D =
+  "M487.343 1200.11L449.066 65.8139C448.145 38.5284 425.508 17.0257 398.211 17.508L10.1325 24.3646";
 
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function HeroGlowEffects() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const leftCanvasRef = useRef<HTMLCanvasElement>(null);
-  const rightCanvasRef = useRef<HTMLCanvasElement>(null);
   const leftPathRef = useRef<SVGPathElement>(null);
   const rightPathRef = useRef<SVGPathElement>(null);
+  const leftSvgRef = useRef<SVGSVGElement>(null);
+  const rightSvgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
     if (prefersReducedMotion) return;
 
-    // Set up canvas DPR scaling
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-    const leftCanvas = leftCanvasRef.current;
-    const rightCanvas = rightCanvasRef.current;
     const leftPath = leftPathRef.current;
     const rightPath = rightPathRef.current;
+    const leftSvg = leftSvgRef.current;
+    const rightSvg = rightSvgRef.current;
 
-    if (!leftCanvas || !rightCanvas || !leftPath || !rightPath) return;
-
-    // Scale canvases for sharp rendering
-    leftCanvas.width = LEFT_CANVAS.w * dpr;
-    leftCanvas.height = LEFT_CANVAS.h * dpr;
-    rightCanvas.width = RIGHT_CANVAS.w * dpr;
-    rightCanvas.height = RIGHT_CANVAS.h * dpr;
+    if (!leftPath || !rightPath || !leftSvg || !rightSvg) return;
 
     const leftTotalLength = leftPath.getTotalLength();
     const rightTotalLength = rightPath.getTotalLength();
     const leftBrightLength = leftTotalLength * 0.25;
     const rightBrightLength = rightTotalLength * 0.25;
 
-    const leftSystem = createParticleSystem(leftCanvas, leftPath, leftTotalLength);
-    const rightSystem = createParticleSystem(rightCanvas, rightPath, rightTotalLength);
-
-    // Ticker function — defined outside gsap.context so we can remove it on cleanup
-    const tickerFn = (_time: number, deltaTime: number) => {
-      const dt = deltaTime / 1000;
-      // Clamp dt to avoid huge jumps on tab refocus
-      const clampedDt = Math.min(dt, 0.1);
-
-      // Read current dashoffset
-      const leftOffset = parseFloat(
-        leftPath.style.strokeDashoffset || String(leftTotalLength + leftBrightLength)
-      );
-      const rightOffset = parseFloat(
-        rightPath.style.strokeDashoffset || String(rightTotalLength + rightBrightLength)
-      );
-
-      const leftHead = offsetToHeadDistance(leftOffset, leftTotalLength, leftBrightLength);
-      const rightHead = offsetToHeadDistance(rightOffset, rightTotalLength, rightBrightLength);
-
-      leftSystem.update(clampedDt, leftHead);
-      rightSystem.update(clampedDt, rightHead);
-      leftSystem.draw(dpr);
-      rightSystem.draw(dpr);
-    };
+    const leftSparks = createSparkPool(leftSvg, "spark-glow-left");
+    const rightSparks = createSparkPool(rightSvg, "spark-glow-right");
 
     const ctx = gsap.context(() => {
-      // ── Grid line flow animations ──
-      // Left path
-      const leftGapLength = leftTotalLength * 1;
+      // Left bright segment
       gsap.set(leftPath, {
-        strokeDasharray: `${leftBrightLength} ${leftGapLength}`,
+        strokeDasharray: `${leftBrightLength} ${leftTotalLength}`,
         strokeDashoffset: leftTotalLength + leftBrightLength,
       });
       gsap.to(leftPath, {
@@ -279,10 +251,9 @@ export default function HeroGlowEffects() {
         delay: 0,
       });
 
-      // Right path
-      const rightGapLength = rightTotalLength * 1;
+      // Right bright segment
       gsap.set(rightPath, {
-        strokeDasharray: `${rightBrightLength} ${rightGapLength}`,
+        strokeDasharray: `${rightBrightLength} ${rightTotalLength}`,
         strokeDashoffset: rightTotalLength + rightBrightLength,
       });
       gsap.to(rightPath, {
@@ -294,12 +265,67 @@ export default function HeroGlowEffects() {
       });
     }, containerRef);
 
+    // Ticker: spawn + update sparks each frame
+    let leftSpawnAccum = 0;
+    let rightSpawnAccum = 0;
+
+    function readOffset(el: SVGPathElement): number {
+      const v = el.style.strokeDashoffset;
+      if (v) return parseFloat(v);
+      return parseFloat(getComputedStyle(el).strokeDashoffset || "0");
+    }
+
+    // Find all visible bright segment head positions.
+    // The dasharray pattern wraps, so multiple segments can be on-path at once.
+    function headsFromElement(el: SVGPathElement, T: number, B: number): number[] {
+      const offset = readOffset(el);
+      const C = B + T;
+      const heads: number[] = [];
+      for (let n = -2; n <= 2; n++) {
+        const head = (T + B) - offset + n * C;
+        if (head >= 0 && head <= T) heads.push(head);
+      }
+      return heads;
+    }
+
+    const tickerFn = (_time: number, deltaTime: number) => {
+      const dt = Math.min(deltaTime / 1000, 0.1);
+
+      const leftHeads = headsFromElement(leftPath, leftTotalLength, leftBrightLength);
+      const rightHeads = headsFromElement(rightPath, rightTotalLength, rightBrightLength);
+
+      if (leftHeads.length > 0) {
+        leftSpawnAccum += dt;
+        while (leftSpawnAccum > 0.033) {
+          const head = leftHeads[Math.floor(Math.random() * leftHeads.length)];
+          spawnSpark(leftSparks, leftPath, head, leftTotalLength);
+          leftSpawnAccum -= 0.033;
+        }
+      } else {
+        leftSpawnAccum = 0;
+      }
+
+      if (rightHeads.length > 0) {
+        rightSpawnAccum += dt;
+        while (rightSpawnAccum > 0.033) {
+          const head = rightHeads[Math.floor(Math.random() * rightHeads.length)];
+          spawnSpark(rightSparks, rightPath, head, rightTotalLength);
+          rightSpawnAccum -= 0.033;
+        }
+      } else {
+        rightSpawnAccum = 0;
+      }
+
+      updateSparks(leftSparks, dt);
+      updateSparks(rightSparks, dt);
+    };
+
     gsap.ticker.add(tickerFn);
 
     return () => {
       gsap.ticker.remove(tickerFn);
-      leftSystem.dispose();
-      rightSystem.dispose();
+      disposeSparks(leftSparks);
+      disposeSparks(rightSparks);
       ctx.revert();
     };
   }, []);
@@ -361,15 +387,22 @@ export default function HeroGlowEffects() {
       <div className="glow-grid-line-left pointer-events-none absolute left-[-67px] top-[543px] flex h-[598px] w-[1036px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87] relative">
           <svg
+            ref={leftSvgRef}
             viewBox="0 0 81.7255 1170.14"
             preserveAspectRatio="none"
-            width={LEFT_CANVAS.w}
-            height={LEFT_CANVAS.h}
+            width={LEFT_SVG.w}
+            height={LEFT_SVG.h}
             overflow="visible"
             style={{ display: "block" }}
           >
             <defs>
-              <filter id="flow-glow-left" x="-50%" y="-50%" width="200%" height="200%">
+              <filter
+                id="flow-glow-left"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
                 <feGaussianBlur stdDeviation="6" result="blur1" />
                 <feGaussianBlur stdDeviation="12" result="blur2" />
                 <feMerge>
@@ -379,17 +412,15 @@ export default function HeroGlowEffects() {
                 </feMerge>
               </filter>
             </defs>
-            {/* Base dim path */}
             <path
-              d="M17.4938 10.3047L64.2317 1159.84"
+              d={LEFT_PATH_D}
               stroke="#00DC46"
               strokeOpacity="0.2"
               strokeWidth="15"
             />
-            {/* Flowing bright segment */}
             <path
               ref={leftPathRef}
-              d="M17.4938 10.3047L64.2317 1159.84"
+              d={LEFT_PATH_D}
               stroke="#01ff80"
               strokeWidth="15"
               strokeLinecap="round"
@@ -397,11 +428,6 @@ export default function HeroGlowEffects() {
               fill="none"
             />
           </svg>
-          <canvas
-            ref={leftCanvasRef}
-            className="absolute inset-0 pointer-events-none"
-            style={{ width: LEFT_CANVAS.w, height: LEFT_CANVAS.h }}
-          />
         </div>
       </div>
 
@@ -409,15 +435,22 @@ export default function HeroGlowEffects() {
       <div className="glow-grid-line-right pointer-events-none absolute left-[836px] top-[352px] flex h-[830px] w-[1438px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87] relative">
           <svg
+            ref={rightSvgRef}
             viewBox="0 0 504.839 1210.36"
             preserveAspectRatio="none"
-            width={RIGHT_CANVAS.w}
-            height={RIGHT_CANVAS.h}
+            width={RIGHT_SVG.w}
+            height={RIGHT_SVG.h}
             overflow="visible"
             style={{ display: "block" }}
           >
             <defs>
-              <filter id="flow-glow-right" x="-50%" y="-50%" width="200%" height="200%">
+              <filter
+                id="flow-glow-right"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
                 <feGaussianBlur stdDeviation="6" result="blur1" />
                 <feGaussianBlur stdDeviation="12" result="blur2" />
                 <feMerge>
@@ -427,18 +460,16 @@ export default function HeroGlowEffects() {
                 </feMerge>
               </filter>
             </defs>
-            {/* Base dim path */}
             <path
-              d="M487.343 1200.11L449.066 65.8139C448.145 38.5284 425.508 17.0257 398.211 17.508L10.1325 24.3646"
+              d={RIGHT_PATH_D}
               stroke="#00DC46"
               strokeOpacity="0.2"
               strokeWidth="15"
               fill="none"
             />
-            {/* Flowing bright segment */}
             <path
               ref={rightPathRef}
-              d="M487.343 1200.11L449.066 65.8139C448.145 38.5284 425.508 17.0257 398.211 17.508L10.1325 24.3646"
+              d={RIGHT_PATH_D}
               stroke="#01ff80"
               strokeWidth="15"
               strokeLinecap="round"
@@ -446,11 +477,6 @@ export default function HeroGlowEffects() {
               fill="none"
             />
           </svg>
-          <canvas
-            ref={rightCanvasRef}
-            className="absolute inset-0 pointer-events-none"
-            style={{ width: RIGHT_CANVAS.w, height: RIGHT_CANVAS.h }}
-          />
         </div>
       </div>
     </div>

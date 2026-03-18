@@ -56,21 +56,18 @@ export default function Footer() {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               {/* Logo */}
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/images/logo-icon.svg"
-                  alt=""
-                  width={36}
-                  height={44}
-                />
-                <Image
-                  src="/images/logo-wordmark.svg"
-                  alt="Greatify"
-                  width={125}
-                  height={30}
-                  className="brightness-0 invert"
-                />
-              </div>
+              <div className="flex shrink-0 items-center">
+        <a href="/" className="flex h-[49px] items-center gap-0">
+          <Image
+            src="/images/examx/greatify-logo.svg"
+            alt="Greatify"
+            width={0}
+            height={48}
+            className="h-12 w-auto"
+            priority
+          />
+        </a>
+      </div>
               <p className="max-w-[251px] text-[13.33px] font-medium leading-[1.5] tracking-[-0.13px] text-chalk-green-100">
                 AI-powered end-to-end examination platform by Greatify. Making
                 assessment fair, intelligent, and accessible.
@@ -214,7 +211,6 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p>Designed at aarts</p>
         </div>
 
         {/* Large Greatify wordmark */}

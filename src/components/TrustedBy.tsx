@@ -5,14 +5,14 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const logos = [
-  { src: "/images/trusted-logos/adani-university.png", alt: "Adani University", width: 113, height: 38, containerWidth: 149 },
-  { src: "/images/trusted-logos/srm.png", alt: "SRM University", width: 120, height: 41, containerWidth: 132 },
-  { src: "/images/trusted-logos/middlesex-university.png", alt: "Middlesex University London", width: 108, height: 43, containerWidth: 128 },
-  { src: "/images/trusted-logos/koshys.png", alt: "Koshys Group of Institutions", width: 155, height: 26, containerWidth: 155 },
-  { src: "/images/trusted-logos/jsw.png", alt: "JSW", width: 89, height: 42, containerWidth: 110 },
-  { src: "/images/trusted-logos/narayana.png", alt: "Narayana", width: 66, height: 66, containerWidth: 78, blend: true },
-  { src: "/images/trusted-logos/dgsom.png", alt: "DGSOM School of Management", width: 127, height: 42, containerWidth: 139, blend: true },
-  { src: "/images/trusted-logos/viewsonic.png", alt: "ViewSonic", width: 172, height: 28, containerWidth: 172 },
+  { src: "/images/logos/trusted-logos/adani-university.png", alt: "Adani University", width: 113, height: 38, containerWidth: 149 },
+  { src: "/images/logos/trusted-logos/srm.png", alt: "SRM University", width: 120, height: 41, containerWidth: 132 },
+  { src: "/images/logos/trusted-logos/middlesex-university.png", alt: "Middlesex University London", width: 108, height: 43, containerWidth: 128 },
+  { src: "/images/logos/trusted-logos/koshys.png", alt: "Koshys Group of Institutions", width: 155, height: 26, containerWidth: 155 },
+  { src: "/images/logos/trusted-logos/jsw.png", alt: "JSW", width: 89, height: 42, containerWidth: 110 },
+  { src: "/images/logos/trusted-logos/narayana.png", alt: "Narayana", width: 66, height: 66, containerWidth: 78, blend: true },
+  { src: "/images/logos/trusted-logos/dgsom.png", alt: "DGSOM School of Management", width: 127, height: 42, containerWidth: 139, blend: true },
+  { src: "/images/logos/trusted-logos/viewsonic.png", alt: "ViewSonic", width: 172, height: 28, containerWidth: 172 },
 ];
 
 function LogoItem({ logo }: { logo: (typeof logos)[number] }) {

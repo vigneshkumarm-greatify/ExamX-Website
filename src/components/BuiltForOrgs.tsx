@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronRightIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -7,7 +8,7 @@ const tabs = [
   {
     id: "universities",
     label: "Universities",
-    icon: "/images/icon-book-reading.svg",
+    icon: "/images/icons/icon-book-reading.svg",
     heading: "Exam integrity at scale,\nevery semester.",
     description:
       "Run semester exams, entrance tests, PhD evaluations, and accreditation assessments across departments all from one platform that integrates with your existing LMS.",
@@ -19,10 +20,10 @@ const tabs = [
     ],
     cta: "Explore Solution",
     pills: [
-      { icon: "/images/icon-graduation-cap.svg", text: "Semester exam scheduling & delivery" },
-      { icon: "/images/icon-iris-scan-sm.svg", text: "AI proctoring for remote exams" },
-      { icon: "/images/icon-contact-book.svg", text: "Question bank with 20+ question types" },
-      { icon: "/images/icon-signal-full.svg", text: "Real-time analytics & result dashboards" },
+      { icon: "/images/icons/icon-graduation-cap.svg", text: "Semester exam scheduling & delivery" },
+      { icon: "/images/icons/icon-iris-scan-sm.svg", text: "AI proctoring for remote exams" },
+      { icon: "/images/icons/icon-contact-book.svg", text: "Question bank with 20+ question types" },
+      { icon: "/images/icons/icon-signal-full.svg", text: "Real-time analytics & result dashboards" },
     ],
     pillBg: "bg-gradient-to-b from-purple-100 to-[#b7a7e6]",
     pillTextColor: "text-purple-500",
@@ -33,7 +34,7 @@ const tabs = [
   {
     id: "k12",
     label: "K-12 Schools",
-    icon: "/images/icon-school.svg",
+    icon: "/images/icons/icon-school.svg",
     heading: "Simple, secure assessments\nfor every grade.",
     description:
       "From weekly quizzes to board exam prep, give teachers the tools to create, deliver, and grade assessments without IT overhead.",
@@ -45,10 +46,10 @@ const tabs = [
     ],
     cta: "Explore Solution",
     pills: [
-      { icon: "/images/icon-graduation-cap.svg", text: "Grade-wise assessment scheduling" },
-      { icon: "/images/icon-iris-scan-sm.svg", text: "Safe exam browser for students" },
-      { icon: "/images/icon-contact-book.svg", text: "Curriculum-aligned question banks" },
-      { icon: "/images/icon-signal-full.svg", text: "Parent & teacher report cards" },
+      { icon: "/images/icons/icon-graduation-cap.svg", text: "Grade-wise assessment scheduling" },
+      { icon: "/images/icons/icon-iris-scan-sm.svg", text: "Safe exam browser for students" },
+      { icon: "/images/icons/icon-contact-book.svg", text: "Curriculum-aligned question banks" },
+      { icon: "/images/icons/icon-signal-full.svg", text: "Parent & teacher report cards" },
     ],
     pillBg: "bg-gradient-to-b from-green-50 to-green-300",
     pillTextColor: "text-green-700",
@@ -59,7 +60,7 @@ const tabs = [
   {
     id: "government",
     label: "Government",
-    icon: "/images/icon-building.svg",
+    icon: "/images/icons/icon-building.svg",
     heading: "National-scale recruitment,\nzero compromise.",
     description:
       "Conduct civil service exams, defense recruitment, and public sector assessments with military-grade security and complete auditability.",
@@ -71,10 +72,10 @@ const tabs = [
     ],
     cta: "Explore Solution",
     pills: [
-      { icon: "/images/icon-graduation-cap.svg", text: "National exam scheduling at scale" },
-      { icon: "/images/icon-iris-scan-sm.svg", text: "Biometric identity verification" },
-      { icon: "/images/icon-contact-book.svg", text: "Multi-language question delivery" },
-      { icon: "/images/icon-signal-full.svg", text: "Compliance & audit dashboards" },
+      { icon: "/images/icons/icon-graduation-cap.svg", text: "National exam scheduling at scale" },
+      { icon: "/images/icons/icon-iris-scan-sm.svg", text: "Biometric identity verification" },
+      { icon: "/images/icons/icon-contact-book.svg", text: "Multi-language question delivery" },
+      { icon: "/images/icons/icon-signal-full.svg", text: "Compliance & audit dashboards" },
     ],
     pillBg: "bg-gradient-to-b from-orange-500/20 to-orange-500/40",
     pillTextColor: "text-orange-600",
@@ -85,7 +86,7 @@ const tabs = [
   {
     id: "enterprise",
     label: "Enterprise",
-    icon: "/images/icon-deepfake.svg",
+    icon: "/images/icons/icon-deepfake.svg",
     heading: "Hire smarter with\nAI-powered assessments.",
     description:
       "From technical coding tests to behavioral assessments, screen candidates at scale with unbiased, data-driven evaluations.",
@@ -97,10 +98,10 @@ const tabs = [
     ],
     cta: "Explore Solution",
     pills: [
-      { icon: "/images/icon-graduation-cap.svg", text: "Technical skill assessments" },
-      { icon: "/images/icon-iris-scan-sm.svg", text: "AI-powered candidate screening" },
-      { icon: "/images/icon-contact-book.svg", text: "Custom branded exam portals" },
-      { icon: "/images/icon-signal-full.svg", text: "Hiring analytics & insights" },
+      { icon: "/images/icons/icon-graduation-cap.svg", text: "Technical skill assessments" },
+      { icon: "/images/icons/icon-iris-scan-sm.svg", text: "AI-powered candidate screening" },
+      { icon: "/images/icons/icon-contact-book.svg", text: "Custom branded exam portals" },
+      { icon: "/images/icons/icon-signal-full.svg", text: "Hiring analytics & insights" },
     ],
     pillBg: "bg-gradient-to-b from-chalk-green-50 to-chalk-green-100",
     pillTextColor: "text-chalk-green-500",
@@ -111,7 +112,7 @@ const tabs = [
   {
     id: "certification",
     label: "Certification",
-    icon: "/images/icon-warranty-badge.svg",
+    icon: "/images/icons/icon-warranty-badge.svg",
     heading: "Certify with confidence,\nglobally recognized.",
     description:
       "Deliver professional certification exams that meet international standards with secure, scalable infrastructure.",
@@ -123,10 +124,10 @@ const tabs = [
     ],
     cta: "Explore Solution",
     pills: [
-      { icon: "/images/icon-graduation-cap.svg", text: "Professional certification delivery" },
-      { icon: "/images/icon-iris-scan-sm.svg", text: "Secure browser lockdown" },
-      { icon: "/images/icon-contact-book.svg", text: "Digital badge & certificate issuing" },
-      { icon: "/images/icon-signal-full.svg", text: "Psychometric item analysis" },
+      { icon: "/images/icons/icon-graduation-cap.svg", text: "Professional certification delivery" },
+      { icon: "/images/icons/icon-iris-scan-sm.svg", text: "Secure browser lockdown" },
+      { icon: "/images/icons/icon-contact-book.svg", text: "Digital badge & certificate issuing" },
+      { icon: "/images/icons/icon-signal-full.svg", text: "Psychometric item analysis" },
     ],
     pillBg: "bg-gradient-to-b from-purple-100 to-[#b7a7e6]",
     pillTextColor: "text-purple-500",
@@ -137,7 +138,7 @@ const tabs = [
   {
     id: "coaching",
     label: "Coaching & EdTech",
-    icon: "/images/icon-bag-suitcase.svg",
+    icon: "/images/icons/icon-bag-suitcase.svg",
     heading: "Scale test prep without\nscaling headcount.",
     description:
       "Run mock tests, practice exams, and competitive prep at scale with AI-powered question generation and performance insights.",
@@ -149,10 +150,10 @@ const tabs = [
     ],
     cta: "Explore Solution",
     pills: [
-      { icon: "/images/icon-graduation-cap.svg", text: "AI-powered mock test creation" },
-      { icon: "/images/icon-iris-scan-sm.svg", text: "Adaptive practice exams" },
-      { icon: "/images/icon-contact-book.svg", text: "Performance tracking dashboards" },
-      { icon: "/images/icon-signal-full.svg", text: "White-label student portals" },
+      { icon: "/images/icons/icon-graduation-cap.svg", text: "AI-powered mock test creation" },
+      { icon: "/images/icons/icon-iris-scan-sm.svg", text: "Adaptive practice exams" },
+      { icon: "/images/icons/icon-contact-book.svg", text: "Performance tracking dashboards" },
+      { icon: "/images/icons/icon-signal-full.svg", text: "White-label student portals" },
     ],
     pillBg: "bg-gradient-to-b from-green-50 to-green-300",
     pillTextColor: "text-green-700",
@@ -178,18 +179,18 @@ export default function BuiltForOrgs() {
     <section className="relative overflow-hidden bg-gradient-to-b from-green-500 to-chalk-green-500 px-6 pb-[120px] pt-24 md:px-12 lg:px-[120px]">
       {/* Decorative blobs */}
       <Image
-        src="/images/org-blob-1.svg"
+        src="/images/decoratives/org-blob-1.svg"
         alt=""
-        width={1066}
+        width={800}
         height={919}
-        className="pointer-events-none absolute bottom-[-60%] right-[-45%] hidden rotate-[170deg] lg:block"
+        className="pointer-events-none absolute hidden -bottom-120 -right-100 rotate-[100deg] scale-x-[-1] lg:block"
       />
       <Image
-        src="/images/org-blob-2.svg"
+        src="/images/decoratives/org-blob-1.svg"
         alt=""
-        width={1066}
+        width={800}
         height={919}
-        className="pointer-events-none absolute bottom-[-64%] left-[-37%] hidden -scale-y-100 rotate-[-88deg] lg:block"
+  className="pointer-events-none absolute hidden -bottom-120 -left-100 -rotate-[80deg] scale-x-[-1] lg:block"
       />
 
       <div className="relative mx-auto max-w-[1200px]">
@@ -266,13 +267,7 @@ export default function BuiltForOrgs() {
                   {active.cta}
                 </span>
                 <span className="flex h-[27px] w-[27px] items-center justify-center rounded-full bg-purple-500">
-                  <Image
-                    src="/images/arrow-right-circle.svg"
-                    alt=""
-                    width={8}
-                    height={8}
-                    className="rotate-180"
-                  />
+                  <ChevronRightIcon className="h-5 w-5 text-white" />
                 </span>
               </div>
             </div>

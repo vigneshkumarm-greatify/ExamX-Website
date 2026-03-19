@@ -1,5 +1,6 @@
 import Image from "next/image";
-import ExamMockup from "./ExamMockup";
+import ExamMockup from "../helperComps/ExamMockup";
+import { DocumentTextIcon } from "@heroicons/react/24/outline";
 
 export default function FairExamsCard() {
   return (
@@ -46,7 +47,7 @@ export default function FairExamsCard() {
       <div className="absolute left-[38px] top-[206px] z-10 flex items-center rounded-[6.8px] bg-chalk-green-500 px-4 py-2">
         <div className="flex items-center gap-[6.9px]">
           <div className="flex items-center gap-[5.2px]">
-            <Image src="/images/fair-exam-loader.svg" alt="" width={17} height={17} />
+            <Image src="/images/illustrations/fair-exam-loader.svg" alt="" width={17} height={17} />
             <div className="flex flex-col leading-[1.2]">
               <span className="text-[4.8px] font-bold uppercase tracking-[0.05px] text-[#00dc46]">
                 Time left
@@ -109,10 +110,10 @@ export default function FairExamsCard() {
       {/* Pen tool + text file icons */}
       <div className="absolute left-[488px] top-[386px] z-10 flex flex-col items-end gap-[8.7px]">
         <div className="flex size-[59.3px] items-center justify-center overflow-hidden rounded-[5.4px] border border-[#dcdcdc] bg-white shadow-[0px_0.87px_8.66px_rgba(0,0,0,0.15)]">
-          <Image src="/images/fair-exam-pen.svg" alt="" width={30} height={80} className="mt-7" />
+          <Image src="/images/illustrations/fair-exam-pen.svg" alt="" width={30} height={80} className="mt-7" />
         </div>
-        <div className="relative size-[32px] rounded-full border border-[#dcdcdc] bg-white shadow-[0px_0.87px_8.66px_rgba(0,0,0,0.15)]">
-          <Image src="/images/fair-exam-text-file.svg" alt="" width={12} height={12} className="absolute left-[10px] top-[10px]" />
+        <div className="relative size-[32px] flex items-center justify-center rounded-full border border-[#dcdcdc] bg-white shadow-[0px_0.87px_8.66px_rgba(0,0,0,0.15)]">
+          <DocumentTextIcon className="h-4 w-4 text-chalk-green-500" />
         </div>
       </div>
     </div>

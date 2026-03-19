@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="flex shrink-0 items-center">
         <a href="/" className="flex h-[49px] items-center gap-0">
           <Image
-            src="/images/examx/greatify-logo.svg"
+            src="/images/logos/examx/greatify-logo.svg"
             alt="Greatify"
             width={0}
             height={48}

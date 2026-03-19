@@ -24,7 +24,7 @@ export default function QuestionBankCard() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         alt=""
-        src="/images/question-bank-columns.svg"
+        src="/images/illustrations/question-bank-columns.svg"
         className="pointer-events-none absolute"
         style={{
           width: "814.254px",

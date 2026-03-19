@@ -1,3 +1,4 @@
+import { BookmarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export default function ExamMockup() {
@@ -39,19 +40,19 @@ export default function ExamMockup() {
                 <div className="h-[3px] w-full rounded-[8px] bg-[#e7e7e7]" />
                 <div className="h-[3px] w-[174px] rounded-[8px] bg-[#e7e7e7]" />
               </div>
-              <Image src="/images/fair-exam-bookmark.svg" alt="" width={13} height={13} />
+              <BookmarkIcon className="h-4 w-4 text-purple-500" />
             </div>
           </div>
 
           {/* Text area box */}
           <div className="flex h-[107px] w-[469px] flex-col items-start justify-between rounded-[4.3px] border border-[#dcdcdc] bg-white p-[6.4px]">
             <div className="h-[3px] w-full rounded-[8px] bg-[#e7e7e7]" />
-            <div className="flex gap-[6.4px] rounded-[2px] border border-[#f4f4f5] bg-[#fafafa] p-[2px]">
-              <Image src="/images/fair-exam-format-bold.svg" alt="" width={9} height={9} />
-              <Image src="/images/fair-exam-format-italic.svg" alt="" width={9} height={9} />
-              <Image src="/images/fair-exam-format-list1.svg" alt="" width={9} height={9} />
-              <Image src="/images/fair-exam-format-list2.svg" alt="" width={9} height={9} />
-            </div>
+            <Image
+              src="/images/illustrations/editor-options.svg"
+              alt=""
+              width={100}
+              height={100}
+            />
           </div>
 
           {/* Previous / Next buttons */}
@@ -62,7 +63,8 @@ export default function ExamMockup() {
             <div
               className="flex w-[86px] items-center justify-center rounded-[4.3px] border border-[#00b63a] px-[8.5px] py-[6.4px] text-[8.55px] font-semibold leading-[1.2] tracking-[-0.17px] text-white"
               style={{
-                backgroundImage: "linear-gradient(100.88deg, #00dc46 0.45%, #00c13d 101%)",
+                backgroundImage:
+                  "linear-gradient(100.88deg, #00dc46 0.45%, #00c13d 101%)",
               }}
             >
               Next
@@ -79,10 +81,14 @@ export default function ExamMockup() {
                     total questions: 40
                   </p>
                   <div className="absolute left-[22px] top-1/2 flex w-[20px] -translate-y-1/2 items-center justify-end rounded-[2px] bg-[#ff8a3b] p-[2px]">
-                    <span className="text-[5.9px] font-bold uppercase leading-[1.2] tracking-[0.06px] text-[#ffdec8]">1</span>
+                    <span className="text-[5.9px] font-bold uppercase leading-[1.2] tracking-[0.06px] text-[#ffdec8]">
+                      1
+                    </span>
                   </div>
                   <div className="absolute left-[0.25px] top-1/2 flex w-[34px] -translate-y-1/2 items-center justify-end rounded-[2px] bg-[#00dc46] p-[2px]">
-                    <span className="text-[5.9px] font-bold uppercase leading-[1.2] tracking-[0.06px] text-chalk-green-500">6</span>
+                    <span className="text-[5.9px] font-bold uppercase leading-[1.2] tracking-[0.06px] text-chalk-green-500">
+                      6
+                    </span>
                   </div>
                 </div>
               </div>

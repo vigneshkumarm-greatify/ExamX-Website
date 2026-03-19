@@ -1,23 +1,23 @@
 import Image from "next/image";
 
 const integrations = [
-  { name: "Moodle", logo: "/images/logo-moodle.png", w: 50, h: 50 },
-  { name: "Canvas", logo: "/images/logo-canvas.png", w: 50, h: 50 },
-  { name: "Blackboard", logo: "/images/logo-blackboard.png", w: 76, h: 58 },
+  { name: "Moodle", logo: "/images/logos/integrations/logo-moodle.png", w: 50, h: 50 },
+  { name: "Canvas", logo: "/images/logos/integrations/logo-canvas.png", w: 50, h: 50 },
+  { name: "Blackboard", logo: "/images/logos/integrations/logo-blackboard.png", w: 76, h: 58 },
   {
     name: "Google\nClassroom",
-    logo: "/images/logo-google-classroom.png",
+    logo: "/images/logos/integrations/logo-google-classroom.png",
     w: 62,
     h: 54,
   },
   {
     name: "SAP\nSuccessFactors",
-    logo: "/images/logo-sap.png",
+    logo: "/images/logos/integrations/logo-sap.png",
     w: 84,
     h: 47,
   },
-  { name: "Workday", logo: "/images/logo-workday.png", w: 49, h: 50 },
-  { name: "REST API", logo: "/images/logo-rest-api.png", w: 61, h: 50 },
+  { name: "Workday", logo: "/images/logos/integrations/logo-workday.png", w: 49, h: 50 },
+  { name: "REST API", logo: "/images/logos/integrations/logo-rest-api.png", w: 61, h: 50 },
 ];
 
 // Arc offsets matching Figma's staggered layout (top margin per card)

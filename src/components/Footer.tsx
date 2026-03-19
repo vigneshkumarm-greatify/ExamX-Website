@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 const socialLinks = [
-  { name: "Facebook", icon: "/images/icon-facebook.svg" },
-  { name: "Instagram", icon: "/images/icon-instagram.svg" },
-  { name: "X", icon: "/images/icon-x.svg" },
-  { name: "LinkedIn", icon: "/images/icon-linkedin.svg" },
-  { name: "YouTube", icon: "/images/icon-youtube.svg" },
+  { name: "Facebook", icon: "/images/icons/icon-facebook.svg" },
+  { name: "Instagram", icon: "/images/icons/icon-instagram.svg" },
+  { name: "X", icon: "/images/icons/icon-x.svg" },
+  { name: "LinkedIn", icon: "/images/icons/icon-linkedin.svg" },
+  { name: "YouTube", icon: "/images/icons/icon-youtube.svg" },
 ];
 
 const offices = [
@@ -42,7 +42,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-gradient-to-b from-chalk-green-500 from-[22.8%] to-[#00c63e] to-[156.9%] px-6 pb-20 pt-[120px] md:px-12 lg:px-16">
       {/* Background pattern */}
       <Image
-        src="/images/footer-bg-pattern.svg"
+        src="/images/decoratives/footer-bg-pattern.svg"
         alt=""
         width={1392}
         height={792}
@@ -59,7 +59,7 @@ export default function Footer() {
               <div className="flex shrink-0 items-center">
         <a href="/" className="flex h-[49px] items-center gap-0">
           <Image
-            src="/images/examx/greatify-logo.svg"
+            src="/images/logos/examx/greatify-logo.svg"
             alt="Greatify"
             width={0}
             height={48}
@@ -77,19 +77,19 @@ export default function Footer() {
             {/* Certification badges */}
             <div className="flex gap-2.5">
               <Image
-                src="/images/badge-iso.png"
+                src="/images/badges/badge-iso.png"
                 alt="ISO 27001 certified"
                 width={88}
                 height={88}
               />
               <Image
-                src="/images/badge-gdpr.png"
+                src="/images/badges/badge-gdpr.png"
                 alt="GDPR compliant"
                 width={88}
                 height={88}
               />
               <Image
-                src="/images/badge-soc2.png"
+                src="/images/badges/badge-soc2.png"
                 alt="SOC 2 certified"
                 width={88}
                 height={88}
@@ -216,7 +216,7 @@ export default function Footer() {
         {/* Large Greatify wordmark */}
         <div className="flex justify-center">
           <Image
-            src="/images/footer-greatify-logo-large.svg"
+            src="/images/logos/footer-greatify-logo-large.svg"
             alt=""
             width={1280}
             height={303}

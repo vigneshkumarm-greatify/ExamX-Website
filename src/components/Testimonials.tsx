@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -9,7 +10,7 @@ const testimonials = [
     role: "Director of Examinations, National University",
     quote:
       "\u201CExamX transformed how we conduct semester exams. What used to take our team three weeks of evaluation now happens in under 48 hours. The AI proctoring gave us confidence to go fully remote without compromising integrity\u201D",
-    logo: "/images/national-university-logo.png",
+    logo: "/images/logos/national-university-logo.png",
     logoBg: "bg-purple-50",
   },
 ];
@@ -47,13 +48,7 @@ export default function Testimonials() {
               }
               className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.1)]"
             >
-              <Image
-                src="/images/arrow-left.svg"
-                alt=""
-                width={13}
-                height={13}
-                className="rotate-90"
-              />
+           <ChevronLeftIcon className="h-7 w-7 text-green-500"  />
             </button>
             <button
               type="button"
@@ -65,13 +60,7 @@ export default function Testimonials() {
               }
               className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.1)]"
             >
-              <Image
-                src="/images/arrow-left.svg"
-                alt=""
-                width={13}
-                height={13}
-                className="-rotate-90"
-              />
+          <ChevronRightIcon className="h-7 w-7 text-green-500" />
             </button>
           </div>
         </div>
@@ -111,13 +100,7 @@ export default function Testimonials() {
                 Learn more
               </span>
               <span className="flex h-[27px] w-[27px] items-center justify-center rounded-full bg-chalk-green-400">
-                <Image
-                  src="/images/arrow-right-sm.svg"
-                  alt=""
-                  width={8}
-                  height={8}
-                  className="rotate-180"
-                />
+                <ChevronRightIcon className="h-4 w-4 text-green-500" />
               </span>
             </div>
           </div>

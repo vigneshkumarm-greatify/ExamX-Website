@@ -36,7 +36,7 @@ export default function CatchesCard() {
           {/* Horizontal scan line — spans full width, centered between rows */}
           <div className="pointer-events-none absolute left-0 right-0 top-[calc(50%-50px)]">
             <img
-              src="/images/scan-line.svg"
+              src="/images/decoratives/scan-line.svg"
               alt=""
               className="h-[6px] w-full"
             />
@@ -72,8 +72,8 @@ function IconCell({
         <img
           src={
             isAlert
-              ? "/images/icon-warning-diamond.svg"
-              : "/images/icon-tick-square.svg"
+              ? "/images/icons/icon-warning-diamond.svg"
+              : "/images/icons/icon-tick-square.svg"
           }
           alt=""
           className={isAlert ? "h-[10px] w-[3px]" : "h-[6px] w-[8px]"}
@@ -82,7 +82,7 @@ function IconCell({
 
       {/* Icon */}
       <img
-        src={`/images/icon-${icon}.svg`}
+        src={`/images/icons/icon-${icon}.svg`}
         alt=""
         className="h-[36px] w-[36px]"
       />

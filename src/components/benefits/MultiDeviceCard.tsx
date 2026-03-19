@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Image from "next/image";
+
 export default function MultiDeviceCard() {
   return (
     <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 md:h-[500px]">
@@ -17,7 +19,7 @@ export default function MultiDeviceCard() {
           <img
             alt=""
             className="block size-full max-w-none"
-            src="/images/multi-device-glow.svg"
+            src="/images/decoratives/multi-device-glow.svg"
           />
         </div>
       </div>
@@ -69,7 +71,7 @@ export default function MultiDeviceCard() {
             <img
               alt=""
               className="block size-full max-w-none"
-              src="/images/multi-device-blob-lg.svg"
+              src="/images/decoratives/multi-device-blob-sm.svg"
             />
           </div>
         </div>
@@ -88,7 +90,7 @@ export default function MultiDeviceCard() {
             <img
               alt=""
               className="block size-full max-w-none"
-              src="/images/multi-device-blob-sm.svg"
+              src="/images/decoratives/multi-device-blob-sm.svg"
             />
           </div>
         </div>
@@ -107,7 +109,7 @@ export default function MultiDeviceCard() {
             <img
               alt=""
               className="block size-full max-w-none"
-              src="/images/multi-device-blob-sm.svg"
+              src="/images/decoratives/multi-device-blob-sm.svg"
             />
           </div>
         </div>
@@ -122,11 +124,7 @@ export default function MultiDeviceCard() {
             height: "33.978px",
           }}
         >
-          <img
-            alt=""
-            className="absolute block size-full max-w-none"
-            src="/images/multi-device-dot.svg"
-          />
+
         </div>
 
         {/* Glass blur overlay */}
@@ -153,24 +151,19 @@ export default function MultiDeviceCard() {
           </span>
         </div>
 
-        {/* Decorative lines overlay */}
-        <div className="absolute inset-[-44.95%_-49.53%_57.78%_86.45%]">
-          <img
-            alt=""
-            className="absolute block size-full max-w-none"
-            src="/images/multi-device-lines.svg"
-          />
-        </div>
 
         {/* Green logo mark at bottom */}
-        <div className="absolute" style={{ inset: "65.59% -21.49% -63.15% 50.9%" }}>
+        <div
+          className="absolute"
+          style={{ inset: "65.59% -21.49% -63.15% 50.9%" }}
+        >
           <div className="flex size-full items-center justify-center">
             <div className="h-[240.005px] w-[298.621px] -scale-y-100 flex-none">
               <div className="relative size-full">
                 <img
                   alt=""
                   className="absolute block size-full max-w-none"
-                  src="/images/multi-device-logo-mark.svg"
+                  src="/images/decoratives/multi-device-logo-mark.svg"
                 />
               </div>
             </div>
@@ -187,23 +180,13 @@ export default function MultiDeviceCard() {
         >
           {/* Left — branding + hero text */}
           <div className="w-[154px] shrink-0">
-            <div className="flex flex-wrap items-start justify-center gap-[2.506px]">
-              <div className="flex shrink-0 items-center">
-                <img
-                  alt=""
-                  className="size-[22.71px]"
-                  src="/images/multi-device-logo-desktop.svg"
-                />
-              </div>
-              <div className="flex shrink-0 flex-col gap-[0.626px] ">
-                <p className=" text-[10.591px] font-semibold leading-[1.2] tracking-[-0.21px] text-white">
-                  Greatify
-                </p>
-                <p className="text-center text-[7.217px] font-semibold leading-[1.2] tracking-[-0.14px] text-green-500">
-                  ExamX Platform{" "}
-                </p>
-              </div>
-            </div>
+            <Image
+              src="/images/logos/examx-logo.svg"
+              alt=""
+              width={100}
+              height={100}
+            />
+
             <p className="mt-[9.084px] w-[168.835px] text-[14.966px] font-semibold leading-[1.2] tracking-[-0.3px] text-white">
               Revolutionise your academic experience with Greatify
             </p>
@@ -244,32 +227,50 @@ export default function MultiDeviceCard() {
         <TabletBlobs />
 
         {/* Tablet branding */}
-        <div className="absolute -translate-x-1/2 flex flex-wrap items-start justify-center gap-[1.993px]" style={{ left: "calc(50% - 3.37px)", top: "33.01px" }}>
-          <div className="flex shrink-0 items-center">
-            <img
+        <div
+          className="absolute -translate-x-1/2 flex flex-wrap items-start justify-center gap-[1.993px]"
+          style={{ left: "calc(50% - 3.37px)", top: "33.01px" }}
+        >
+         <Image
+              src="/images/logos/examx-logo.svg"
               alt=""
-              className="size-[18.064px]"
-              src="/images/multi-device-logo-tablet.svg"
+              width={60}
+              height={80}
             />
-          </div>
-          <div className="flex shrink-0 flex-col gap-[0.498px]">
-            <p className="text-[8.424px] font-semibold leading-[1.2] tracking-[-0.17px] text-white">
-              Greatify
-            </p>
-            <p className="text-center text-[5.741px] font-semibold leading-[1.2] tracking-[-0.11px] text-creme-500">
-              ExamX Platform{" "}
-            </p>
-          </div>
         </div>
 
         {/* Tablet login form */}
-        <div className="absolute -translate-x-1/2" style={{ left: "calc(50% - 3.03px)", top: "69.58px", width: "119.537px", height: "118.588px" }}>
+        <div
+          className="absolute -translate-x-1/2"
+          style={{
+            left: "calc(50% - 3.03px)",
+            top: "69.58px",
+            width: "119.537px",
+            height: "118.588px",
+          }}
+        >
           <TabletPopupForm />
         </div>
 
         {/* Tablet home indicator */}
-        <div className="absolute -translate-x-1/2" style={{ left: "calc(50% - 3.03px)", bottom: "1.51px", width: "198.837px", height: "3.122px" }}>
-          <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 0.08px)", bottom: "1.15px", width: "51.763px", height: "0.904px" }}>
+        <div
+          className="absolute -translate-x-1/2"
+          style={{
+            left: "calc(50% - 3.03px)",
+            bottom: "1.51px",
+            width: "198.837px",
+            height: "3.122px",
+          }}
+        >
+          <div
+            className="absolute -translate-x-1/2 flex items-center justify-center"
+            style={{
+              left: "calc(50% + 0.08px)",
+              bottom: "1.15px",
+              width: "51.763px",
+              height: "0.904px",
+            }}
+          >
             <div className="h-[0.904px] w-[51.763px] rounded-[100px] bg-white" />
           </div>
         </div>
@@ -284,9 +285,7 @@ export default function MultiDeviceCard() {
           boxShadow: "0 4px 24px 0 rgba(108, 255, 188, 0.20)",
         }}
       >
-        <span className="text-xs text-white font-medium">
-          Tablet
-        </span>
+        <span className="text-xs text-white font-medium">Tablet</span>
       </div>
 
       {/* ── MOBILE ── */}
@@ -319,39 +318,54 @@ export default function MultiDeviceCard() {
         <MobileBlobs />
 
         {/* Mobile branding */}
-        <div className="absolute -translate-x-1/2 flex flex-wrap items-start justify-center gap-[1.238px]" style={{ left: "calc(50% - 2.27px)", top: "20.04px" }}>
-          <div className="flex shrink-0 items-center">
-            <img
+        <div
+          className="absolute -translate-x-1/2 flex flex-wrap items-start justify-center gap-[1.238px] mt-2"
+          style={{ left: "calc(50% - 2.27px)", top: "20.04px" }}
+        >
+          <Image
+              src="/images/logos/examx-logo.svg"
               alt=""
-              className="size-[11.221px]"
-              src="/images/multi-device-logo-mobile.svg"
+              width={50}
+              height={100}
             />
-          </div>
-          <div className="flex shrink-0 flex-col gap-[0.31px]">
-            <p className=" text-[5.233px] font-semibold leading-[1.2] tracking-[-0.1px] text-white">
-              Greatify
-            </p>
-            <p className="text-center text-[3.566px] font-semibold leading-[1.2] tracking-[-0.07px] text-creme-500">
-              ExamX Platform{" "}
-            </p>
-          </div>
         </div>
 
         {/* Mobile login form */}
-        <div className="absolute -translate-x-1/2" style={{ left: "calc(50% - 0.5px)", top: "46.42px", width: "58px", height: "66.156px" }}>
+        <div
+          className="absolute -translate-x-1/2"
+          style={{
+            left: "calc(50% - 0.5px)",
+            top: "46.42px",
+            width: "58px",
+            height: "66.156px",
+          }}
+        >
           <MobilePopupForm />
         </div>
 
         {/* Mobile home indicator */}
-        <div className="absolute -translate-x-1/2" style={{ left: "calc(50% - 2.06px)", bottom: "2.48px", width: "123.507px", height: "1.939px" }}>
-          <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 0.05px)", bottom: "0.71px", width: "32.153px", height: "0.561px" }}>
+        <div
+          className="absolute -translate-x-1/2"
+          style={{
+            left: "calc(50% - 2.06px)",
+            bottom: "2.48px",
+            width: "123.507px",
+            height: "1.939px",
+          }}
+        >
+          <div
+            className="absolute -translate-x-1/2 flex items-center justify-center"
+            style={{
+              left: "calc(50% + 0.05px)",
+              bottom: "0.71px",
+              width: "32.153px",
+              height: "0.561px",
+            }}
+          >
             <div className="h-[0.561px] w-[32.153px] rounded-[100px] bg-white" />
           </div>
         </div>
       </div>
-
-
-
 
       <div
         className="absolute z-30 rounded backdrop-blur-sm bg-white/20 border border-white/30 shadow-[0_1px_8px_0_rgba(0,0,0,0.12)] px-1  "
@@ -361,15 +375,8 @@ export default function MultiDeviceCard() {
           boxShadow: "0 4px 24px 0 rgba(108, 255, 188, 0.20)",
         }}
       >
-        <span className="text-xs text-white font-medium">
-          Mobile
-        </span>
+        <span className="text-xs text-white font-medium">Mobile</span>
       </div>
-
-      
-
-
-      
     </div>
   );
 }
@@ -379,13 +386,6 @@ function DesktopPopupForm() {
   return (
     <div className="relative h-[167.582px] w-[157.872px] shrink-0">
       <div className="absolute left-0 top-0 flex w-[157.872px] flex-col items-center gap-[6.265px] rounded-[3.759px] border-[0.313px] border-[#e4e4e7] bg-white p-[6.265px] shadow-[0_0.626px_7.831px_rgba(0,0,0,0.1)]">
-        {/* Union wave decoration */}
-        <img
-          alt=""
-          className="absolute left-[-0.31px] top-[-0.31px] block h-[116.838px] w-[157.559px] max-w-none"
-          src="/images/multi-device-union-desktop.svg"
-        />
-
         {/* Form content */}
         <div className="relative flex w-full shrink-0 flex-col items-center gap-[6.265px]">
           {/* Heading */}
@@ -443,14 +443,6 @@ function DesktopField({
           <span className="text-[4.175px] font-medium leading-[1.5] tracking-[-0.04px] text-[#a1a1aa]">
             {placeholder}
           </span>
-          <div className="relative size-[5.012px] shrink-0">
-            <img
-              alt=""
-              className="absolute block size-full max-w-none"
-              src="/images/multi-device-arrow-down.svg"
-              style={{ inset: "40.01% 27.6% 37.5% 27.6%", width: "auto", height: "auto" }}
-            />
-          </div>
         </div>
       ) : (
         <div className="flex h-[13.782px] w-full shrink-0 items-center rounded-[2.506px] border-[0.313px] border-[#e4e4e7] bg-white p-[2.506px]">
@@ -470,16 +462,11 @@ function DesktopPasswordField() {
       <div className="flex w-full shrink-0 items-center justify-between rounded-[2.506px] border-[0.313px] border-[#e4e4e7] bg-white py-[3.759px] pl-[2.506px] pr-[3.759px]">
         <div className="flex min-h-px min-w-px flex-1 items-center gap-[2.506px]">
           {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="size-[2.506px] shrink-0 rounded-full bg-[#000606]" />
+            <div
+              key={i}
+              className="w-[2px] h-[2px] shrink-0 rounded-full bg-[#000606]"
+            />
           ))}
-        </div>
-        <div className="relative size-[5.952px] shrink-0 overflow-hidden">
-          <img
-            alt=""
-            className="absolute block size-full max-w-none"
-            src="/images/multi-device-iris-scan.svg"
-            style={{ inset: "17.43% 7.14%" }}
-          />
         </div>
       </div>
     </div>
@@ -493,13 +480,6 @@ function TabletPopupForm() {
       className="absolute flex w-[119.537px] flex-col items-center gap-[4.744px] rounded-[2.846px] border-[0.237px] border-[#e4e4e7] bg-white pb-[4.744px] pt-[11.384px] px-[4.744px] shadow-[0_1.338px_6.691px_rgba(0,0,0,0.2)]"
       style={{ left: "0px", top: "16.6px" }}
     >
-      {/* Union wave decoration */}
-      <img
-        alt=""
-        className="absolute left-[-0.24px] top-[-16.84px] block h-[105.069px] w-[119.3px] max-w-none"
-        src="/images/multi-device-union-tablet.svg"
-      />
-
       {/* User avatar circle */}
       <div
         className="absolute -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-[#f9f7e8] p-[6px]"
@@ -510,15 +490,13 @@ function TabletPopupForm() {
           height: "22.769px",
         }}
       >
-     
-          <img
-            alt=""
-            className="w-full h-full object-cover"
-            src="/images/multi-device-user-sync-tablet.svg"
-            style={{ inset: "22.63% 25.01% 25% 24.97%" }}
-          />
-        </div>
-
+        <img
+          alt=""
+          className="w-full h-full object-cover"
+          src="/images/illustrations/multi-device-user-sync-tablet.svg"
+          style={{ inset: "22.63% 25.01% 25% 24.97%" }}
+        />
+      </div>
 
       <div className="relative flex w-full shrink-0 flex-col items-center gap-[4.744px]">
         {/* Heading */}
@@ -536,7 +514,7 @@ function TabletPopupForm() {
               <img
                 alt=""
                 className="absolute block size-full max-w-none"
-                src="/images/multi-device-school.svg"
+                src="/images/illustrations/multi-device-school.svg"
                 style={{ inset: "3.57%" }}
               />
             </div>
@@ -559,13 +537,13 @@ function TabletPopupForm() {
 
       {/* Login button */}
       <div
-        className="flex h-[10.199px] w-[110.05px] shrink-0 items-center justify-center rounded-[1.897px] border-[0.237px] border-green-600 px-[2.372px] py-[1.897px]"
+        className="flex h-[10.199px] w-full shrink-0 items-center justify-center rounded-[1.897px] border-[0.237px] border-green-600 bg-red-300 "
         style={{
           backgroundImage:
             "linear-gradient(118.82deg, #00dc46 0.45%, #00c13d 100.96%)",
         }}
       >
-        <span className="text-[3.79px] font-semibold leading-[1.2] tracking-[-0.076px] text-white">
+        <span className="text-[3.79px]  font-semibold leading-[1.2] tracking-[-0.076px] text-white">
           Login
         </span>
       </div>
@@ -599,16 +577,11 @@ function TabletPasswordField() {
       <div className="flex w-full shrink-0 items-center justify-between rounded-[1.897px] border-[0.237px] border-[#e4e4e7] bg-white py-[2.846px] pl-[1.897px] pr-[2.846px]">
         <div className="flex min-h-px min-w-px flex-1 items-center gap-[1.897px]">
           {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="size-[1.897px] shrink-0 rounded-full bg-[#e7e7e7]" />
+            <div
+              key={i}
+              className="h-[2px] w-[2px] shrink-0 rounded-full bg-[#e7e7e7]"
+            />
           ))}
-        </div>
-        <div className="relative size-[4.506px] shrink-0 overflow-hidden">
-          <img
-            alt=""
-            className="absolute block size-full max-w-none"
-            src="/images/multi-device-iris-scan-tablet.svg"
-            style={{ inset: "17.43% 7.14%" }}
-          />
         </div>
       </div>
     </div>
@@ -622,12 +595,7 @@ function MobilePopupForm() {
       className="absolute flex w-[67.289px] flex-col items-center gap-[2.67px] rounded-[1.602px] border-[0.134px] border-[#e4e4e7] bg-white pb-[2.67px] pt-[6.408px] px-[2.67px] shadow-[0_0.753px_3.766px_rgba(0,0,0,0.2)]"
       style={{ left: "-4.53px", top: "9.13px" }}
     >
-      {/* Union wave decoration */}
-      <img
-        alt=""
-        className="absolute left-[-0.13px] top-[-9.48px] block h-[59.145px] w-[67.155px] max-w-none"
-        src="/images/multi-device-union-mobile.svg"
-      />
+
 
       {/* User avatar circle */}
       <div
@@ -637,14 +605,11 @@ function MobilePopupForm() {
           top: "calc(50% - 28px)",
         }}
       >
-
-          <img
-            alt=""
-            className="w-full h-full object-cover"
-            src="/images/multi-device-user-sync-mobile.svg"
-            
-          />
-
+        <img
+          alt=""
+          className="w-full h-full object-cover"
+          src="/images/illustrations/multi-device-user-sync-tablet.svg"
+        />
       </div>
 
       <div className="relative flex w-full shrink-0 flex-col items-center gap-[2.67px]">
@@ -663,7 +628,7 @@ function MobilePopupForm() {
               <img
                 alt=""
                 className="absolute block size-full max-w-none"
-                src="/images/multi-device-school-mobile.svg"
+                src="/images/illustrations/multi-device-school.svg"
                 style={{ inset: "3.57%" }}
               />
             </div>
@@ -726,16 +691,11 @@ function MobilePasswordField() {
       <div className="flex w-full shrink-0 items-center justify-between rounded-[1.068px] border-[0.134px] border-[#e4e4e7] bg-white py-[1.602px] pl-[1.068px] pr-[1.602px]">
         <div className="flex min-h-px min-w-px flex-1 items-center gap-[1.068px]">
           {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="size-[1.068px] shrink-0 rounded-full bg-[#e7e7e7]" />
+            <div
+              key={i}
+              className="size-[1.068px] shrink-0 rounded-full bg-[#e7e7e7]"
+            />
           ))}
-        </div>
-        <div className="relative size-[2.537px] shrink-0 overflow-hidden">
-          <img
-            alt=""
-            className="absolute block size-full max-w-none"
-            src="/images/multi-device-iris-scan-mobile.svg"
-            style={{ inset: "17.43% 7.14%" }}
-          />
         </div>
       </div>
     </div>
@@ -746,38 +706,86 @@ function MobilePasswordField() {
 function TabletBlobs() {
   return (
     <>
-      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% - 94.55px)", bottom: "-41.79px", width: "118.486px", height: "124.927px" }}>
+      <div
+        className="absolute -translate-x-1/2 flex items-center justify-center"
+        style={{
+          left: "calc(50% - 94.55px)",
+          bottom: "-41.79px",
+          width: "118.486px",
+          height: "124.927px",
+        }}
+      >
         <div className="flex-none rotate-[42.8deg]">
           <div className="relative h-[145.452px] w-[26.794px]">
             <div className="absolute inset-[-15.33%_-83.23%]">
-              <img alt="" className="block size-full max-w-none" src="/images/multi-device-tablet-blob-1.svg" />
+              <img
+                alt=""
+                className="block size-full max-w-none"
+                src="/images/decoratives/multi-device-glow.svg"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 63.79px)", bottom: "167.85px", width: "118.486px", height: "124.927px" }}>
+      <div
+        className="absolute -translate-x-1/2 flex items-center justify-center"
+        style={{
+          left: "calc(50% + 63.79px)",
+          bottom: "167.85px",
+          width: "118.486px",
+          height: "124.927px",
+        }}
+      >
         <div className="flex-none rotate-[42.8deg]">
           <div className="relative h-[145.452px] w-[26.794px]">
             <div className="absolute inset-[-15.33%_-83.23%]">
-              <img alt="" className="block size-full max-w-none" src="/images/multi-device-tablet-blob-2.svg" />
+              <img
+                alt=""
+                className="block size-full max-w-none"
+                src="/images/decoratives/multi-device-glow.svg"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% - 52.09px)", bottom: "-62.23px", width: "118.486px", height: "124.927px" }}>
+      <div
+        className="absolute -translate-x-1/2 flex items-center justify-center"
+        style={{
+          left: "calc(50% - 52.09px)",
+          bottom: "-62.23px",
+          width: "118.486px",
+          height: "124.927px",
+        }}
+      >
         <div className="flex-none rotate-[42.8deg]">
           <div className="relative h-[145.452px] w-[26.794px]">
             <div className="absolute inset-[-15.33%_-83.23%]">
-              <img alt="" className="block size-full max-w-none" src="/images/multi-device-tablet-blob-1.svg" />
+              <img
+                alt=""
+                className="block size-full max-w-none"
+                src="/images/decoratives/multi-device-glow.svg"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 73.61px)", bottom: "113.88px", width: "118.486px", height: "124.927px" }}>
+      <div
+        className="absolute -translate-x-1/2 flex items-center justify-center"
+        style={{
+          left: "calc(50% + 73.61px)",
+          bottom: "113.88px",
+          width: "118.486px",
+          height: "124.927px",
+        }}
+      >
         <div className="flex-none rotate-[42.8deg]">
           <div className="relative h-[145.452px] w-[26.794px]">
             <div className="absolute inset-[-15.33%_-83.23%]">
-              <img alt="" className="block size-full max-w-none" src="/images/multi-device-tablet-blob-2.svg" />
+              <img
+                alt=""
+                className="block size-full max-w-none"
+                src="/images/decoratives/multi-device-glow.svg"
+              />
             </div>
           </div>
         </div>
@@ -790,38 +798,86 @@ function TabletBlobs() {
 function MobileBlobs() {
   return (
     <>
-      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% - 58.91px)", bottom: "-26.42px", width: "73.597px", height: "77.598px" }}>
+      <div
+        className="absolute -translate-x-1/2 flex items-center justify-center"
+        style={{
+          left: "calc(50% - 58.91px)",
+          bottom: "-26.42px",
+          width: "73.597px",
+          height: "77.598px",
+        }}
+      >
         <div className="flex-none rotate-[42.8deg]">
           <div className="relative h-[90.347px] w-[16.643px]">
             <div className="absolute inset-[-15.33%_-83.23%]">
-              <img alt="" className="block size-full max-w-none" src="/images/multi-device-mobile-blob-1.svg" />
+              <img
+                alt=""
+                className="block size-full max-w-none"
+                src="/images/decoratives/multi-device-glow.svg"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 39.45px)", bottom: "103.79px", width: "73.597px", height: "77.598px" }}>
+      <div
+        className="absolute -translate-x-1/2 flex items-center justify-center"
+        style={{
+          left: "calc(50% + 39.45px)",
+          bottom: "103.79px",
+          width: "73.597px",
+          height: "77.598px",
+        }}
+      >
         <div className="flex-none rotate-[42.8deg]">
           <div className="relative h-[90.347px] w-[16.643px]">
             <div className="absolute inset-[-15.33%_-83.23%]">
-              <img alt="" className="block size-full max-w-none" src="/images/multi-device-mobile-blob-2.svg" />
+              <img
+                alt=""
+                className="block size-full max-w-none"
+                src="/images/decoratives/multi-device-glow.svg"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% - 32.54px)", bottom: "-39.12px", width: "73.597px", height: "77.598px" }}>
+      <div
+        className="absolute -translate-x-1/2 flex items-center justify-center"
+        style={{
+          left: "calc(50% - 32.54px)",
+          bottom: "-39.12px",
+          width: "73.597px",
+          height: "77.598px",
+        }}
+      >
         <div className="flex-none rotate-[42.8deg]">
           <div className="relative h-[90.347px] w-[16.643px]">
             <div className="absolute inset-[-15.33%_-83.23%]">
-              <img alt="" className="block size-full max-w-none" src="/images/multi-device-mobile-blob-1.svg" />
+              <img
+                alt=""
+                className="block size-full max-w-none"
+                src="/images/decoratives/multi-device-glow.svg"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute -translate-x-1/2 flex items-center justify-center" style={{ left: "calc(50% + 45.54px)", bottom: "70.27px", width: "73.597px", height: "77.598px" }}>
+      <div
+        className="absolute -translate-x-1/2 flex items-center justify-center"
+        style={{
+          left: "calc(50% + 45.54px)",
+          bottom: "70.27px",
+          width: "73.597px",
+          height: "77.598px",
+        }}
+      >
         <div className="flex-none rotate-[42.8deg]">
           <div className="relative h-[90.347px] w-[16.643px]">
             <div className="absolute inset-[-15.33%_-83.23%]">
-              <img alt="" className="block size-full max-w-none" src="/images/multi-device-mobile-blob-2.svg" />
+              <img
+                alt=""
+                className="block size-full max-w-none"
+                src="/images/decoratives/multi-device-glow.svg"
+              />
             </div>
           </div>
         </div>

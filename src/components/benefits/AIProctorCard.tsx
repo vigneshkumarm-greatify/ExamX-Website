@@ -48,7 +48,7 @@ export default function AIProctorCard() {
       <div className="relative z-10 mt-6 flex items-center gap-4 px-9 pb-9">
         {/* AI graphic */}
         <img
-          src="/images/ai-proctored-graphic.svg"
+          src="/images/illustrations/ai-proctored-graphic.svg"
           alt=""
           className="h-[63px] w-[63px] shrink-0"
         />

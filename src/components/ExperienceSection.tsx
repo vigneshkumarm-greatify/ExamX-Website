@@ -1,3 +1,4 @@
+import { PlayIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 
 export default function ExperienceSection() {
@@ -16,7 +17,7 @@ export default function ExperienceSection() {
         >
           <div className="relative aspect-[1200/538]">
             <Image
-              src="/images/experience-video-bg.png"
+              src="/images/illustrations/experience-video-bg.png"
               alt="Greatify platform preview"
               fill
               className="object-cover opacity-100"
@@ -27,12 +28,9 @@ export default function ExperienceSection() {
               aria-label="Play video"
               className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2"
             >
-              <Image
-                src="/images/play-button.svg"
-                alt=""
-                width={100}
-                height={100}
-              />
+              <div className="flex items-center justify-center rounded-full bg-white p-6 cursor-pointer">
+                <PlayIcon className="h-6 w-6 text-green-500" />
+              </div>
             </button>
           </div>
         </div>

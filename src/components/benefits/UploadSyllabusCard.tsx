@@ -57,8 +57,8 @@ export default function UploadSyllabusCard() {
           className="absolute right-[39.5%] top-[55%] z-50 -translate-x-1/2 -translate-y-1/2"
         >
           <img
-            src="/images/ai-graphic.svg"
-            alt=""
+            src="/images/illustrations/ai-proctored-graphic.svg"
+            alt=""  
             className="h-[91px] w-[91px]"
           />
         </div>

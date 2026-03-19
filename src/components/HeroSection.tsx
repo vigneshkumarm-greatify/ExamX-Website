@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="pointer-events-none absolute left-[-680px] top-[127px] flex h-[1616px] w-[2800px] items-center justify-center">
         <div className="-rotate-[30deg] skew-x-[30deg] scale-y-[0.87]">
           <Image
-            src="/images/union-pattern.svg"
+            src="/images/decoratives/union-pattern.svg"
             alt=""
             width={1889}
             height={1343}
@@ -52,7 +52,7 @@ export default function HeroSection() {
               <div className="w-[133px] rounded-[10px] border border-dashed border-white/30 bg-[rgba(0,55,58,0.1)] p-[17px]">
                 <div className="mb-[10px] opacity-0">
                   <Image
-                    src="/images/hero-icon-attempted.svg"
+                    src="/images/icons/hero-icon-attempted.svg"
                     alt=""
                     width={17}
                     height={17}
@@ -68,7 +68,7 @@ export default function HeroSection() {
               <div className="w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                 <div className="mb-[10px]">
                   <Image
-                    src="/images/hero-icon-failed.svg"
+                    src="/images/icons/hero-icon-failed.svg"
                     alt=""
                     width={17}
                     height={17}
@@ -83,7 +83,7 @@ export default function HeroSection() {
               {/* Reattempted Tests */}
               <div className="w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                 <div className="mb-[10px]">
-                  <Image src="/images/hero-icon-reattempted.svg" alt="" width={17} height={17} className="mb-[7px]" />
+                  <Image src="/images/icons/hero-icon-reattempted.svg" alt="" width={17} height={17} className="mb-[7px]" />
                   <p className="text-[9.3px] font-medium text-chalk-green-100">
                     Reattempted Tests
                   </p>
@@ -94,7 +94,7 @@ export default function HeroSection() {
               <div className="relative w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                 <div className="mb-[10px]">
                   <Image
-                    src="/images/hero-icon-passed.svg"
+                    src="/images/icons/hero-icon-passed.svg"
                     alt=""
                     width={17}
                     height={17}
@@ -110,7 +110,7 @@ export default function HeroSection() {
               <div className="w-[133px] rounded-[10px] border border-white/20 bg-[rgba(0,55,58,0.5)] p-[17px] opacity-0">
                 <div className="mb-[10px]">
                   <Image
-                    src="/images/hero-icon-failed.svg"
+                    src="/images/icons/hero-icon-failed.svg"
                     alt=""
                     width={17}
                     height={17}
@@ -132,7 +132,7 @@ export default function HeroSection() {
                   <p className="text-[16px] font-semibold text-white">
                     Skills to focus
                   </p>
-                  <div className="rounded-[7px] border border-white/10 px-[7px] py-[7px]">
+                  <div className="rounded-[7px] border border-white/10 px-[7px] ">
                     <span className="text-[9.3px] font-semibold text-[#71717a]">
                       All
                     </span>
@@ -202,7 +202,7 @@ export default function HeroSection() {
                 <div className="flex flex-col gap-[15px] p-0">
                   <div className="space-y-[13px] px-[17px] pt-[17px]">
                     <Image
-                      src="/images/ai-graphic.svg"
+                      src="/images/illustrations/ai-proctored-graphic.svg"
                       alt=""
                       width={64}
                       height={64}
@@ -268,7 +268,7 @@ export default function HeroSection() {
                   <div className="relative mx-auto h-[189px] w-[189px]">
                     {/* Outer circle */}
                     <Image
-                      src="/images/hero-piechart.svg"
+                      src="/images/illustrations/hero-piechart.svg"
                       alt=""
                       width={189}
                       height={189}
@@ -277,7 +277,7 @@ export default function HeroSection() {
                     {/* Inner ring */}
                     <div className="absolute inset-[21.24%]">
                       <Image
-                        src="/images/hero-pie-ring.svg"
+                        src="/images/illustrations/hero-pie-ring.svg"
                         alt=""
                         width={109}
                         height={109}
@@ -288,7 +288,7 @@ export default function HeroSection() {
                     <div className="absolute inset-[2.65%]">
                       <div className="absolute inset-[0_15.42%_0_0]">
                         <Image
-                          src="/images/hero-pie-seg1.svg"
+                          src="/images/illustrations/hero-pie-seg1.svg"
                           alt=""
                           width={151}
                           height={179}
@@ -303,7 +303,7 @@ export default function HeroSection() {
                         style={{ inset: "49.69% 0 3.15% 60.91%" }}
                       >
                         <Image
-                          src="/images/hero-pie-seg2.svg"
+                          src="/images/illustrations/hero-pie-seg2.svg"
                           alt=""
                           width={70}
                           height={84}
@@ -318,7 +318,7 @@ export default function HeroSection() {
                         style={{ inset: "17.01% 0.17% 51.63% 74.73%" }}
                       >
                         <Image
-                          src="/images/hero-pie-seg3.svg"
+                          src="/images/illustrations/hero-pie-seg3.svg"
                           alt=""
                           width={45}
                           height={56}
@@ -419,7 +419,7 @@ export default function HeroSection() {
             <div className="p-4">
               <div className="flex items-center gap-2">
                 <Image
-                  src="/images/ai-proctored-graphic.svg"
+                  src="/images/illustrations/ai-proctored-graphic.svg"
                   alt=""
                   width={38}
                   height={38}
@@ -460,7 +460,7 @@ export default function HeroSection() {
             <div className="p-4">
               <div className="flex gap-2">
                 <Image
-                  src="/images/hero-icon-failed.svg"
+                  src="/images/icons/hero-icon-failed.svg"
                   alt=""
                   width={17}
                   height={17}
@@ -493,7 +493,7 @@ export default function HeroSection() {
           >
             <div className="space-y-[7px]">
               <Image
-                src="/images/hero-icon-attempted.svg"
+                src="/images/icons/hero-icon-attempted.svg"
                 alt=""
                 width={17}
                 height={17}
@@ -513,7 +513,7 @@ export default function HeroSection() {
           <div className="w-[133px] rounded-[10px] border border-white/20 bg-gradient-to-b from-green-500/20 to-green-700/20 p-[17px] shadow-[0px_4px_15px_rgba(0,0,0,0.15)] border border-white/10">
             <div className="space-y-[7px]">
               <Image
-                src="/images/hero-icon-failed.svg"
+                src="/images/icons/hero-icon-failed.svg"
                 alt=""
                 width={17}
                 height={17}
@@ -568,7 +568,7 @@ export default function HeroSection() {
         <div className="flex flex-col gap-3">
           <div className="flex items-start">
             <span className="inline-flex items-center gap-1 rounded-lg border border-[rgba(0,220,70,0.4)] bg-[rgba(0,220,70,0.2)] px-2 py-1.5">
-              <Image src="/images/sparkle.svg" alt="" width={15} height={15} />
+              <Image src="/images/illustrations/greatify-ai.svg" alt="" width={15} height={15} />
               <span className="text-[11.11px] font-semibold leading-[1.2] tracking-[-0.01em] text-green-500">
                 AI Empowered
               </span>
@@ -615,7 +615,7 @@ export default function HeroSection() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-1">
             <Image
-              src="/images/star-circle.svg"
+              src="/images/decoratives/star-circle.svg"
               alt=""
               width={14}
               height={14}
@@ -626,7 +626,7 @@ export default function HeroSection() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="/images/star-circle.svg"
+              src="/images/decoratives/star-circle.svg"
               alt=""
               width={14}
               height={14}
@@ -637,7 +637,7 @@ export default function HeroSection() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="/images/star-circle.svg"
+              src="/images/decoratives/star-circle.svg"
               alt=""
               width={14}
               height={14}
@@ -648,7 +648,7 @@ export default function HeroSection() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="/images/countdown-timer.svg"
+              src="/images/illustrations/countdown-timer.svg"
               alt=""
               width={14}
               height={14}

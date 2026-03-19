@@ -29,7 +29,7 @@ export default function BuiltOnAI() {
     <section className="relative overflow-hidden bg-creme-500 px-6 py-24 md:px-12 lg:px-[120px]">
       {/* Decorative watermark */}
       <Image
-        src="/images/ai-watermark.svg"
+        src="/images/decoratives/ai-watermark.svg"
         alt=""
         width={675}
         height={583}

@@ -6,7 +6,7 @@ const stages = [
     title: "Author",
     description:
       "Create questions with 20+ types, AI generation, and collaborative question banks organized by topic and difficulty.",
-    icon: "/images/icon-pen-tool.svg",
+    icon: "/images/icons/icon-pen-tool.svg",
     iconBg: "bg-[rgba(255,138,59,0.2)]",
     stageColor: "text-orange-500",
     offset: "lg:mt-0",
@@ -16,7 +16,7 @@ const stages = [
     title: "Deliver",
     description:
       "Schedule and deliver exams across desktops, tablets, and mobiles. Support 100K+ concurrent test-takers.",
-    icon: "/images/icon-star-circle.svg",
+    icon: "/images/icons/icon-star-circle.svg",
     iconBg: "bg-[rgba(98,64,200,0.2)]",
     stageColor: "text-purple-500",
     offset: "lg:mt-[30px]",
@@ -26,7 +26,7 @@ const stages = [
     title: "Proctor",
     description:
       "AI monitors every session with face detection, gaze tracking, audio analysis, and real-time cheating alerts.",
-    icon: "/images/icon-iris-scan.svg",
+    icon: "/images/icons/icon-iris-scan.svg",
     iconBg: "bg-[rgba(175,173,145,0.2)]",
     stageColor: "text-creme-900",
     offset: "lg:mt-[60px]",
@@ -36,7 +36,7 @@ const stages = [
     title: "Evaluate",
     description:
       "Auto-grade objective answers instantly. AI evaluates essays using rubric-aware scoring with faculty override.",
-    icon: "/images/icon-book-reading.svg",
+    icon: "/images/icons/icon-book-reading.svg",
     iconBg: "bg-[rgba(0,220,70,0.2)]",
     stageColor: "text-green-600",
     offset: "lg:mt-[90px]",
@@ -46,7 +46,7 @@ const stages = [
     title: "Report",
     description:
       "Real-time dashboards, item analysis, performance trends, incident logs, and downloadable certificates.",
-    icon: "/images/icon-ai-generate.svg",
+    icon: "/images/icons/icon-ai-generate.svg",
     iconBg: "bg-chalk-green-100",
     stageColor: "text-chalk-green-300",
     offset: "lg:mt-[120px]",

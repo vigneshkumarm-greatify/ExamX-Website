@@ -1,3 +1,4 @@
+import { ArrowDownIcon, ArrowDownTrayIcon, ArrowUpIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 
 export default function AnalyticsCard() {
@@ -35,12 +36,7 @@ export default function AnalyticsCard() {
             <div className="h-[6px] w-[43px] rounded-[8px] bg-purple-100 opacity-30" />
           </div>
           <button className="flex items-center gap-1.5 rounded-[8px] border border-[#e4e4e7] bg-white px-3 py-1.5 text-[11px] font-medium text-[#71717a]">
-            <Image
-              src="/images/analytics-upload.svg"
-              alt=""
-              width={12}
-              height={12}
-            />
+      <ArrowDownTrayIcon className="h-4 w-4 text-purple-400" />
             Export
           </button>
         </div>
@@ -55,7 +51,7 @@ export default function AnalyticsCard() {
         {/* Pie chart — single SVG image */}
         <div className="relative mx-auto mt-4 h-[218px] w-[227px]">
           <Image
-            src="/images/analytics-piechart.svg"
+            src="/images/illustrations/analytics-piechart.svg"
             alt="Exam analytics pie chart"
             width={227}
             height={218}
@@ -89,18 +85,13 @@ export default function AnalyticsCard() {
           Item Analysis
         </span>
         <Image
-          src="/images/analytics-sparkline-item.svg"
+          src="/images/illustrations/analytics-sparkline-item.svg"
           alt=""
           width={49}
           height={24}
         />
         <div className="flex size-[24px] items-center justify-center rounded-full bg-purple-100">
-          <Image
-            src="/images/analytics-arrow-item.svg"
-            alt=""
-            width={10}
-            height={10}
-          />
+          <ArrowDownIcon className="h-4 w-4 text-purple-500" />
         </div>
         <span className="text-[11px] font-semibold text-purple-500">5%</span>
       </div>
@@ -114,7 +105,7 @@ export default function AnalyticsCard() {
           Performance Trends
         </span>
         <Image
-          src="/images/analytics-sparkline-trends.svg"
+          src="/images/illustrations/analytics-sparkline-trends.svg"
           alt=""
           width={48}
           height={24}
@@ -124,55 +115,6 @@ export default function AnalyticsCard() {
         </span>
       </div>
 
-      {/* Performance / Progress / Result mini-table — peeks from right */}
-      <div
-        className="absolute left-[636px] top-[234.67px] rounded-[8px] border border-[#f4f4f5] bg-white p-3"
-        style={{ boxShadow: "0px 4px 50px rgba(0,0,0,0.1)" }}
-      >
-        <div className="flex gap-6">
-          {/* Performance column */}
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-semibold text-[#71717a]">
-              Performance
-            </span>
-            <Image
-              src="/images/analytics-sparkline-perf.svg"
-              alt=""
-              width={34}
-              height={17}
-            />
-            <div className="flex items-center gap-1">
-              <div className="flex size-[16px] items-center justify-center rounded-full bg-green-50">
-                <Image
-                  src="/images/analytics-arrow-perf.svg"
-                  alt=""
-                  width={8}
-                  height={8}
-                />
-              </div>
-              <span className="text-[10px] font-semibold text-green-500">
-                8%
-              </span>
-            </div>
-          </div>
-          {/* Progress column */}
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-semibold text-[#71717a]">
-              Progress
-            </span>
-            <div className="mt-1 h-[2px] w-[34px] rounded bg-purple-100" />
-            <div className="mt-2 h-[2px] w-[28px] rounded bg-purple-100" />
-          </div>
-          {/* Result column */}
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-semibold text-[#71717a]">
-              Result
-            </span>
-            <div className="mt-1 h-[2px] w-[34px] rounded bg-purple-100" />
-            <div className="mt-2 h-[2px] w-[28px] rounded bg-purple-100" />
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main>
-      <div className="relative min-h-[1090px] overflow-hidden bg-[linear-gradient(176.9deg,#00373a_43.715%,#00dc46_141.44%)]">
+      <div className="relative min-h-[1090px] overflow-hidden max-lg:min-h-0 bg-[linear-gradient(176.9deg,#00373a_43.715%,#00dc46_141.44%)]">
         <Navbar />
         <HeroSection />
       </div>

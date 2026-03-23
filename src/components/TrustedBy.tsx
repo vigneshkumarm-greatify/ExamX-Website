@@ -26,7 +26,7 @@ function LogoItem({ logo }: { logo: (typeof logos)[number] }) {
         alt={logo.alt}
         width={logo.width}
         height={logo.height}
-        className={`object-contain${logo.blend ? " mix-blend-darken" : ""}`}
+        className={`object-contain${logo.blend ? " mix-blend-darken" : ""} grayscale-95 opacity-80`}
       />
     </div>
   );

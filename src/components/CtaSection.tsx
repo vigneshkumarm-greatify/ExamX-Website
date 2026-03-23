@@ -1,21 +1,21 @@
 export default function CtaSection() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-[120px] md:px-12 lg:px-[120px]">
+    <section className="relative overflow-hidden bg-white px-6 py-16 md:px-12 md:py-[120px] desktop:px-[100px]">
       {/* Background curves — rainbow/arc shape */}
       <div className="pointer-events-none absolute inset-0">
         {/* Green accent arc — large ellipse, only top visible */}
         <div
-          className="absolute left-[50%] top-[45%] h-[400%] w-[200%] -translate-x-1/2 rounded-l-[100%] rounded-r-[100%]  bg-green-500"
+          className="absolute left-[50%] top-[60%] h-[400%] w-[200%] -translate-x-1/2 rounded-l-[100%] rounded-r-[100%] bg-green-500 md:top-[45%]"
         />
         {/* Dark teal arc — slightly smaller ellipse on top */}
         <div
-          className="absolute  left-[50%] top-[50%] h-[400%] w-[195%] -translate-x-1/2 rounded-l-[100%] rounded-r-[93%] bg-chalk-green-500"
+          className="absolute left-[50%] top-[65%] h-[400%] w-[195%] -translate-x-1/2 rounded-l-[100%] rounded-r-[93%] bg-chalk-green-500 md:top-[50%]"
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-start lg:gap-[126px]">
+      <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col gap-8 lg:flex-row lg:items-start lg:gap-16">
         {/* Left — heading */}
-        <div className="flex shrink-0 flex-col gap-3 lg:w-[486px]">
+        <div className="flex shrink-0 flex-col gap-3 lg:max-w-[486px]">
           <h2 className="text-[32px] font-semibold leading-[1.2] tracking-[-0.96px] text-chalk-green-500 md:text-[47.78px]">
             Ready to transform your exams with AI?
           </h2>

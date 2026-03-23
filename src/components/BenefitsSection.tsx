@@ -13,7 +13,7 @@ import AnalyticsCard from "./benefits/AnalyticsCard";
 
 export default function BenefitsSection() {
   return (
-    <section className="bg-creme-500 px-6 py-24 md:px-12 lg:px-[120px]">
+    <section className="bg-creme-500 px-6 py-24 md:px-12 desktop:px-[100px]">
       <div className="mx-auto max-w-[1200px]">
         {/* Heading */}
         <div className="mx-auto mb-16 max-w-[607px] text-center">

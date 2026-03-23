@@ -26,14 +26,14 @@ const stats = [
 
 export default function BuiltOnAI() {
   return (
-    <section className="relative overflow-hidden bg-creme-500 px-6 py-24 md:px-12 lg:px-[120px]">
+    <section className="relative overflow-hidden bg-creme-500 px-6 py-24 md:px-12 desktop:px-[100px]">
       {/* Decorative watermark */}
       <Image
         src="/images/decoratives/ai-watermark.svg"
         alt=""
         width={675}
         height={583}
-        className="pointer-events-none absolute -left-[163px] top-[112px] hidden lg:block"
+        className="pointer-events-none absolute -left-[163px] bottom-0  block"
       />
 
       <div className="relative mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
@@ -58,7 +58,7 @@ export default function BuiltOnAI() {
               className="relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-creme-600 px-6 py-8 sm:flex-row sm:items-center"
             >
               {/* Stat + label */}
-              <div className="flex shrink-0 flex-col gap-3 sm:w-[40%]">
+              <div className="flex shrink-0 flex-col gap-3 sm:w-[40%] pr-2">
                 <p
                   className={`text-[32px] font-semibold leading-[1.2] tracking-[-0.8px] md:text-[39.81px] ${stat.valueColor}`}
                 >

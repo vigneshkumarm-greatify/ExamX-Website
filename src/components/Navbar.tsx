@@ -15,7 +15,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="absolute inset-x-0 top-0 z-50 flex items-center justify-between py-6 px-[120px]">
+    <nav className="absolute inset-x-0 top-0 z-50 flex items-center justify-between py-6  px-4 min-[768px]:px-12 desktop:px-[100px]">
       {/* Logo */}
       <div className="flex shrink-0 items-center">
         <a href="/" className="flex h-[49px] items-center gap-0">
@@ -24,7 +24,7 @@ export default function Navbar() {
             alt="Greatify"
             width={0}
             height={48}
-            className="h-12 w-auto"
+            className="h-8 w-auto"
             priority
           />
         </a>

@@ -20,10 +20,10 @@ export default function Testimonials() {
   const t = testimonials[current];
 
   return (
-    <section className="bg-white px-6 py-[120px] md:px-12 lg:px-[120px]">
+    <section className="bg-white px-6 py-16 md:px-12 md:py-[120px] desktop:px-[100px]">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-6">
-        {/* Left column */}
-        <div className="flex shrink-0 flex-col gap-[126px] lg:w-[384px]">
+        {/* Left column — heading + "View all" + arrows (desktop only) */}
+        <div className="flex shrink-0 flex-col justify-between lg:w-[384px] lg:self-stretch">
           <div className="flex flex-col gap-4">
             <h2 className="text-[32px] font-semibold leading-[1.2] tracking-[-0.96px] text-chalk-green-500 md:text-[47.78px]">
               Success stories with AI-powered exam solutions
@@ -36,8 +36,8 @@ export default function Testimonials() {
             </button>
           </div>
 
-          {/* Nav arrows */}
-          <div className="flex items-center gap-3">
+          {/* Nav arrows — desktop: bottom of left column */}
+          <div className="hidden items-center gap-3 lg:flex">
             <button
               type="button"
               aria-label="Previous testimonial"
@@ -48,7 +48,7 @@ export default function Testimonials() {
               }
               className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.1)]"
             >
-           <ChevronLeftIcon className="h-7 w-7 text-green-500"  />
+              <ChevronLeftIcon className="h-7 w-7 text-green-500" />
             </button>
             <button
               type="button"
@@ -60,16 +60,16 @@ export default function Testimonials() {
               }
               className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.1)]"
             >
-          <ChevronRightIcon className="h-7 w-7 text-green-500" />
+              <ChevronRightIcon className="h-7 w-7 text-green-500" />
             </button>
           </div>
         </div>
 
         {/* Right column — cards */}
-        <div className="flex flex-col gap-6 sm:flex-row">
+        <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
           {/* Logo card */}
           <div
-            className={`flex h-[400px] w-full items-center justify-center overflow-hidden rounded-[20px] sm:w-[282px] ${t.logoBg}`}
+            className={`flex h-[280px] w-full items-center justify-center overflow-hidden rounded-[20px] sm:h-[400px] sm:w-[282px] ${t.logoBg}`}
           >
             <Image
               src={t.logo}
@@ -81,8 +81,8 @@ export default function Testimonials() {
           </div>
 
           {/* Quote card */}
-          <div className="flex h-[400px] w-full flex-col justify-between overflow-hidden rounded-[20px] bg-chalk-green-500 p-8 sm:w-[486px]">
-            <div className="flex flex-col gap-10">
+          <div className="flex h-auto min-h-[320px] w-full flex-col justify-between gap-8 overflow-hidden rounded-[20px] bg-chalk-green-500 p-6 sm:h-[400px] sm:min-h-0 sm:w-[486px] sm:gap-0 sm:p-8">
+            <div className="flex flex-col gap-6 sm:gap-10">
               <div className="flex flex-col gap-1">
                 <p className="text-[19.2px] font-semibold leading-[1.2] tracking-[-0.38px] text-white">
                   {t.name}
@@ -104,6 +104,34 @@ export default function Testimonials() {
               </span>
             </div>
           </div>
+        </div>
+
+        {/* Nav arrows — mobile: below the cards */}
+        <div className="flex items-center justify-center gap-3 lg:hidden">
+          <button
+            type="button"
+            aria-label="Previous testimonial"
+            onClick={() =>
+              setCurrent((c) =>
+                c === 0 ? testimonials.length - 1 : c - 1
+              )
+            }
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.1)]"
+          >
+            <ChevronLeftIcon className="h-7 w-7 text-green-500" />
+          </button>
+          <button
+            type="button"
+            aria-label="Next testimonial"
+            onClick={() =>
+              setCurrent((c) =>
+                c === testimonials.length - 1 ? 0 : c + 1
+              )
+            }
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.1)]"
+          >
+            <ChevronRightIcon className="h-7 w-7 text-green-500" />
+          </button>
         </div>
       </div>
     </section>

@@ -40,6 +40,9 @@
   --color-orange-600: #cc6e2f;
   --color-orange-700: #995323;
 
+  /* Custom breakpoints */
+  --breakpoint-desktop: 1200px;
+
   /* Font family */
   --font-yelliz: var(--font-yellix), "Inter", ui-sans-serif, system-ui, sans-serif;
 }

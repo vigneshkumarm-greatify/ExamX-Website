@@ -39,17 +39,17 @@ const bottomLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-chalk-green-500 from-[22.8%] to-[#00c63e] to-[156.9%] px-6 pb-20 pt-[120px] md:px-12 lg:px-16">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-chalk-green-500 from-[22.8%] to-[#00c63e] to-[156.9%] px-6 pb-12 pt-16 md:px-12 md:pb-20 md:pt-[120px] desktop:px-[100px]">
       {/* Background pattern */}
       <Image
         src="/images/decoratives/footer-bg-pattern.svg"
         alt=""
         width={1392}
         height={792}
-        className="pointer-events-none absolute left-1/2 top-[515px] -translate-x-1/2 -scale-y-100"
+        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 -scale-y-100"
       />
 
-      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-16">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-10 md:gap-16">
         {/* Top row */}
         <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
           {/* Brand column */}
@@ -81,24 +81,27 @@ export default function Footer() {
                 alt="ISO 27001 certified"
                 width={88}
                 height={88}
+                className="h-16 w-16 md:h-[88px] md:w-[88px]"
               />
               <Image
                 src="/images/badges/badge-gdpr.png"
                 alt="GDPR compliant"
                 width={88}
                 height={88}
+                className="h-16 w-16 md:h-[88px] md:w-[88px]"
               />
               <Image
                 src="/images/badges/badge-soc2.png"
                 alt="SOC 2 certified"
                 width={88}
                 height={88}
+                className="h-16 w-16 md:h-[88px] md:w-[88px]"
               />
             </div>
           </div>
 
           {/* Link columns */}
-          <div className="flex flex-wrap gap-12 lg:gap-24">
+          <div className="grid grid-cols-2 gap-8 sm:flex sm:flex-wrap sm:gap-12 lg:gap-24">
             {/* Solutions */}
             <div className="flex flex-col">
               <p className="py-2 text-[11.11px] font-bold uppercase leading-[1.2] tracking-[0.11px] text-chalk-green-300">
@@ -183,7 +186,7 @@ export default function Footer() {
         <div className="h-px w-full bg-chalk-green-300/30" />
 
         {/* Offices */}
-        <div className="flex flex-col gap-6 sm:flex-row sm:justify-between">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
           {offices.map((o) => (
             <div key={o.city} className="max-w-[246px]">
               <p className="text-[11.11px] font-bold uppercase leading-[1.2] tracking-[0.11px] text-white">
@@ -200,11 +203,11 @@ export default function Footer() {
         <div className="h-px w-full bg-chalk-green-300/30" />
 
         {/* Bottom credits */}
-        <div className="flex flex-col items-center gap-4 text-[13.33px] font-medium leading-[1.5] tracking-[-0.13px] text-[#91a9aa] lg:flex-row lg:justify-between">
+        <div className="flex flex-col items-center gap-4 text-center text-[13.33px] font-medium leading-[1.5] tracking-[-0.13px] text-[#91a9aa] lg:flex-row lg:justify-between lg:text-left">
           <p>
             © 2026, Gigadesk Technologies Private Limited. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {bottomLinks.map((link) => (
               <a key={link} href="#" className="hover:text-white">
                 {link}

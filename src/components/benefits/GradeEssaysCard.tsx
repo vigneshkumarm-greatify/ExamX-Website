@@ -1,13 +1,13 @@
 export default function GradeEssaysCard() {
   return (
     <div
-      className="relative overflow-hidden rounded-[20px] md:h-[313px]"
+      className="relative overflow-hidden rounded-[20px] pb-0  lg:h-[313px]"
       style={{
         background: "linear-gradient(-60.73deg, #ffc9a5 1.9%, #fff 78%)",
       }}
     >
       {/* Title block */}
-      <div className="px-8 pt-8">
+      <div className="px-6 pt-6 lg:px-8 lg:pt-8">
         <h3 className="text-[21.67px] font-semibold leading-[1.3] text-chalk-green-500">
           Grade essays. At scale
         </h3>
@@ -18,7 +18,7 @@ export default function GradeEssaysCard() {
       </div>
 
       {/* Inner UI card */}
-      <div className="relative z-10 mx-auto mt-8 mb-12 w-[calc(100%-48px)] max-w-[425px] rounded-[16px] border border-orange-100 bg-creme-50 p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+      <div className="relative z-10 mx-auto mt-8 -mb-8 w-[calc(100%-48px)] max-w-[425px] rounded-[16px] border border-orange-100 bg-creme-50 p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
         {/* Top row */}
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium text-[#475569]">

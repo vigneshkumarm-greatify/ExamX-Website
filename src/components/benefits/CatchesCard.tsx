@@ -1,6 +1,6 @@
 export default function CatchesCard() {
   return (
-    <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 p-9 md:h-[500px]">
+    <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 p-6   lg:p-9 lg:h-[500px]">
       {/* Title block */}
       <h3 className="text-[21.67px] font-semibold leading-[1.2] tracking-[-0.43px] text-creme-500">
         Catches what humans miss
@@ -22,7 +22,7 @@ export default function CatchesCard() {
         />
 
         {/* Inner bordered container */}
-        <div className="relative overflow-hidden rounded-[10px] border border-[#36de50] mt-18">
+        <div className="relative overflow-hidden rounded-[10px] border border-[#36de50] -mb-8 md:mt-12 lg:mt-18">
           {/* 3×2 icon grid */}
           <div className="grid grid-cols-3 gap-[15px] p-[21px]">
             <IconCell icon="iris-scan" status="ok" />

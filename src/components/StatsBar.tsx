@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const stats = [
   { value: "10M+", label: "Exams delivered\nglobally" },
   { value: "500+", label: "Organisations trust ExamX" },
@@ -14,32 +12,26 @@ export default function StatsBar() {
         <h2 className=" text-[28px] font-semibold leading-[1.2] tracking-[-0.68px] text-[#0f172a] md:text-[33.81px] desktop:w-[342px]">
           The exam platform that delivers results.
         </h2>
-        <div className="grid w-full flex-1 grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid w-full flex-1 grid-cols-2 justify-items-center gap-4 sm:grid-cols-3 md:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.value}
-              className="relative flex h-[200px] flex-col items-center justify-center gap-2.5 overflow-hidden rounded-2xl border border-creme-600 px-6 py-2.5 md:h-[239px]"
+              className="relative flex w-full max-w-[200px] h-[239px] flex-col items-center overflow-hidden justify-center gap-2.5 rounded-2xl border border-creme-600 px-6 py-2.5"
             >
-              {/* Decorative wave arcs — coded, no image */}
-              <svg
-                className="pointer-events-none absolute -left-[329px] -top-[65px] -rotate-[2.3deg]"
-                width="818"
-                height="545"
-                viewBox="0 0 880.69 546.723"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M31.4654 263.548C229.954 49.4781 626.461 -62.5872 848.671 179.67"
-                  stroke="#F0EFE2"
-                  strokeWidth="85.82"
-                />
-                <path
-                  d="M31.8629 517.548C230.351 303.478 626.858 191.413 849.068 433.67"
-                  stroke="#F0EFE2"
-                  strokeWidth="85.82"
-                />
-              </svg>
+              {/* Decorative wave arcs — CSS divs */}
+              <div
+          className=" absolute w-120 -top-10 -left-28 h-100 -rotate-6 rounded-full m  border-70 border-transparent 
+            border-t-[#F0EFE2]   border-r-[#F0EFE2]"
+        ></div>
+
+
+<div
+          className=" absolute w-120 -bottom-10 -right-28 h-100 -rotate-6 rounded-full m  border-70 border-transparent 
+            border-b-[#F0EFE2]   border-l-[#F0EFE2]"
+        ></div>
+
+   
+        
               <p className="relative text-[32px] font-semibold leading-[1.2] tracking-[-0.8px] text-green-600 md:text-[39.81px]">
                 {stat.value}
               </p>

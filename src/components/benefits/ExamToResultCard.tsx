@@ -23,13 +23,13 @@ export default function ExamToResultCard() {
 
   return (
     <div
-      className="relative overflow-hidden rounded-[20px] md:h-[313px]"
+      className="relative overflow-hidden rounded-[20px] pb-4 lg:pb-0 lg:h-[313px]"
       style={{
         background: "linear-gradient(-60.73deg, #ffc9a5 1.9%, #fff 78%)",
       }}
     >
       {/* Title block */}
-      <div className="px-8 pt-8">
+      <div className="px-6 pt-6 lg:px-8 lg:pt-8">
         <h3 className="text-[23.04px] font-semibold leading-[1.2] tracking-[-0.46px] text-chalk-green-500">
           Exam to result in minutes. Not weeks
         </h3>

@@ -58,15 +58,15 @@ export default function FiveStages() {
     <section className="relative overflow-hidden bg-white px-6 pb-[120px] pt-24 md:px-12 desktop:px-[100px]">
       {/* Decorative wave — inline SVG arc, scales to full width */}
       <svg
-        className="pointer-events-none absolute bottom-0 left-0 w-full"
-        viewBox="0 0 1440 480"
+        className="pointer-events-none hidden desktop:block absolute -left-1 bottom-0 w-[calc(100%+8px)]"
+        viewBox="-200 0 1840 520"
         fill="none"
         preserveAspectRatio="none"
         aria-hidden="true"
-        style={{ height: "clamp(200px, 50%, 480px)" }}
+        style={{ height: "clamp(100px, 25vw, 480px)" }}
       >
         <path
-          d="M-120 460C180 50 700 -80 1560 380"
+          d="M-200 500C180 50 700 -80 1640 420"
           stroke="url(#stages-wave-grad)"
           strokeWidth="160"
           strokeLinecap="round"

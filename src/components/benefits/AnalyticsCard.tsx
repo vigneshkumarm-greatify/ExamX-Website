@@ -4,14 +4,14 @@ import Image from "next/image";
 export default function AnalyticsCard() {
   return (
     <div
-      className="relative overflow-hidden rounded-[20px] md:h-[500px]"
+      className="relative overflow-hidden rounded-[20px] lg:h-[500px] flex flex-col"
       style={{
         background:
           "linear-gradient(-70.52deg, #9b85dc 23.43%, #ffffff 59.9%)",
       }}
     >
-      {/* Title block — absolute */}
-      <div className="absolute left-[36px] top-[35.67px] flex w-[516px] flex-col gap-2">
+      {/* Title block — absolute on lg */}
+      <div className="relative z-10 flex max-w-[516px] flex-col gap-2 px-6 pt-6 lg:pt-9 lg:px-9">
         <h3 className="text-[23.04px] font-semibold leading-[1.2] tracking-[-0.46px] text-chalk-green-500">
           See everything. In real time
         </h3>
@@ -22,10 +22,9 @@ export default function AnalyticsCard() {
         </p>
       </div>
 
-      {/* Purple pie chart container — absolute centered */}
+      {/* Purple pie chart container — absolute centered on lg */}
       <div
-        className="absolute top-[180.67px] flex h-[396px] w-[324px] flex-col rounded-[12px] bg-purple-50 p-5"
-        style={{ left: "calc(50% + 13px)", transform: "translateX(-50%)" }}
+        className="relative mx-auto -mb-6 mt-12 flex h-auto  flex-col rounded-[12px] bg-purple-50 p-5 "
       >
         {/* Header row */}
         <div className="flex items-center justify-between">
@@ -49,7 +48,7 @@ export default function AnalyticsCard() {
         </div>
 
         {/* Pie chart — single SVG image */}
-        <div className="relative mx-auto mt-4 h-[218px] w-[227px]">
+        <div className="relative mx-auto mt-3 w-full h-auto px-4">
           <Image
             src="/images/illustrations/analytics-piechart.svg"
             alt="Exam analytics pie chart"
@@ -61,7 +60,7 @@ export default function AnalyticsCard() {
       </div>
 
       {/* Export format buttons — stacked right of pie */}
-      <div className="absolute left-[481px] top-[200.67px] flex w-[58px] flex-col gap-[9px]">
+      <div className="hidden lg:flex absolute left-[481px] top-[200.67px] w-[58px] flex-col gap-[9px]">
         {["PDF", "Excel", "CVS"].map((fmt) => (
           <span
             key={fmt}
@@ -74,7 +73,7 @@ export default function AnalyticsCard() {
 
       {/* Item Analysis floating badge */}
       <div
-        className="absolute flex items-center gap-2 rounded-[8px] border border-purple-100 bg-purple-50 px-3 py-2"
+        className="flex md:hidden lg:flex absolute items-center gap-2 rounded-[8px] border border-purple-100 bg-purple-50 px-3 py-2"
         style={{
           left: "calc(50% + 13px - 162px - 120.5px)",
           top: "calc(180.67px + 164px)",
@@ -98,7 +97,7 @@ export default function AnalyticsCard() {
 
       {/* Performance Trends floating badge */}
       <div
-        className="absolute left-[307px] top-[415.67px] flex items-center gap-2 rounded-[8px] border border-purple-100 bg-purple-50 px-3 py-2"
+        className="lg:flex md:hidden flex absolute left-[307px] top-[415.67px] items-center gap-2 rounded-[8px] border border-purple-100 bg-purple-50 px-3 py-2"
         style={{ boxShadow: "0px 4px 50px rgba(0,0,0,0.1)" }}
       >
         <span className="w-[133px] text-[11px] font-semibold text-chalk-green-500">

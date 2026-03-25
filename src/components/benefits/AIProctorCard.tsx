@@ -1,6 +1,6 @@
 export default function AIProctorCard() {
   return (
-    <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 md:h-[313px]">
+    <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 lg:h-[313px]">
       {/* Horizontal grid lines — dashed */}
       <div className="pointer-events-none absolute inset-x-0 top-[156px]">
         {[0, 40.44, 80.89, 121.33, 161.78].map((offset) => (
@@ -33,7 +33,7 @@ export default function AIProctorCard() {
       />
 
       {/* Title block */}
-      <div className="relative z-10 px-9 pt-9">
+      <div className="relative z-10 px-6 pt-6 lg:px-9 lg:pt-9">
         <h3 className="text-[23.04px] font-semibold leading-[1.2] tracking-[-0.46px] text-white">
           AI eyes on every exam. Zero compromise
         </h3>
@@ -45,7 +45,7 @@ export default function AIProctorCard() {
       </div>
 
       {/* Inner UI — stats & tags */}
-      <div className="relative z-10 mt-6 flex items-center gap-4 px-9 pb-9">
+      <div className="relative z-10 mt-6 flex items-center gap-4 px-6 pb-6 lg:px-9 lg:pb-9">
         {/* AI graphic */}
         <img
           src="/images/illustrations/ai-proctored-graphic.svg"

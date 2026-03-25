@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ExamMockup() {
   return (
-    <div className="h-[374px] w-[770px] overflow-hidden rounded-[8.7px] bg-[#fafafa] shadow-[0px_4px_50px_rgba(0,0,0,0.25)]">
+    <div className="h-[274px] w-[770px] overflow-hidden rounded-[8.7px] bg-[#fafafa] shadow-[0px_4px_50px_rgba(0,0,0,0.25)]">
       {/* Top nav bar */}
       <div className="flex w-[573px] items-center justify-between rounded-b-[6.4px] bg-chalk-green-500 px-[10.7px] py-[8.5px]">
         <div className="relative h-[21px] w-[78px]">
@@ -55,46 +55,7 @@ export default function ExamMockup() {
             />
           </div>
 
-          {/* Previous / Next buttons */}
-          <div className="flex items-start justify-between border-t border-[#f4f4f5] pt-[17px]">
-            <div className="flex w-[86px] items-center justify-center rounded-[4.3px] border border-[#e4e4e7] bg-[#fafafa] px-[8.5px] py-[6.4px] text-[8.55px] font-semibold leading-[1.2] tracking-[-0.17px] text-chalk-green-500">
-              Previous
-            </div>
-            <div
-              className="flex w-[86px] items-center justify-center rounded-[4.3px] border border-[#00b63a] px-[8.5px] py-[6.4px] text-[8.55px] font-semibold leading-[1.2] tracking-[-0.17px] text-white"
-              style={{
-                backgroundImage:
-                  "linear-gradient(100.88deg, #00dc46 0.45%, #00c13d 101%)",
-              }}
-            >
-              Next
-            </div>
-          </div>
 
-          {/* Bottom progress bar */}
-          <div className="flex flex-1 items-end">
-            <div className="flex w-[469px] items-center justify-between border-t border-[#f4f4f5] pt-[15px]">
-              <div className="flex w-[403px] items-center gap-[12px]">
-                <div className="h-[3px] w-[41px] rounded-[8px] bg-[#e7e7e7]" />
-                <div className="relative h-[11px] w-[224px] rounded-[2px] bg-[#f4f4f5]">
-                  <p className="absolute right-[3px] top-[2px] text-right text-[5.9px] font-bold uppercase leading-[1.2] tracking-[0.06px] text-[#a1a1aa]">
-                    total questions: 40
-                  </p>
-                  <div className="absolute left-[22px] top-1/2 flex w-[20px] -translate-y-1/2 items-center justify-end rounded-[2px] bg-[#ff8a3b] p-[2px]">
-                    <span className="text-[5.9px] font-bold uppercase leading-[1.2] tracking-[0.06px] text-[#ffdec8]">
-                      1
-                    </span>
-                  </div>
-                  <div className="absolute left-[0.25px] top-1/2 flex w-[34px] -translate-y-1/2 items-center justify-end rounded-[2px] bg-[#00dc46] p-[2px]">
-                    <span className="text-[5.9px] font-bold uppercase leading-[1.2] tracking-[0.06px] text-chalk-green-500">
-                      6
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="h-[3px] w-[41px] rounded-[8px] bg-[#e7e7e7]" />
-            </div>
-          </div>
         </div>
       </div>
     </div>

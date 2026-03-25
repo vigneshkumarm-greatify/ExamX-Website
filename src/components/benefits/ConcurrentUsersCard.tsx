@@ -1,14 +1,14 @@
 export default function ConcurrentUsersCard() {
   return (
     <div
-      className="relative overflow-hidden rounded-[20px] md:h-[313px]"
+      className="relative overflow-hidden rounded-[20px] pb-8 lg:pb-0 lg:h-[313px]"
       style={{
         background: "linear-gradient(-60.73deg, #b8f5cb 1.9%, #fff 78.07%)",
       }}
     >
       {/* Background gradient overlay */}
       <div
-        className="pointer-events-none absolute rounded-[16px] overflow-hidden"
+        className="pointer-events-none absolute rounded-[16px] overflow-hidden "
         style={{
           left: "calc(50% - 52.5px)",
           transform: "translateX(-50%)",
@@ -27,7 +27,7 @@ export default function ConcurrentUsersCard() {
         ></div>
       </div>
       {/* Title block */}
-      <div className="px-9 pt-9">
+      <div className="px-6 pt-6 lg:px-9 lg:pt-9">
         <h3 className="text-[21.67px] font-semibold leading-[1.2] tracking-[-0.43px] text-chalk-green-500">
           100,000+ concurrent users. Zero downtime
         </h3>
@@ -39,7 +39,7 @@ export default function ConcurrentUsersCard() {
       </div>
 
       {/* Progress bars */}
-      <div className="relative mt-13 flex w-[501px] flex-col gap-3 px-9">
+      <div className="lg:absolute lg:left-0 lg:bottom-5 relative mt-13 flex w-full max-w-[501px] flex-col gap-3 px-6 lg:px-9">
         <BarRow label="10K" rightInset="17.71%" />
         <BarRow label="50K" rightInset="9.26%" />
         <BarRow label="100K+" rightInset="3.27%" />
@@ -49,7 +49,7 @@ export default function ConcurrentUsersCard() {
       <img
         src="/images/decoratives/sparkle-stars.svg"
         alt=""
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute block"
         style={{
           left: "504px",
           top: "184px",
@@ -67,7 +67,7 @@ function BarRow({ label, rightInset }: { label: string; rightInset: string }) {
       <span className="w-[47px] text-right text-base font-medium leading-[1.5] tracking-[-0.16px] text-green-700">
         {label}
       </span>
-      <div className="h-2 w-[367px] overflow-hidden rounded-full bg-green-50">
+      <div className="h-2 flex-1 overflow-hidden rounded-full bg-green-50">
         <div
           className="h-full rounded-full"
           style={{

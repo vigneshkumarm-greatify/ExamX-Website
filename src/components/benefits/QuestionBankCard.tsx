@@ -1,6 +1,6 @@
 export default function QuestionBankCard() {
   return (
-    <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 p-9 md:h-[500px]">
+    <div className="relative overflow-hidden rounded-[20px] bg-chalk-green-500 p-6 pb-[240px] lg:p-9 lg:h-[500px]">
       {/* Green radial glow */}
       <div
         className="pointer-events-none absolute left-[-33px] top-[279px] h-[618px] w-[618px]"
@@ -25,18 +25,12 @@ export default function QuestionBankCard() {
       <img
         alt=""
         src="/images/illustrations/question-bank-columns.svg"
-        className="pointer-events-none absolute"
-        style={{
-          width: "814.254px",
-          height: "483px",
-          left: "calc(50% - 14.87px)",
-          top: "202.67px",
-          transform: "translateX(-50%)",
-        }}
+        className="pointer-events-none absolute w-[814.254px] h-[483px] left-[calc(50%-14.87px)] top-[202.67px] transform -translate-x-1/2 lg:h-[483px]"
+
       />
 
       {/* Floating glass tags */}
-      <div className="absolute left-[325px] top-[354px] z-10 flex flex-col gap-2">
+      <div className="hidden lg:flex absolute left-[325px] top-[354px] z-10 flex-col gap-2">
         {/* Import tag */}
         <span
           className="rounded-lg px-4 py-2 text-[11.11px] font-semibold text-[#5ce989]"

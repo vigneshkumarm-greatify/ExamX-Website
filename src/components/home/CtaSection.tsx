@@ -1,15 +1,15 @@
 export default function CtaSection() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-16 md:px-12 md:py-[120px] desktop:px-[100px]">
+    <section className="relative overflow-hidden bg-white px-6 py-16 md:px-12 md:py-[120px] xl:px-[100px]">
       {/* Background curves — rainbow/arc shape */}
       <div className="pointer-events-none absolute inset-0">
         {/* Green accent arc — large ellipse, only top visible */}
         <div
-          className="absolute left-[50%] top-[60%] h-[150%] min-[768px]:h-[250%] desktop:h-[400%] w-[200%] -translate-x-1/2 rounded-l-[100%] rounded-r-[100%] bg-green-500 md:top-[45%]"
+          className="absolute left-[50%] top-[60%] h-[150%] min-[768px]:h-[250%] xl:h-[400%] w-[200%] -translate-x-1/2 rounded-l-[100%] rounded-r-[100%] bg-green-500 md:top-[45%]"
         />
         {/* Dark teal arc — slightly smaller ellipse on top */}
         <div
-          className="absolute left-[50%] top-[65%] h-[150%] min-[768px]:h-[250%] desktop:h-[400%] w-[195%] -translate-x-1/2 rounded-l-[100%] rounded-r-[82%] min-[768px]:rounded-r-[89%] desktop:rounded-r-[93%] bg-chalk-green-500 md:top-[50%]"
+          className="absolute left-[50%] top-[65%] h-[150%] min-[768px]:h-[250%] xl:h-[400%] w-[195%] -translate-x-1/2 rounded-l-[100%] rounded-r-[82%] min-[768px]:rounded-r-[89%] xlrounded-r-[93%] bg-chalk-green-500 md:top-[50%]"
         />
       </div>
 

@@ -39,7 +39,7 @@ const bottomLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-chalk-green-500 from-[22.8%] to-[#00c63e] to-[156.9%] px-6 pb-12 pt-16 md:px-12 md:pb-20 md:pt-[120px] desktop:px-[100px]">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-chalk-green-500 from-[22.8%] to-[#00c63e] to-[156.9%] px-6 pb-12 pt-16 md:px-12 md:pb-20 md:pt-[120px] xl:px-[100px]">
       {/* Background pattern */}
       <Image
         src="/images/common/decoratives/footer-bg-pattern.svg"

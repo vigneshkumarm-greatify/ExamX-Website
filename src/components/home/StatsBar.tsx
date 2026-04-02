@@ -7,9 +7,9 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <section className="border-b border-[#e2e8f0] bg-creme-500 px-6 pb-24 pt-16 md:px-12 desktop:px-[100px]">
-      <div className="mx-auto flex max-w-[1200px] flex-col items-start gap-10 desktop:gap-4 desktop:flex-row lg:items-center  ">
-        <h2 className=" text-[28px] font-semibold leading-[1.2] tracking-[-0.68px] text-[#0f172a] md:text-[33.81px] desktop:w-[342px]">
+    <section className="border-b border-[#e2e8f0] bg-creme-500 px-6 pb-24 pt-16 md:px-12 xl:px-[100px]">
+      <div className="mx-auto flex max-w-[1200px] flex-col items-start gap-10 xlgap-4 xlflex-row lg:items-center  ">
+        <h2 className=" text-[28px] font-semibold leading-[1.2] tracking-[-0.68px] text-[#0f172a] md:text-[33.81px] xl:w-[342px]">
           The exam platform that delivers results.
         </h2>
         <div className="grid w-full flex-1 grid-cols-2 justify-items-center gap-4 sm:grid-cols-3 md:grid-cols-4">

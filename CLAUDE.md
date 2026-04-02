@@ -47,15 +47,15 @@ Good pattern — nested parent-child:
 
 - Never build desktop-only and "fix responsive later". Build responsive as you go
 - Every component must work at mobile (< 768px), tablet (768-1024px), and desktop (1200px+)
-- Use the project breakpoints: `md:` (768px), `lg:` (1024px), `desktop:` (1200px)
+- Use the project breakpoints: `md:` (768px), `lg:` (1024px), xl 
 - Test mental model: "if I shrink this to 375px wide, does it still work?"
 - Stack layouts vertically on mobile: `flex-col lg:flex-row`
-- Grid columns should reduce: `grid-cols-1 md:grid-cols-2 desktop:grid-cols-3`
+- Grid columns should reduce: `grid-cols-1 md:grid-cols-2 xlgrid-cols-3`
 
 ## Rule 5: Section Layout Convention
 
 - Every section wraps content in: `<div className="mx-auto max-w-[1200px]">`
-- Section horizontal padding: `px-6 md:px-12 desktop:px-[100px]`
+- Section horizontal padding: `px-6 md:px-12 xl:px-[100px]`
 - Sections with decorative backgrounds: `relative overflow-hidden`
 
 ## Rule 6: Component Architecture
@@ -79,7 +79,18 @@ Good pattern — nested parent-child:
 - Use Tailwind color tokens for solid colors: `text-chalk-green-500`, `bg-green-500`
 - Decorative elements: `pointer-events-none` to prevent blocking interactions
 
-## Rule 9: File Organization
+## Rule 9: Reuse Before Rebuilding
+
+- **When receiving a Figma design, always scan existing components first.** Before building anything new, check if the codebase already has a component with a similar visual structure (same card shape, same section layout, same UI pattern). If it does, make the existing component reusable with props instead of creating a duplicate.
+- If the structure is the same and only data, colors, spacing, or positioning differ, extract a shared reusable component in `src/components/common/` with props for the varying parts — don't duplicate the markup
+- Examples of what should be reused:
+  - Stat cards that appear on multiple pages (same card shape, different numbers/labels) → shared `StatCard` component with props for `stats`, `columns`, `showConnectors`, etc.
+  - Section wrappers with the same padding/max-width → shared layout component
+  - Icon + text patterns that repeat → shared `IconLabel` component
+  - Feature cards, testimonial cards, CTA banners — if the Figma design looks like something already built, refactor to share
+- Only create a page-specific component when the layout, structure, or behavior is genuinely unique to that page
+
+## Rule 10: File Organization
 
 ```
 src/components/

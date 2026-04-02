@@ -9,7 +9,7 @@ const stages = [
     icon: "/images/home/icons/icon-pen-tool.svg",
     iconBg: "bg-[rgba(255,138,59,0.2)]",
     stageColor: "text-orange-500",
-    offset: "desktop:mt-0",
+    offset: "xl:mt-0",
   },
   {
     stage: 2,
@@ -19,7 +19,7 @@ const stages = [
     icon: "/images/home/icons/icon-star-circle.svg",
     iconBg: "bg-[rgba(98,64,200,0.2)]",
     stageColor: "text-purple-500",
-    offset: " desktop:mt-[30px]",
+    offset: " xl:mt-[30px]",
   },
   {
     stage: 3,
@@ -29,7 +29,7 @@ const stages = [
     icon: "/images/home/icons/icon-iris-scan.svg",
     iconBg: "bg-[rgba(175,173,145,0.2)]",
     stageColor: "text-creme-900",
-    offset: " desktop:mt-[60px]",
+    offset: " xl:mt-[60px]",
   },
   {
     stage: 4,
@@ -39,7 +39,7 @@ const stages = [
     icon: "/images/home/icons/icon-book-reading.svg",
     iconBg: "bg-[rgba(0,220,70,0.2)]",
     stageColor: "text-green-600",
-    offset: " desktop:mt-[90px]",
+    offset: " xl:mt-[90px]",
   },
   {
     stage: 5,
@@ -49,16 +49,16 @@ const stages = [
     icon: "/images/home/icons/icon-ai-generate.svg",
     iconBg: "bg-chalk-green-100",
     stageColor: "text-chalk-green-300",
-    offset: " desktop:mt-[120px]",
+    offset: " xl:mt-[120px]",
   },
 ];
 
 export default function FiveStages() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 pb-[120px] pt-24 md:px-12 desktop:px-[100px]">
+    <section className="relative overflow-hidden bg-white px-6 pb-[120px] pt-24 md:px-12 xl:px-[100px]">
       {/* Decorative wave — inline SVG arc, scales to full width */}
       <svg
-        className="pointer-events-none hidden desktop:block absolute -left-1 bottom-0 w-[calc(100%+8px)]"
+        className="pointer-events-none hidden xlblock absolute -left-1 bottom-0 w-[calc(100%+8px)]"
         viewBox="-200 0 1840 520"
         fill="none"
         preserveAspectRatio="none"
@@ -101,11 +101,11 @@ export default function FiveStages() {
         </div>
 
         {/* Stage cards — stair-step layout on desktop */}
-        <div className="mt-10 grid  gap-4 max-[400px]:grid-cols-1 min-[401px]:max-[600px]:grid-cols-2 min-[600px]:max-desktop:grid-cols-3 desktop:grid-cols-5 lg:mt-[42px] lg:items-start">
+        <div className="mt-10 grid  gap-4 max-[400px]:grid-cols-1 min-[401px]:max-[600px]:grid-cols-2 min-[600px]:max-xlgrid-cols-3 xlgrid-cols-5 lg:mt-[42px] lg:items-start">
           {stages.map((s) => (
             <div
               key={s.stage}
-              className={`flex flex-col gap-2 rounded-2xl border border-creme-600 bg-creme-100 p-6 min-[600px]:max-desktop:h[310px] desktop:h-[281px] ${s.offset}`}
+              className={`flex flex-col gap-2 rounded-2xl border border-creme-600 bg-creme-100 p-6 min-[600px]:max-xl:h[310px] xl:h-[281px] ${s.offset}`}
             >
               <div className="flex flex-col gap-5">
                 <div

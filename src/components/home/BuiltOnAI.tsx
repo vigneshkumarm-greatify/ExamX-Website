@@ -26,7 +26,7 @@ const stats = [
 
 export default function BuiltOnAI() {
   return (
-    <section className="relative overflow-hidden bg-creme-500 px-6 py-24 md:px-12 desktop:px-[100px]">
+    <section className="relative overflow-hidden bg-creme-500 px-6 py-24 md:px-12 xl:px-[100px]">
       {/* Decorative watermark */}
       <Image
         src="/images/home/decoratives/ai-watermark.svg"

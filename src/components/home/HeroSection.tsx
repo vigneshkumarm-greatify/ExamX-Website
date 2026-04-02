@@ -7,8 +7,10 @@ export default function HeroSection() {
     <section className="relative overflow-hidden bg-[linear-gradient(176.9deg,#00373a_43.715%,#00dc46_141.44%)]">
     
 
+      {/* Centered constraint for text positioning */}
+      <div className="absolute inset-0 z-10 mx-auto max-w-[1440px] max-md:relative max-md:inset-auto">
       {/* ===== HERO TEXT CONTENT — independently responsive ===== */}
-      <div className="absolute left-[100px] top-[141px] z-10 flex w-[665px] flex-col gap-9 max-desktop:left-12 max-lg:top-[100px] max-lg:w-[min(90%,500px)] max-md:static max-md:w-full max-md:px-4 max-md:pt-24 max-md:pb-8">
+      <div className="absolute left-0 top-[141px] flex w-[665px] flex-col gap-9 max-lg:w-[min(90%,800px)] max-md:static max-md:w-full  max-md:pt-32   px-6 min-[768px]:px-12 xl:px-12">
         {/* AI Empowered Badge */}
         <div className="flex flex-col gap-3">
           <div className="flex items-start">
@@ -103,6 +105,7 @@ export default function HeroSection() {
             </span>
           </div>
         </div>
+      </div>
       </div>
 
 

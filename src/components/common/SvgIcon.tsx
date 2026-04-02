@@ -51,9 +51,10 @@ export default function SvgIcon({
           return;
         }
 
-        const svgText = await response.text();
+        const processedSvg = await response.text();
+
         const parser = new DOMParser();
-        const doc = parser.parseFromString(svgText, "image/svg+xml");
+        const doc = parser.parseFromString(processedSvg, "image/svg+xml");
         const svgElement = doc.querySelector("svg");
 
         if (!svgElement) {

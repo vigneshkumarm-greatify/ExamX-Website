@@ -183,7 +183,7 @@ export default function BuiltForOrgs() {
   const active = tabs[activeTab];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-green-500 to-chalk-green-500 px-6 pb-[120px] pt-24 md:px-12 desktop:px-[120px]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-green-500 to-chalk-green-500 px-6 pb-[120px] pt-24 md:px-12 xl:px-[120px]">
       {/* Decorative blobs */}
       <Image
         src="/images/home/decoratives/org-blob-1.svg"

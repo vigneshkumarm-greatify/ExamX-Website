@@ -20,7 +20,7 @@ export default function Testimonials() {
   const t = testimonials[current];
 
   return (
-    <section className="bg-white px-6 py-16 md:px-12 md:py-[120px] desktop:px-[100px]">
+    <section className="bg-white px-6 py-16 md:px-12 md:py-[120px] xl:px-[100px]">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-6">
         {/* Left column — heading + "View all" + arrows (desktop only) */}
         <div className="flex shrink-0 flex-col justify-between lg:w-[384px] lg:self-stretch">
@@ -36,7 +36,7 @@ export default function Testimonials() {
             </button>
           </div>
 
-          {/* Nav arrows — desktop: bottom of left column */}
+          {/* Nav arrows — xl bottom of left column */}
           <div className="hidden items-center gap-3 lg:flex">
             <button
               type="button"

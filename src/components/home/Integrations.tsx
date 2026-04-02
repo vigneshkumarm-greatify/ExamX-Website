@@ -1,30 +1,30 @@
 import Image from "next/image";
 
 const integrations = [
-  { name: "Moodle", logo: "/images/home/logos/integrations/logo-moodle.png", w: 50, h: 50, offset: "desktop:mt-[119px]" },
-  { name: "Canvas", logo: "/images/home/logos/integrations/logo-canvas.png", w: 50, h: 50, offset: "desktop:mt-[69px]" },
-  { name: "Blackboard", logo: "/images/home/logos/integrations/logo-blackboard.png", w: 76, h: 58, offset: "desktop:mt-[20px]" },
+  { name: "Moodle", logo: "/images/home/logos/integrations/logo-moodle.png", w: 50, h: 50, offset: "xl:mt-[119px]" },
+  { name: "Canvas", logo: "/images/home/logos/integrations/logo-canvas.png", w: 50, h: 50, offset: "xl:mt-[69px]" },
+  { name: "Blackboard", logo: "/images/home/logos/integrations/logo-blackboard.png", w: 76, h: 58, offset: "xl:mt-[20px]" },
   {
     name: "Google\nClassroom",
     logo: "/images/home/logos/integrations/logo-google-classroom.png",
     w: 62,
     h: 54,
-    offset: "desktop:mt-0",
+    offset: "xl:mt-0",
   },
   {
     name: "SAP\nSuccessFactors",
     logo: "/images/home/logos/integrations/logo-sap.png",
     w: 84,
     h: 47,
-    offset: "desktop:mt-[20px]",
+    offset: "xl:mt-[20px]",
   },
-  { name: "Workday", logo: "/images/home/logos/integrations/logo-workday.png", w: 49, h: 50, offset: "desktop:mt-[69px]" },
-  { name: "REST API", logo: "/images/home/logos/integrations/logo-rest-api.png", w: 61, h: 50, offset: "desktop:mt-[119px]" },
+  { name: "Workday", logo: "/images/home/logos/integrations/logo-workday.png", w: 49, h: 50, offset: "xl:mt-[69px]" },
+  { name: "REST API", logo: "/images/home/logos/integrations/logo-rest-api.png", w: 61, h: 50, offset: "xl:mt-[119px]" },
 ];
 
 export default function Integrations() {
   return (
-    <section className="bg-white px-6 pb-16 pt-16 md:px-12 md:pb-[112px] md:pt-24 desktop:px-[100px]">
+    <section className="bg-white px-6 pb-16 pt-16 md:px-12 md:pb-[112px] md:pt-24 xl:px-[100px]">
       <div className="mx-auto max-w-[1200px]">
         {/* Header */}
         <div className="mx-auto mb-10 max-w-[591px] text-center md:mb-16">
@@ -38,7 +38,7 @@ export default function Integrations() {
         </div>
 
         {/* Integration cards — flex wrap on mobile, 7-col grid with arc on desktop */}
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 desktop:grid desktop:grid-cols-7 desktop:items-start desktop:gap-[43px]">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 xlgrid xlgrid-cols-7 xlitems-start xlgap-[43px]">
           {integrations.map((item) => (
             <div
               key={item.name}

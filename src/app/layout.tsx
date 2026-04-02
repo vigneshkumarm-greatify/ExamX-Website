@@ -19,9 +19,29 @@ const yellix = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://exam-x-website.vercel.app"),
   title: "Greatify — AI-Powered Exam Platform",
   description:
     "AI that creates, proctors, and grades exams end-to-end. Enterprise-grade assessment platform with SOC 2, GDPR, and ISO 27001 compliance.",
+  icons: {
+    icon: "/images/common/ai-logo.svg",
+    shortcut: "/images/common/ai-logo.svg",
+    apple: "/images/common/ai-logo.svg",
+  },
+  openGraph: {
+    title: "Greatify — AI-Powered Exam Platform",
+    description:
+      "AI that creates, proctors, and grades exams end-to-end. Enterprise-grade assessment platform with SOC 2, GDPR, and ISO 27001 compliance.",
+    siteName: "Greatify",
+    type: "website",
+    url: "https://exam-x-website.vercel.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Greatify — AI-Powered Exam Platform",
+    description:
+      "AI that creates, proctors, and grades exams end-to-end. Enterprise-grade assessment platform with SOC 2, GDPR, and ISO 27001 compliance.",
+  },
 };
 
 export default function RootLayout({

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -59,7 +59,6 @@ const plainLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const closeMobile = useCallback(() => {
     setMobileOpen(false);
@@ -221,10 +220,7 @@ export default function Navbar() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 -translate-y-4"
       >
-        <div
-          ref={mobileMenuRef}
-          className="fixed inset-x-0 top-0 z-50 max-h-[100dvh] overflow-y-auto bg-white px-6 pb-6 pt-8 shadow-lg lg:hidden"
-        >
+        <div className="fixed inset-x-0 top-0 z-50 max-h-[100dvh] overflow-y-auto bg-white px-6 py-6 shadow-lg lg:hidden">
           {/* Header: Logo + Close */}
           <div className="mb-6 flex items-center justify-between">
             <Link href="/" onClick={closeMobile} className="flex items-center">

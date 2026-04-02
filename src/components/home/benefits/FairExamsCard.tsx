@@ -49,6 +49,8 @@ export default function FairExamsCard() {
                   alt=""
                   width={17}
                   height={17}
+                  draggable={false}
+                  className="select-none"
                 />
                 <div className="flex flex-col leading-[1.2]">
                   <span className="text-[4.8px] font-bold uppercase tracking-[0.05px] text-[#00dc46]">
@@ -118,7 +120,8 @@ export default function FairExamsCard() {
                 alt=""
                 width={30}
                 height={80}
-                className="mt-7"
+                draggable={false}
+                className="mt-7 select-none"
               />
             </div>
             <div className="relative size-[32px] flex items-center justify-center rounded-full border border-[#dcdcdc] bg-white shadow-[0px_0.87px_8.66px_rgba(0,0,0,0.15)]">

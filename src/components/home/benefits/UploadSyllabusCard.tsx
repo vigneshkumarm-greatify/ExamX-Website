@@ -58,9 +58,11 @@ export default function UploadSyllabusCard() {
         >
           <img
             src="/images/home/illustrations/ai-proctored-graphic.svg"
-            alt=""  
-            className="h-[91px] w-[91px]"
+            alt=""
+            draggable={false}
+            className="h-[91px] w-[91px] select-none"
           />
+          <div className="absolute inset-0 z-10" />
         </div>
 
         {/* Right anchor — at left edge of doc card group */}

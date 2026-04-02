@@ -52,6 +52,8 @@ export default function ExamMockup() {
               alt=""
               width={100}
               height={100}
+              draggable={false}
+              className="select-none"
             />
           </div>
 

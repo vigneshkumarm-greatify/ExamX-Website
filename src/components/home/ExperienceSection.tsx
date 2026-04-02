@@ -20,9 +20,12 @@ export default function ExperienceSection() {
               src="/images/home/illustrations/experience-video-bg.png"
               alt="Greatify platform preview"
               fill
-              className="object-cover opacity-100"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              draggable={false}
+              className="object-cover opacity-100 select-none"
             />
             <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 z-[1]" />
             <button
               type="button"
               aria-label="Play video"

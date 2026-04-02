@@ -63,7 +63,7 @@ export default function LockdownCard() {
                   className="flex size-[40px] lg:size-[56.8px] items-center justify-center rounded-[9.6px] border border-[#ff8a3b]"
                   style={{ background: "rgba(255,138,59,0.08)" }}
                 >
-                  <Image src={icon.src} alt="" width={icon.size} height={icon.size} className="p-1 lg:p-0" />
+                  <Image src={icon.src} alt="" width={icon.size} height={icon.size} draggable={false} className="p-1 lg:p-0 select-none" />
                 </div>
               ))}
             </div>

@@ -22,8 +22,10 @@ export default function MultiDeviceCard() {
           alt="Greatify platform on desktop, tablet, and mobile devices"
           width={1072}
           height={587}
-          className=" w-full object-contain object-bottom max-w-[500px] px-6 py-6"
+          draggable={false}
+          className=" w-full object-contain object-bottom max-w-[500px] px-6 py-6 select-none"
         />
+        <div className="absolute inset-0 z-10" />
       </div>
     </div>
   );

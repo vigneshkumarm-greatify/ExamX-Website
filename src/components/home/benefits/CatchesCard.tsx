@@ -84,8 +84,10 @@ function IconCell({
       <img
         src={`/images/home/icons/icon-${icon}.svg`}
         alt=""
-        className="h-[36px] w-[36px]"
+        draggable={false}
+        className="h-[36px] w-[36px] select-none"
       />
+      <div className="absolute inset-0 z-10" />
     </div>
   );
 }

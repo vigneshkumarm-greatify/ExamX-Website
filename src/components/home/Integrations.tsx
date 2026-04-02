@@ -38,7 +38,7 @@ export default function Integrations() {
         </div>
 
         {/* Integration cards — flex wrap on mobile, 7-col grid with arc on desktop */}
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 xlgrid xlgrid-cols-7 xlitems-start xlgap-[43px]">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 xl:grid xl:grid-cols-7 xl:items-start xl:gap-[43px]">
           {integrations.map((item) => (
             <div
               key={item.name}

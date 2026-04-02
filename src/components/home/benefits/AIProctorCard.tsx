@@ -47,11 +47,15 @@ export default function AIProctorCard() {
       {/* Inner UI — stats & tags */}
       <div className="relative z-10 mt-6 flex items-center gap-4 px-6 pb-6 lg:px-9 lg:pb-9">
         {/* AI graphic */}
-        <img
-          src="/images/home/illustrations/ai-proctored-graphic.svg"
-          alt=""
-          className="h-[63px] w-[63px] shrink-0"
-        />
+        <div className="relative h-[63px] w-[63px] shrink-0">
+          <img
+            src="/images/home/illustrations/ai-proctored-graphic.svg"
+            alt=""
+            draggable={false}
+            className="h-[63px] w-[63px] select-none"
+          />
+          <div className="absolute inset-0 z-10" />
+        </div>
 
         {/* Stats + tags */}
         <div className="flex flex-1 flex-col gap-2">

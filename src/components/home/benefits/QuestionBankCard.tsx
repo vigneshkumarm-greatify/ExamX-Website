@@ -25,7 +25,8 @@ export default function QuestionBankCard() {
       <img
         alt=""
         src="/images/home/illustrations/question-bank-columns.svg"
-        className="pointer-events-none absolute w-[814.254px] h-[483px] left-[calc(50%-14.87px)] top-[202.67px] transform -translate-x-1/2 lg:h-[483px]"
+        draggable={false}
+        className="pointer-events-none absolute w-[814.254px] h-[483px] left-[calc(50%-14.87px)] top-[202.67px] transform -translate-x-1/2 lg:h-[483px] select-none"
 
       />
 

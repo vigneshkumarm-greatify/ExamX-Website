@@ -154,8 +154,11 @@ export default function DetailCard({ card }: { card: DetailCardData }) {
         src={card.dashboardImage}
         alt={card.dashboardAlt}
         fill
-        className="object-contain"
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        draggable={false}
+        className="object-contain select-none"
       />
+      <div className="absolute inset-0 z-10" />
     </div>
   );
 

@@ -58,7 +58,7 @@ export default function FiveStages() {
     <section className="relative overflow-hidden bg-white px-6 pb-[120px] pt-24 md:px-12 xl:px-[100px]">
       {/* Decorative wave — inline SVG arc, scales to full width */}
       <svg
-        className="pointer-events-none hidden xlblock absolute -left-1 bottom-0 w-[calc(100%+8px)]"
+        className="pointer-events-none hidden xl:block absolute -left-1 bottom-0 w-[calc(100%+8px)]"
         viewBox="-200 0 1840 520"
         fill="none"
         preserveAspectRatio="none"
@@ -101,7 +101,7 @@ export default function FiveStages() {
         </div>
 
         {/* Stage cards — stair-step layout on desktop */}
-        <div className="mt-10 grid  gap-4 max-[400px]:grid-cols-1 min-[401px]:max-[600px]:grid-cols-2 min-[600px]:max-xlgrid-cols-3 xlgrid-cols-5 lg:mt-[42px] lg:items-start">
+        <div className="mt-10 grid  gap-4 max-[400px]:grid-cols-1 min-[401px]:max-[600px]:grid-cols-2 min-[600px]:max-xl:grid-cols-3 xl:grid-cols-5 lg:mt-[42px] lg:items-start">
           {stages.map((s) => (
             <div
               key={s.stage}

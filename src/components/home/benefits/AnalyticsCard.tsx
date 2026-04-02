@@ -54,8 +54,10 @@ export default function AnalyticsCard() {
             alt="Exam analytics pie chart"
             width={227}
             height={218}
-            className="h-full w-full"
+            draggable={false}
+            className="h-full w-full select-none"
           />
+          <div className="absolute inset-0 z-10" />
         </div>
       </div>
 

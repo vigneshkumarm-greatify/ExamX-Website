@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CloseButton, Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
@@ -52,9 +52,22 @@ const plainLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+
+  // Close mobile menu on outside click
+  useEffect(() => {
+    if (!mobileOpen) return;
+    function handleClick(e: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setMobileOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [mobileOpen]);
 
   return (
-    <nav className="absolute inset-x-0 top-0 z-50 mx-auto flex max-w-[1440px] items-center justify-between px-4 py-6 min-[768px]:px-12 xl:px-12">
+    <nav ref={navRef} className="absolute inset-x-0 top-0 z-50 mx-auto flex max-w-[1440px] items-center justify-between px-4 py-6 min-[768px]:px-12 xl:px-12">
       {/* Logo */}
       <div className="flex shrink-0 items-center">
         <Link href="/" className="flex h-[49px] items-center">

@@ -2,6 +2,7 @@
 
 import { ChevronRightIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import SvgIcon from "@/components/common/SvgIcon";
 
@@ -9,6 +10,7 @@ const tabs = [
   {
     id: "universities",
     label: "Universities",
+    href: "/solutions",
     icon: "/images/home/icons/icon-book-reading.svg",
     activeIconColor: "#7c3aed",
     heading: "Exam integrity at scale,\nevery semester.",
@@ -36,6 +38,7 @@ const tabs = [
   {
     id: "k12",
     label: "K-12 Schools",
+    href: "/solutions",
     icon: "/images/home/icons/icon-school.svg",
     activeIconColor: "#16a34a",
     heading: "Simple, secure assessments\nfor every grade.",
@@ -63,6 +66,7 @@ const tabs = [
   {
     id: "government",
     label: "Government",
+    href: "/solutions",
     icon: "/images/home/icons/icon-building.svg",
     activeIconColor: "#ea580c",
     heading: "National-scale recruitment,\nzero compromise.",
@@ -90,6 +94,7 @@ const tabs = [
   {
     id: "enterprise",
     label: "Enterprise",
+    href: "/solutions",
     icon: "/images/home/icons/icon-deepfake.svg",
     activeIconColor: "#00373a",
     heading: "Hire smarter with\nAI-powered assessments.",
@@ -117,6 +122,7 @@ const tabs = [
   {
     id: "certification",
     label: "Certification",
+    href: "/solutions",
     icon: "/images/home/icons/icon-warranty-badge.svg",
     activeIconColor: "#7c3aed",
     heading: "Certify with confidence,\nglobally recognized.",
@@ -144,6 +150,7 @@ const tabs = [
   {
     id: "coaching",
     label: "Coaching & EdTech",
+    href: "/solutions",
     icon: "/images/home/icons/icon-bag-suitcase.svg",
     activeIconColor: "#16a34a",
     heading: "Scale test prep without\nscaling headcount.",
@@ -274,14 +281,14 @@ export default function BuiltForOrgs() {
               </div>
 
               {/* CTA */}
-              <div className="flex items-center gap-2">
+              <Link href={active.href} className="flex items-center gap-2">
                 <span className="text-lg font-semibold leading-[1.5] tracking-[-0.18px] text-chalk-green-500">
                   {active.cta}
                 </span>
                 <span className="flex h-[27px] w-[27px] items-center justify-center rounded-full bg-purple-500">
                   <ChevronRightIcon className="h-5 w-5 text-white" />
                 </span>
-              </div>
+              </Link>
             </div>
 
             {/* Right — floating pills */}

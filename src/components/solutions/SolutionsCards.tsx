@@ -1,6 +1,7 @@
 "use client";
 
 import SvgIcon from "@/components/common/SvgIcon";
+import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/16/solid";
 
 /* ── Theme config per card ── */
@@ -31,6 +32,7 @@ interface SolutionCard {
   subtitle: string;
   bullets: string[];
   cta: string;
+  href: string;
   theme: CardTheme;
 }
 
@@ -46,6 +48,7 @@ const solutionCards: SolutionCard[] = [
       "Accreditation & Outcome Mapping",
     ],
     cta: "Explore University Solutions",
+    href: "/solutions/universities",
     theme: {
       gradientTo: "to-purple-50",
       iconBg: "bg-[#D3CAF0]/20",
@@ -67,6 +70,7 @@ const solutionCards: SolutionCard[] = [
       "Parent Progress Reports",
     ],
     cta: "Explore School Solutions",
+    href: "/solutions/k12-schools",
     theme: {
       gradientTo: "to-orange-50",
       iconBg: "bg-[rgba(255,222,200,0.2)]",
@@ -92,6 +96,7 @@ const solutionCards: SolutionCard[] = [
       "Regulatory Compliance",
     ],
     cta: "Explore Government Solutions",
+    href: "/solutions/government",
     theme: {
       gradientTo: "to-green-50",
       iconBg: "bg-green-200",
@@ -116,6 +121,7 @@ const solutionCards: SolutionCard[] = [
       "Leadership Assessment",
     ],
     cta: "Explore Enterprise Solutions",
+    href: "/solutions/corporate",
     theme: {
       gradientTo: "to-creme-500",
       iconBg: "bg-[rgba(240,239,226,0.5)]",
@@ -137,6 +143,7 @@ const solutionCards: SolutionCard[] = [
       "Digital Credentialing",
     ],
     cta: "Explore Certification",
+    href: "/solutions/certification",
     theme: {
       gradientTo: "to-purple-50",
       iconBg: "bg-[rgba(211,202,240,0.2)]",
@@ -158,6 +165,7 @@ const solutionCards: SolutionCard[] = [
       "White-Label Platform",
     ],
     cta: "Explore EdTech Solutions",
+    href: "/solutions/coaching-institutes",
     theme: {
       gradientTo: "to-chalk-green-100",
       iconBg: "bg-[rgba(145,169,170,0.12)]",
@@ -222,12 +230,12 @@ function SolutionCardItem({ card }: { card: SolutionCard }) {
       </div>
 
       {/* CTA */}
-      <div className="mt-10 flex items-center gap-2 cursor-pointer" >
-        <span className="text-lg font-semibold leading-[1.5] tracking-[-0.18px] text-chalk-green-500">
+      <Link href={card.href} className="mt-10 flex items-center gap-2 z-10 ">
+        <span className="text-lg font-semibold leading-[1.5] cursor-pointer tracking-[-0.18px] text-chalk-green-500">
           {card.cta}
         </span>
         <ChevronRightIcon className={`w-6 h-auto text-white bg-chalk-green-500 rounded-full p-1 ${theme.dotColor}`} />
-      </div>
+      </Link>
 
       <div className="absolute -bottom-5 -left-9 w-full -rotate-45  flex flex-col gap-6 items-start justify-between">
         <div className={`w-[50%] h-35 ${theme.decorGradientColor}`}></div>

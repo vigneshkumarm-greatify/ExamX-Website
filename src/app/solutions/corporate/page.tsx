@@ -1,7 +1,7 @@
 import OrgHero from "@/components/common/OrgHero";
 import type { OrgHeroProps } from "@/components/common/OrgHero";
-import TrustedBy from "@/components/home/TrustedBy";
 import UseCases from "@/components/corporate/UseCases";
+import ExploreOtherSolutions from "@/components/common/ExploreOtherSolutions";
 import SolutionsTrustedBy from "@/components/solutions/SolutionsTrustedBy";
 
 const heroData: OrgHeroProps = {
@@ -47,6 +47,7 @@ export default function CorporatePage() {
       <OrgHero {...heroData} />
       <SolutionsTrustedBy/>
       <UseCases />
+      <ExploreOtherSolutions currentSlug="/solutions/corporate" />
     </main>
   );
 }

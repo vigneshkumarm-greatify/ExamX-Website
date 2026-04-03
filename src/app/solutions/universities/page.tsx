@@ -1,8 +1,10 @@
 import OrgHero from "@/components/common/OrgHero";
 import type { OrgHeroProps } from "@/components/common/OrgHero";
-import TrustedBy from "@/components/home/TrustedBy";
+import ExploreOtherSolutions from "@/components/common/ExploreOtherSolutions";
 import SolutionsTrustedBy from "@/components/solutions/SolutionsTrustedBy";
 import UseCases from "@/components/universities/UseCases";
+import WhyChoose from "@/components/universities/WhyChoose";
+import FeaturesGrid from "@/components/universities/FeaturesGrid";
 
 const heroData: OrgHeroProps = {
   badge: "Universities & Colleges",
@@ -40,7 +42,11 @@ export default function UniversitiesPage() {
     <main>
       <OrgHero {...heroData} />
       <SolutionsTrustedBy />
+ 
       <UseCases />
+      <WhyChoose />
+      <FeaturesGrid />
+      <ExploreOtherSolutions currentSlug="/solutions/universities" />
     </main>
   );
 }

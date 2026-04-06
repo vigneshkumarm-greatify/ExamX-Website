@@ -1,20 +1,32 @@
-"use client";
-
-// Deterministic pseudo-random opacity per tile (GitHub heatmap effect)
+// Deterministic hash for per-tile opacity (same result every render)
 function getTileOpacity(index: number): number {
   const levels = [0.02, 0.02, 0.05, 0.05, 0.05, 0.08, 0.08, 0.11, 0.14];
-
   let x = index;
   x = ((x >> 16) ^ x) * 0x45d9f3b;
   x = ((x >> 16) ^ x) * 0x45d9f3b;
   x = (x >> 16) ^ x;
-
   return levels[Math.abs(x) % levels.length];
 }
 
-// Enough tiles to fill large screens (~20 cols × 25 rows)
-const TILE_COUNT = 10000;
-const tiles = Array.from({ length: TILE_COUNT }, (_, i) => getTileOpacity(i));
+const COLS = 40;
+const ROWS = 30;
+const CELL = 11; // 8px rect + 3px gap
+
+function generateHeatmapSvg(): string {
+  const w = COLS * CELL;
+  const h = ROWS * CELL;
+  let rects = "";
+  for (let row = 0; row < ROWS; row++) {
+    for (let col = 0; col < COLS; col++) {
+      const i = row * COLS + col;
+      const opacity = getTileOpacity(i);
+      rects += `<rect x="${col * CELL}" y="${row * CELL}" width="8" height="8" rx="2" fill="rgba(255,255,255,${opacity})"/>`;
+    }
+  }
+  return `<svg xmlns='http://www.w3.org/2000/svg' width='${w}' height='${h}'>${rects}</svg>`;
+}
+
+const heatmapDataUri = `url("data:image/svg+xml,${encodeURIComponent(generateHeatmapSvg())}")`;
 
 const cards = [
   {
@@ -50,24 +62,14 @@ export default function VisionMission() {
       <div className="z-10 w-30 h-100 bg-green-500/20 rotate-135 rounded-[80%_80%_80%_80%_/_60%_60%_60%_60%] absolute top-1/2 -translate-1/2 -left-10 blur-xl"></div>
       <div className="z-10 w-30 h-100 bg-green-500/20 rotate-45 rounded-[80%_80%_80%_80%_/_60%_60%_60%_60%] absolute top-1/2 -translate-1/2 -right-10 blur-xl"></div>
 
-      {/* Square grid overlay (GitHub contribution-graph style) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div
-          className="grid gap-[3px] w-full h-full"
-          style={{
-            gridTemplateColumns: "repeat(auto-fill, minmax(8px, 1fr))",
-            gridAutoRows: "8px",
-          }}
-        >
-          {tiles.map((opacity, i) => (
-            <div
-              key={i}
-              className="h-[8px] rounded-[2px]"
-              style={{ backgroundColor: `rgba(255,255,255,${opacity})` }}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Heatmap grid overlay — large pre-computed SVG tile with per-cell random opacity */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: heatmapDataUri,
+          backgroundSize: `${COLS * CELL}px ${ROWS * CELL}px`,
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-[1200px] px-6 md:px-12 xl:px-[100px] py-16 md:py-20 xl:py-24">

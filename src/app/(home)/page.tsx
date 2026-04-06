@@ -8,7 +8,7 @@ import BuiltForOrgs from "@/components/home/BuiltForOrgs";
 import BenefitsSection from "@/components/home/BenefitsSection";
 import Testimonials from "@/components/home/Testimonials";
 import Integrations from "@/components/home/Integrations";
-import CtaSection from "@/components/home/CtaSection";
+import CtaSection from "@/components/common/CtaSection";
 
 export default function Home() {
   return (

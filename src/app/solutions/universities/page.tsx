@@ -1,6 +1,7 @@
 import OrgHero from "@/components/common/OrgHero";
 import type { OrgHeroProps } from "@/components/common/OrgHero";
 import ExploreOtherSolutions from "@/components/common/ExploreOtherSolutions";
+import CtaSection from "@/components/common/CtaSection";
 import SolutionsTrustedBy from "@/components/solutions/SolutionsTrustedBy";
 import UseCases from "@/components/universities/UseCases";
 import WhyChoose from "@/components/universities/WhyChoose";
@@ -47,6 +48,8 @@ export default function UniversitiesPage() {
       <WhyChoose />
       <FeaturesGrid />
       <ExploreOtherSolutions currentSlug="/solutions/universities" />
+      <CtaSection bgColor="bg-creme-500" id="request-demo" />
+ 
     </main>
   );
 }

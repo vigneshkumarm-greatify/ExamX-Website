@@ -1,6 +1,17 @@
-export default function CtaSection() {
+interface CtaSectionProps {
+  bgColor?: string;
+  id?: string;
+}
+
+export default function CtaSection({
+  bgColor = "bg-white",
+  id,
+}: CtaSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-16 md:px-12 md:py-[120px] xl:px-[100px]">
+    <section
+      id={id}
+      className={`relative overflow-hidden ${bgColor} px-6 py-16 md:px-12 md:py-[120px] xl:px-[100px]`}
+    >
       {/* Background curves — rainbow/arc shape */}
       <div className="pointer-events-none absolute inset-0">
         {/* Green accent arc — large ellipse, only top visible */}

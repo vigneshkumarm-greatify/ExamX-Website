@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   CloseButton,
   Popover,
@@ -52,11 +53,13 @@ const plainLinks = [
   { label: "Platform", href: "#platform", hasDropdown: true },
   { label: "AI", href: "#ai", hasDropdown: true },
   { label: "Resources", href: "#resources" },
-  { label: "About us", href: "#about" },
-  { label: "Contact us", href: "#contact" },
+  { label: "About us", href: "/about" },
+  { label: "Contact us", href: "/contact-us" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isLightBg = pathname.startsWith("/about") || pathname.startsWith("/contact") || pathname.startsWith("/solutions/corporate")  ;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
 
@@ -81,12 +84,12 @@ export default function Navbar() {
     <nav className="absolute inset-x-0 top-0 z-50 mx-auto flex max-w-[1440px] items-center justify-between px-4 py-6 min-[768px]:px-12 xl:px-12">
       {/* Logo */}
       <div className="flex shrink-0 items-center">
-        <Link href="/" className="flex h-[49px] items-center">
+        <Link href="/" className="flex h-[49px] items-center cursor-pointer">
           <Image
-            src="/images/common/logos/examx/greatify-logo.svg"
+            src={isLightBg ? "/images/common/Greatify-logo-dark.png" : "/images/common/logos/examx/greatify-logo.svg"}
             alt="Greatify"
-            width={0}
-            height={48}
+            width={isLightBg ? 416 : 0}
+            height={isLightBg ? 98 : 48}
             className="h-8 w-auto"
             priority
           />
@@ -99,7 +102,7 @@ export default function Navbar() {
         <Popover className="relative">
           {({ open }) => (
             <>
-              <PopoverButton className="flex cursor-pointer items-center gap-1 whitespace-nowrap text-base font-semibold leading-[1.2] tracking-[-0.16px] text-creme-500 outline-none transition-colors hover:text-white">
+              <PopoverButton className={`flex cursor-pointer items-center gap-1 whitespace-nowrap text-base font-semibold leading-[1.2] tracking-[-0.16px] outline-none transition-colors ${isLightBg ? "text-chalk-green-500 hover:text-chalk-green-400" : "text-creme-500 hover:text-white"}`}>
                 Solutions
                 <ChevronDownIcon
                   className={`h-[11px] w-[11px] transition-transform ${open ? "rotate-180" : ""}`}
@@ -149,7 +152,7 @@ export default function Navbar() {
           <a
             key={link.label}
             href={link.href}
-            className="flex items-center gap-1 whitespace-nowrap text-base font-semibold leading-[1.2] tracking-[-0.16px] text-creme-500 transition-colors hover:text-white"
+            className={`flex items-center gap-1 whitespace-nowrap text-base font-semibold leading-[1.2] tracking-[-0.16px] transition-colors ${isLightBg ? "text-chalk-green-500 hover:text-chalk-green-400" : "text-creme-500 hover:text-white"}`}
           >
             {link.label}
             {link.hasDropdown && (
@@ -163,13 +166,13 @@ export default function Navbar() {
       <div className="hidden shrink-0 items-center gap-2 lg:flex">
         <a
           href="#trial"
-          className="rounded-lg bg-white px-3 py-2 text-[11.11px] font-semibold leading-[1.2] tracking-[-0.01em] text-chalk-green-500 shadow-[0px_4px_15px_rgba(25,0,100,0.5)] transition-shadow hover:shadow-[0px_6px_20px_rgba(25,0,100,0.6)]"
+          className={`rounded-lg px-3 py-2 text-[11.11px] font-semibold leading-[1.2] tracking-[-0.01em] transition-shadow ${isLightBg ? "bg-gradient-to-r from-[#00dc46] to-[#008f2e] text-white shadow-[0px_4px_15px_rgba(0,55,58,0.3)] hover:shadow-[0px_6px_20px_rgba(0,55,58,0.4)]" : "bg-white text-chalk-green-500 shadow-[0px_4px_15px_rgba(25,0,100,0.5)] hover:shadow-[0px_6px_20px_rgba(25,0,100,0.6)]"}`}
         >
           Start free trial
         </a>
         <a
           href="#demo"
-          className="rounded-lg border border-white px-3 py-2 text-[11.11px] font-semibold leading-[1.2] tracking-[-0.01em] text-creme-500 transition-colors hover:border-creme-500"
+          className={`rounded-lg border px-3 py-2 text-[11.11px] font-semibold leading-[1.2] tracking-[-0.01em] transition-colors ${isLightBg ? "border-[#e4e4e7] text-chalk-green-500 hover:bg-chalk-green-500/5" : "border-white text-creme-500 hover:border-creme-500"}`}
         >
           Book a demo
         </a>
@@ -182,13 +185,13 @@ export default function Navbar() {
         aria-label="Toggle menu"
       >
         <span
-          className={`block h-0.5 w-6 bg-creme-500 transition-transform ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
+          className={`block h-0.5 w-6 transition-transform ${isLightBg ? "bg-chalk-green-500" : "bg-creme-500"} ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
         />
         <span
-          className={`block h-0.5 w-6 bg-creme-500 transition-opacity ${mobileOpen ? "opacity-0" : ""}`}
+          className={`block h-0.5 w-6 transition-opacity ${isLightBg ? "bg-chalk-green-500" : "bg-creme-500"} ${mobileOpen ? "opacity-0" : ""}`}
         />
         <span
-          className={`block h-0.5 w-6 bg-creme-500 transition-transform ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
+          className={`block h-0.5 w-6 transition-transform ${isLightBg ? "bg-chalk-green-500" : "bg-creme-500"} ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
         />
       </button>
 

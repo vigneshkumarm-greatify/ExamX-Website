@@ -1,4 +1,16 @@
-export default function GetStartedCta() {
+interface GetStartedCtaProps {
+  heading: string;
+  description: string;
+  buttonLabel: string;
+  buttonHref: string;
+}
+
+export default function GetStartedCta({
+  heading,
+  description,
+  buttonLabel,
+  buttonHref,
+}: GetStartedCtaProps) {
   return (
     <section className="relative overflow-hidden bg-creme-500 px-6 py-20 md:px-12 md:py-28 xl:px-[100px] xl:py-32">
       {/* ── Decorative perspective grid background ── */}
@@ -57,25 +69,24 @@ export default function GetStartedCta() {
       <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col items-center gap-8 text-center">
         {/* Text block */}
         <div className="flex flex-col items-center gap-2">
-          <h2 className="max-w-[471px] text-[32px] font-semibold leading-[1.2] tracking-[-0.96px] text-chalk-green-500 md:text-[47.78px]">
-            Not sure which solution fits?
+          <h2 className="max-w-[527px] text-[32px] font-semibold leading-[1.2] tracking-[-0.96px] text-chalk-green-500 md:text-[47.78px]">
+            {heading}
           </h2>
           <p className="max-w-[527px] text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#71717a]">
-            Talk to our team. We&apos;ll map ExamX to your exact assessment
-            workflow and show you how organizations like yours made the switch.
+            {description}
           </p>
         </div>
 
         {/* CTA button */}
         <a
-          href="#request-demo"
+          href={buttonHref}
           className="inline-block w-full max-w-[278px] rounded-lg px-4 py-3 text-center text-base font-semibold leading-[1.2] tracking-[-0.32px] text-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.15)]"
           style={{
             backgroundImage:
               "linear-gradient(124.32deg, #00dc46 1.33%, #008f2e 98.18%)",
           }}
         >
-          Talk to sales
+          {buttonLabel}
         </a>
       </div>
     </section>

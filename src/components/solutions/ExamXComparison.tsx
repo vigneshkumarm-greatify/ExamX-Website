@@ -118,7 +118,7 @@ export default function ExamXComparison() {
         alt=""
         width={1345}
         height={1163}
-        className="pointer-events-none absolute left-[50%] -translate-x-1/2 -bottom-40 sm:-bottom-70 md:-bottom-90 lg:-bottom-[100%] h-auto w-[150%] sm:w-[120%] md:w-[100%] lg:w-[80%] rotate-90 opacity-100"
+        className="pointer-events-none absolute left-[60%] -translate-x-1/2 -bottom-40 sm:-bottom-70 md:-bottom-90 lg:-bottom-[100%] h-auto w-[150%] sm:w-[120%] md:w-[100%] lg:w-[80%] rotate-90 opacity-100"
       />
 
       {/* Content */}

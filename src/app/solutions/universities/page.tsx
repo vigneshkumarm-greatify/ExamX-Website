@@ -20,7 +20,7 @@ const heroData: OrgHeroProps = {
     { value: "400+", label: "Faculty hours saved/year" },
     { value: "99.2%", label: "Integrity score" },
   ],
-  centerIconPath: "/images/home/icons/icon-book-reading.svg",
+  centerIconPath: "/images/common/icons/icon-book-reading.svg",
   arcSvgPath: "/images/common/hero-arc.svg",
   theme: {
     bgGradient: "linear-gradient(180deg, #3b2678 0%, #7e62d2 100%)",

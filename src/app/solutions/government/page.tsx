@@ -17,7 +17,7 @@ const heroData: OrgHeroProps = {
     { value: "0", label: "Paper leaks" },
     { value: "100%", label: "RTI compliant" },
   ],
-  centerIconPath: "/images/home/icons/icon-building.svg",
+  centerIconPath: "/images/common/icons/icon-building.svg",
   arcSvgPath: "/images/common/hero-arc.svg",
   theme: {
     bgGradient: "linear-gradient(180deg, #006921 27.885%, #00b63a 100%)",

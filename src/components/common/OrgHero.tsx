@@ -39,7 +39,7 @@ export interface OrgHeroProps {
   ctaHref: string;
   /** Exactly 4 stat cards: [left1, left2, right1, right2] */
   stats: [OrgHeroStat, OrgHeroStat, OrgHeroStat, OrgHeroStat];
-  /** Thematic SVG icon for center card (path, e.g. "/images/home/icons/icon-book-reading.svg") */
+  /** Thematic SVG icon for center card (path, e.g. "/images/common/icons/icon-book-reading.svg") */
   centerIconPath: string;
   /** Decorative arc/blob SVG path (user-uploaded asset) */
   arcSvgPath: string;

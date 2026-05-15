@@ -12,12 +12,12 @@ interface OrgColumn {
 }
 
 const columns: OrgColumn[] = [
-  { icon: "/images/home/icons/icon-book-reading.svg", iconBg: "bg-[rgba(211,202,240,0.2)]", label: "Universities", iconColor: "#6240c8" },
-  { icon: "/images/home/icons/icon-school.svg", iconBg: "bg-[rgba(255,222,200,0.4)]", label: "Schools", iconColor: "#ff8a3b" },
-  { icon: "/images/home/icons/icon-building.svg", iconBg: "bg-[rgba(184,245,203,0.2)]", label: "Government", iconColor: "#00DC46" },
-  { icon: "/images/home/icons/icon-bag-suitcase.svg", iconBg: "bg-[rgba(219,217,204,0.2)]", label: "Enterprises", iconColor: "#c9c8bb" },
-  { icon: "/images/home/icons/icon-warranty-badge.svg", iconBg: "bg-[rgba(211,202,240,0.2)]", label: "Certification", iconColor: "#6240c8" },
-  { icon: "/images/home/icons/icon-deepfake.svg", iconBg: "bg-[rgba(145,169,170,0.12)]", label: "EdTech", iconColor: "#00373a" },
+  { icon: "/images/common/icons/icon-book-reading.svg", iconBg: "bg-[rgba(211,202,240,0.2)]", label: "Universities", iconColor: "#6240c8" },
+  { icon: "/images/common/icons/icon-school.svg", iconBg: "bg-[rgba(255,222,200,0.4)]", label: "Schools", iconColor: "#ff8a3b" },
+  { icon: "/images/common/icons/icon-building.svg", iconBg: "bg-[rgba(184,245,203,0.2)]", label: "Government", iconColor: "#00DC46" },
+  { icon: "/images/common/icons/icon-bag-suitcase.svg", iconBg: "bg-[rgba(219,217,204,0.2)]", label: "Enterprises", iconColor: "#c9c8bb" },
+  { icon: "/images/common/icons/icon-warranty-badge.svg", iconBg: "bg-[rgba(211,202,240,0.2)]", label: "Certification", iconColor: "#6240c8" },
+  { icon: "/images/common/icons/icon-deepfake.svg", iconBg: "bg-[rgba(145,169,170,0.12)]", label: "EdTech", iconColor: "#00373a" },
 ];
 
 /* ── Cell value: true = checkmark, false = dash, string = text like "Optional" ── */

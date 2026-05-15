@@ -2,11 +2,11 @@ import Image from "next/image";
 import ExamMockup from "../helperComps/ExamMockup";
 
 const lockdownIcons = [
-  { src: "/images/home/icons/lockdown-icon-screen.svg", size: 24 },
-  { src: "/images/home/icons/lockdown-icon-device.svg", size: 24 },
-  { src: "/images/home/icons/lockdown-icon-iris.svg", size: 26 },
-  { src: "/images/home/icons/lockdown-icon-network.svg", size: 26 },
-  { src: "/images/home/icons/lockdown-icon-padlock.svg", size: 26 },
+  { src: "/images/common/icons/lockdown-icon-screen.svg", size: 24 },
+  { src: "/images/common/icons/lockdown-icon-device.svg", size: 24 },
+  { src: "/images/common/icons/lockdown-icon-iris.svg", size: 26 },
+  { src: "/images/common/icons/lockdown-icon-network.svg", size: 26 },
+  { src: "/images/common/icons/lockdown-icon-padlock.svg", size: 26 },
 ];
 
 export default function LockdownCard() {

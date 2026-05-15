@@ -3,27 +3,27 @@ import Image from "next/image";
 const coreValues = [
   {
     title: "Innovative EdTech solutions",
-    icon: "/images/about/icons/icon-lightbulb.svg",
+    icon: "/images/common/icons/icon-lightbulb.svg",
     bg: "bg-[#FFC9A5]/20",
   },
   {
     title: "Leadership in educational technology",
-    icon: "/images/about/icons/icon-star-circle.svg",
+    icon: "/images/common/icons/icon-star-circle.svg",
     bg: "bg-[rgba(211,202,240,0.2)]",
   },
   {
     title: "Customer-centric approach",
-    icon: "/images/about/icons/icon-user-group.svg",
+    icon: "/images/common/icons/icon-user-group.svg",
     bg: "bg-[rgba(201,200,187,0.2)]",
   },
   {
     title: "Passion for educational innovation",
-    icon: "/images/about/icons/icon-book.svg",
+    icon: "/images/common/icons/icon-book.svg",
     bg: "bg-[rgba(184,245,203,0.2)]",
   },
   {
     title: "Ownership and accountability",
-    icon: "/images/about/icons/icon-ai-spark.svg",
+    icon: "/images/common/icons/icon-ai-spark.svg",
     bg: "bg-[rgba(145,169,170,0.12)]",
   },
 ];

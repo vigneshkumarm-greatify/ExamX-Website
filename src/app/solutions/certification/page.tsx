@@ -17,7 +17,7 @@ const heroData: OrgHeroProps = {
     { value: "Forensic-grade", label: "Security" },
     { value: "Global", label: "Delivery" },
   ],
-  centerIconPath: "/images/home/icons/icon-warranty-badge.svg",
+  centerIconPath: "/images/common/icons/icon-warranty-badge.svg",
   arcSvgPath: "/images/common/hero-arc.svg",
   theme: {
     bgGradient: "linear-gradient(180deg, #3b2678 0%, #7e62d2 100%)",

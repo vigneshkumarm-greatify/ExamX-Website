@@ -1,3 +1,5 @@
+import InquiryForm from "@/components/common/InquiryForm";
+
 interface CtaSectionProps {
   bgColor?: string;
   id?: string;
@@ -41,49 +43,7 @@ export default function CtaSection({
             Trusted by more than 500+ clients worldwide
           </p>
 
-          <form className="flex flex-col gap-3 border-y border-[#f4f4f5] py-6">
-            <input
-              type="text"
-              placeholder="Name"
-              className="rounded-lg border border-[#d4d4d8] p-3 text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#52525b] placeholder:opacity-50 focus:border-green-500 focus:outline-none"
-            />
-            <input
-              type="email"
-              placeholder="Email address"
-              className="rounded-lg border border-[#d4d4d8] p-3 text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#52525b] placeholder:opacity-50 focus:border-green-500 focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Institution name"
-              className="rounded-lg border border-[#d4d4d8] p-3 text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#52525b] placeholder:opacity-50 focus:border-green-500 focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Your role"
-              className="rounded-lg border border-[#d4d4d8] p-3 text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#52525b] placeholder:opacity-50 focus:border-green-500 focus:outline-none"
-            />
-            <input
-              type="tel"
-              placeholder="Phone no."
-              className="rounded-lg border border-[#d4d4d8] p-3 text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#52525b] placeholder:opacity-50 focus:border-green-500 focus:outline-none"
-            />
-            <textarea
-              placeholder="How we can help you?"
-              rows={3}
-              className="resize-none rounded-lg border border-[#d4d4d8] p-3 text-base font-medium leading-[1.5] tracking-[-0.16px] text-[#52525b] placeholder:opacity-50 focus:border-green-500 focus:outline-none"
-            />
-          </form>
-
-          <button
-            type="submit"
-            className="mt-6 w-full rounded-lg px-4 py-3 text-base font-semibold leading-[1.2] tracking-[-0.32px] text-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.15)]"
-            style={{
-              backgroundImage:
-                "linear-gradient(137.09deg, #00dc46 1.33%, #008f2e 98.18%)",
-            }}
-          >
-            Book a demo
-          </button>
+          <InquiryForm buttonLabel="Book a demo" />
         </div>
       </div>
     </section>

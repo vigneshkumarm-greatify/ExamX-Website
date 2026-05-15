@@ -72,8 +72,8 @@ function IconCell({
         <img
           src={
             isAlert
-              ? "/images/home/icons/icon-warning-diamond.svg"
-              : "/images/home/icons/icon-tick-square.svg"
+              ? "/images/common/icons/icon-warning-diamond.svg"
+              : "/images/common/icons/icon-tick-square.svg"
           }
           alt=""
           className={isAlert ? "h-[10px] w-[3px]" : "h-[6px] w-[8px]"}
@@ -82,7 +82,7 @@ function IconCell({
 
       {/* Icon */}
       <img
-        src={`/images/home/icons/icon-${icon}.svg`}
+        src={`/images/common/icons/icon-${icon}.svg`}
         alt=""
         draggable={false}
         className="h-[36px] w-[36px] select-none"

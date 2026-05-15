@@ -17,7 +17,7 @@ const heroData: OrgHeroProps = {
     { value: "<48h", label: "Go live" },
     { value: "100K+", label: "Concurrent students" },
   ],
-  centerIconPath: "/images/home/icons/icon-deepfake.svg",
+  centerIconPath: "/images/common/icons/icon-deepfake.svg",
   arcSvgPath: "/images/common/hero-arc.svg",
   theme: {
     bgGradient: "linear-gradient(180deg, #00373a 0%, #618385 100%)",

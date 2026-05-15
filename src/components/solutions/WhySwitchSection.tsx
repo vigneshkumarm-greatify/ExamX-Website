@@ -42,7 +42,7 @@ const cards: WhySwitchCard[] = [
     glowBlur: 20,
   },
   {
-    icon: "/images/home/icons/icon-signal-full.svg",
+    icon: "/images/common/icons/icon-signal-full.svg",
     iconColor: "#71717a",
     iconBg: "bg-[rgba(184,182,171,0.2)]",
     title: "Actionable Data, Not Noise",
@@ -74,7 +74,7 @@ const cards: WhySwitchCard[] = [
     glowBlur: 20,
   },
   {
-    icon: "/images/home/icons/icon-signal-full.svg",
+    icon: "/images/common/icons/icon-signal-full.svg",
     iconColor: "#71717a",
     iconBg: "bg-[rgba(184,182,171,0.2)]",
     title: "Actionable Data, Not Noise",

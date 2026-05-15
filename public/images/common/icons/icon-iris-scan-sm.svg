@@ -1,0 +1,36 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 19.3187 19.307" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="iris-scan--identification-retina-secure-security-iris-scan-eye-brackets">
+<path id="Ellipse 20" d="M16.4191 9.6535C16.4191 10.7893 13.3926 14.7909 9.65924 14.7909C5.9259 14.7909 2.89944 10.7893 2.89944 9.6535C2.89944 8.51776 5.9259 4.51606 9.65924 4.51606C13.3926 4.51606 16.4191 8.51776 16.4191 9.6535Z" stroke="url(#paint0_linear_0_38)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Intersect" d="M13.9548 1.00008C14.4846 1.05715 15.0096 1.11833 15.5295 1.17857C16.9002 1.33743 17.9939 2.43043 18.1478 3.80169C18.2058 4.31817 18.2642 4.83979 18.3186 5.36613" stroke="url(#paint1_linear_0_38)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Intersect_2" d="M13.9548 18.3069C14.4846 18.2498 15.0096 18.1886 15.5295 18.1283C16.9002 17.9695 17.9939 16.8765 18.1478 15.5052C18.2058 14.9888 18.2642 14.4672 18.3186 13.9408" stroke="url(#paint2_linear_0_38)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Intersect_3" d="M5.36386 1.00008C4.83408 1.05715 4.30906 1.11833 3.78923 1.17857C2.41853 1.33743 1.32483 2.43043 1.17087 3.80169C1.11288 4.31817 1.05442 4.83979 1.00008 5.36613" stroke="url(#paint3_linear_0_38)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Intersect_4" d="M5.36386 18.3069C4.83408 18.2498 4.30906 18.1886 3.78923 18.1283C2.41853 17.9695 1.32483 16.8765 1.17087 15.5052C1.11288 14.9888 1.05442 14.4672 1.00008 13.9408" stroke="url(#paint4_linear_0_38)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector" d="M9.65934 11.4388C10.8022 11.4388 11.4451 10.796 11.4451 9.65313C11.4451 8.51027 10.8022 7.86742 9.65934 7.86742C8.51648 7.86742 7.87363 8.51027 7.87363 9.65313C7.87363 10.796 8.51648 11.4388 9.65934 11.4388Z" stroke="url(#paint5_linear_0_38)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_38" x1="9.65925" y1="4.51606" x2="9.65925" y2="14.7909" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_38" x1="16.1367" y1="1.00008" x2="16.1367" y2="5.36613" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_38" x1="16.1367" y1="13.9408" x2="16.1367" y2="18.3069" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+<linearGradient id="paint3_linear_0_38" x1="3.18197" y1="1.00008" x2="3.18197" y2="5.36613" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+<linearGradient id="paint4_linear_0_38" x1="3.18197" y1="13.9408" x2="3.18197" y2="18.3069" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+<linearGradient id="paint5_linear_0_38" x1="9.65934" y1="7.86742" x2="9.65934" y2="11.4388" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7A7E6"/>
+<stop offset="1" stop-color="#6240C8"/>
+</linearGradient>
+</defs>
+</svg>

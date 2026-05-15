@@ -17,7 +17,7 @@ const heroData: OrgHeroProps = {
     { value: "200+", label: "Assessment templates" },
     { value: "6000+", label: "Corporate clients" },
   ],
-  centerIconPath: "/images/home/icons/icon-bag-suitcase.svg",
+  centerIconPath: "/images/common/icons/icon-bag-suitcase.svg",
   arcSvgPath: "/images/common/hero-arc.svg",
   theme: {
     bgGradient: "linear-gradient(180deg, #b8b6ab 0%, #f9f7e8 100%)",

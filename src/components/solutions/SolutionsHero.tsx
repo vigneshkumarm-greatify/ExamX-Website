@@ -8,37 +8,37 @@ import SvgIcon from "@/components/common/SvgIcon";
 const industryCards = [
   {
     label: "Universities",
-    icon: "/images/home/icons/icon-book-reading.svg",
+    icon: "/images/common/icons/icon-book-reading.svg",
     glowColor: "#a48ced",
     glowBlur: 15,
   },
   {
     label: "EdTech",
-    icon: "/images/home/icons/icon-deepfake.svg",
+    icon: "/images/common/icons/icon-deepfake.svg",
     glowColor: "#C9C8BB",
     glowBlur: 22,
   },
   {
     label: "K-12 Schools",
-    icon: "/images/home/icons/icon-school.svg",
+    icon: "/images/common/icons/icon-school.svg",
     glowColor: "#f59a5d",
     glowBlur: 15,
   },
   {
     label: "Certification",
-    icon: "/images/home/icons/icon-warranty-badge.svg",
+    icon: "/images/common/icons/icon-warranty-badge.svg",
     glowColor: "#a48ced",
     glowBlur: 15,
   },
   {
     label: "Government",
-    icon: "/images/home/icons/icon-building.svg",
+    icon: "/images/common/icons/icon-building.svg",
     glowColor: "#00DC46",
     glowBlur: 15,
   },
   {
     label: "Enterprise",
-    icon: "/images/home/icons/icon-bag-suitcase.svg",
+    icon: "/images/common/icons/icon-bag-suitcase.svg",
     glowColor: "#C9C8BB",
     glowBlur: 15,
   },

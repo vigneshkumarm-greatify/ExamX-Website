@@ -159,7 +159,7 @@ export default function HeroSection() {
                 <div className="w-[133px] rounded-[10px] border border-dashed border-white/30 bg-[rgba(0,55,58,0.1)] p-[17px]">
                   <div className="mb-[10px] opacity-0">
                     <Image
-                      src="/images/home/icons/hero-icon-attempted.svg"
+                      src="/images/common/icons/hero-icon-attempted.svg"
                       alt=""
                       width={17}
                       height={17}
@@ -175,7 +175,7 @@ export default function HeroSection() {
                 <div className="w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                   <div className="mb-[10px]">
                     <Image
-                      src="/images/home/icons/hero-icon-failed.svg"
+                      src="/images/common/icons/hero-icon-failed.svg"
                       alt=""
                       width={17}
                       height={17}
@@ -190,7 +190,7 @@ export default function HeroSection() {
                 {/* Reattempted Tests */}
                 <div className="w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                   <div className="mb-[10px]">
-                    <Image src="/images/home/icons/hero-icon-reattempted.svg" alt="" width={17} height={17} className="mb-[7px]" />
+                    <Image src="/images/common/icons/hero-icon-reattempted.svg" alt="" width={17} height={17} className="mb-[7px]" />
                     <p className="text-[9.3px] font-medium text-chalk-green-100">
                       Reattempted Tests
                     </p>
@@ -201,7 +201,7 @@ export default function HeroSection() {
                 <div className="relative w-[133px] rounded-[10px] border border-white/10 bg-[rgba(0,55,58,0.5)] p-[17px]">
                   <div className="mb-[10px]">
                     <Image
-                      src="/images/home/icons/hero-icon-passed.svg"
+                      src="/images/common/icons/hero-icon-passed.svg"
                       alt=""
                       width={17}
                       height={17}
@@ -217,7 +217,7 @@ export default function HeroSection() {
                 <div className="w-[133px] rounded-[10px] border border-white/20 bg-[rgba(0,55,58,0.5)] p-[17px] opacity-0">
                   <div className="mb-[10px]">
                     <Image
-                      src="/images/home/icons/hero-icon-failed.svg"
+                      src="/images/common/icons/hero-icon-failed.svg"
                       alt=""
                       width={17}
                       height={17}
@@ -567,7 +567,7 @@ export default function HeroSection() {
               <div className="p-4">
                 <div className="flex gap-2">
                   <Image
-                    src="/images/home/icons/hero-icon-failed.svg"
+                    src="/images/common/icons/hero-icon-failed.svg"
                     alt=""
                     width={17}
                     height={17}
@@ -600,7 +600,7 @@ export default function HeroSection() {
             >
               <div className="space-y-[7px]">
                 <Image
-                  src="/images/home/icons/hero-icon-attempted.svg"
+                  src="/images/common/icons/hero-icon-attempted.svg"
                   alt=""
                   width={17}
                   height={17}
@@ -620,7 +620,7 @@ export default function HeroSection() {
             <div className="w-[133px] rounded-[10px] border border-white/20 bg-gradient-to-b from-green-500/20 to-green-700/20 p-[17px] shadow-[0px_4px_15px_rgba(0,0,0,0.15)] border border-white/10">
               <div className="space-y-[7px]">
                 <Image
-                  src="/images/home/icons/hero-icon-failed.svg"
+                  src="/images/common/icons/hero-icon-failed.svg"
                   alt=""
                   width={17}
                   height={17}

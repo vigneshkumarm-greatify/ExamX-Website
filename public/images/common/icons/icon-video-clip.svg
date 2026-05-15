@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 29.4286 24.6194" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="youtube--youtube-clip-social-video">
+<path id="Intersect" d="M1.32 17.0731C1.70171 20.3531 4.42857 22.9383 7.72 23.2377C9.99657 23.4434 12.3326 23.6194 14.7143 23.6194C17.096 23.6194 19.432 23.4434 21.7086 23.2377C25 22.9406 27.7269 20.3531 28.1086 17.0731C28.2914 15.5143 28.4286 13.9234 28.4286 12.3097C28.4286 10.696 28.2914 9.10514 28.1086 7.54629C27.7269 4.26629 25 1.68114 21.7086 1.38171C19.432 1.176 17.096 1 14.7143 1C12.3326 1 9.99657 1.176 7.72 1.38171C4.42857 1.68114 1.70171 4.26629 1.32 7.54629C1.12076 9.12652 1.01391 10.717 1 12.3097C1 13.9234 1.13714 15.5143 1.32 17.0731Z" stroke="url(#paint0_linear_0_33)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Intersect_2" d="M14.2211 17.4755C17.0188 15.9761 20.6463 13.7543 20.6463 12.3098C20.6463 10.8652 17.0188 8.64349 14.2211 7.14406C12.7514 6.35777 11.0371 7.44578 11.0371 9.11206V15.5075C11.0371 17.1738 12.7514 18.2618 14.2211 17.4732V17.4755Z" stroke="url(#paint1_linear_0_33)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_33" x1="14.7143" y1="1" x2="14.7143" y2="23.6194" gradientUnits="userSpaceOnUse">
+<stop stop-color="#91A9AA"/>
+<stop offset="1" stop-color="#00373A"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_33" x1="15.8417" y1="6.88318" x2="15.8417" y2="17.7353" gradientUnits="userSpaceOnUse">
+<stop stop-color="#91A9AA"/>
+<stop offset="1" stop-color="#00373A"/>
+</linearGradient>
+</defs>
+</svg>

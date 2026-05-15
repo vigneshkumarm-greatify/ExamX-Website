@@ -38,7 +38,7 @@ interface SolutionCard {
 
 const solutionCards: SolutionCard[] = [
   {
-    icon: "/images/home/icons/icon-book-reading.svg",
+    icon: "/images/common/icons/icon-book-reading.svg",
     title: "Universities & Colleges",
     subtitle: "Accreditation-ready exams, at any scale.",
     bullets: [
@@ -60,7 +60,7 @@ const solutionCards: SolutionCard[] = [
     },
   },
   {
-    icon: "/images/home/icons/icon-school.svg",
+    icon: "/images/common/icons/icon-school.svg",
     title: "K-12 Schools",
     subtitle: "So simple teachers love it, so smart principals trust it",
     bullets: [
@@ -84,7 +84,7 @@ const solutionCards: SolutionCard[] = [
     },
   },
   {
-    icon: "/images/home/icons/icon-building.svg",
+    icon: "/images/common/icons/icon-building.svg",
     title: "Government & Public Sector",
     subtitle: "National scale exams, Zero paper leaks",
     bullets: [
@@ -108,7 +108,7 @@ const solutionCards: SolutionCard[] = [
     },
   },
   {
-    icon: "/images/home/icons/icon-bag-suitcase.svg",
+    icon: "/images/common/icons/icon-bag-suitcase.svg",
     title: "Corporate & Enterprise",
     subtitle: "Hire smarter, train faster, measure everything",
     bullets: [
@@ -133,7 +133,7 @@ const solutionCards: SolutionCard[] = [
     },
   },
   {
-    icon: "/images/home/icons/icon-warranty-badge.svg",
+    icon: "/images/common/icons/icon-warranty-badge.svg",
     title: "Certification & Licensure Bodies",
     subtitle: "High stakes credentials, psychometric precision",
     bullets: [
@@ -155,7 +155,7 @@ const solutionCards: SolutionCard[] = [
     },
   },
   {
-    icon: "/images/home/icons/icon-deepfake.svg",
+    icon: "/images/common/icons/icon-deepfake.svg",
     title: "Coaching & EdTech",
     subtitle: "Launch test series in hours, not months",
     bullets: [

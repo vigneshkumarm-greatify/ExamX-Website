@@ -17,7 +17,7 @@ const heroData: OrgHeroProps = {
     { value: "8+ hrs", label: "Saved per week" },
     { value: "20+", label: "Regional languages" },
   ],
-  centerIconPath: "/images/home/icons/icon-school.svg",
+  centerIconPath: "/images/common/icons/icon-school.svg",
   arcSvgPath: "/images/common/hero-arc.svg",
   theme: {
     bgGradient: "linear-gradient(180deg, #663718 0%, #ff8a3b 100%)",

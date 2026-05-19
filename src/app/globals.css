@@ -89,3 +89,9 @@
     transition: none !important;
   }
 }
+
+
+.shadow30 {
+  box-shadow: 0 10 40px 15 rgba(0, 220, 70, 1) inset;
+}
+

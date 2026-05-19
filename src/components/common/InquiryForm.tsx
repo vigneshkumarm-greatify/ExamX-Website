@@ -223,7 +223,9 @@ export default function InquiryForm({
 
   return (
     <div className={className}>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3 border-y border-[#f4f4f5] py-6">
+
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3  ">
+    
         <div>
           <input
             type="text"
@@ -317,10 +319,12 @@ export default function InquiryForm({
           <p className="text-sm font-medium text-red-500">{errorMessage}</p>
         )}
 
+<div className="w-[100%] bg-gray-200 mt-3 h-[1px] mx-auto"></div>
+
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="mt-3 w-full rounded-lg px-4 py-3 text-base font-semibold leading-[1.2] tracking-[-0.32px] text-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.15)] disabled:opacity-60"
+          className="mt-3 w-full cursor-pointer rounded-lg px-4 py-3 text-base font-semibold leading-[1.2] tracking-[-0.32px] text-white shadow-[0px_4px_15px_0px_rgba(0,0,0,0.15)] disabled:opacity-60"
           style={{
             backgroundImage:
               "linear-gradient(137.09deg, #00dc46 1.33%, #008f2e 98.18%)",

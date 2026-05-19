@@ -58,7 +58,7 @@ const cards: WhySwitchCard[] = [
     glowBlur: 22,
   },
   {
-    icon: "/images/solutions/icon-ai-scanner.svg",
+    icon: "/images/common/icons/icon-ai-scanner.svg",
     iconColor: "#00DC46",
     iconBg: "bg-green-200",
     title: "Agentic AI Proctoring",

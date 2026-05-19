@@ -62,9 +62,22 @@ const aiSections = [
   },
 ];
 
+/* ── Platform dropdown sections ── */
+const platformSections = [
+  {
+    section: "Proctoring",
+    items: [
+      {
+        title: "AI Proctoring",
+        description: "Real-time exam integrity with AI detection",
+        href: "/platform/ai-proctoring",
+      },
+    ],
+  },
+];
+
 /* ── Plain nav links ── */
 const plainLinks = [
-  { label: "Platform", href: "#platform", hasDropdown: true },
   { label: "Resources", href: "#resources" },
   { label: "About us", href: "/about" },
   { label: "Contact us", href: "/contact-us" },
@@ -76,11 +89,13 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const [mobileAiOpen, setMobileAiOpen] = useState(false);
+  const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false);
 
   const closeMobile = useCallback(() => {
     setMobileOpen(false);
     setMobileSolutionsOpen(false);
     setMobileAiOpen(false);
+    setMobilePlatformOpen(false);
   }, []);
 
   /* Lock body scroll when mobile menu is open */
@@ -162,6 +177,50 @@ export default function Navbar() {
           )}
         </Popover>
 
+        {/* Platform — Headless UI Popover */}
+        <Popover className="relative">
+          {({ open }) => (
+            <>
+              <PopoverButton className={`flex cursor-pointer items-center gap-1 whitespace-nowrap text-base font-semibold leading-[1.2] tracking-[-0.16px] outline-none transition-colors ${isLightBg ? "text-chalk-green-500 hover:text-chalk-green-400" : "text-creme-500 hover:text-white"}`}>
+                Platform
+                <ChevronDownIcon
+                  className={`h-[11px] w-[11px] transition-transform ${open ? "rotate-180" : ""}`}
+                />
+              </PopoverButton>
+
+              <PopoverPanel
+                transition
+                className="absolute left-0 top-full z-[60] mt-4 w-[380px] origin-top-left rounded-2xl border border-gray-100 bg-white p-4 shadow-[0px_16px_40px_rgba(0,0,0,0.12)] transition data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              >
+                <div className="flex flex-col gap-3">
+                  {platformSections.map((group) => (
+                    <div key={group.section} className="flex flex-col gap-1">
+                      <p className="px-3 pt-1 text-[11px] font-semibold uppercase leading-[1.2] tracking-[0.6px] text-[#a1a1aa]">
+                        {group.section}
+                      </p>
+                      {group.items.map((item) => (
+                        <CloseButton
+                          as={Link}
+                          key={item.href}
+                          href={item.href}
+                          className="group rounded-xl px-3 py-2.5 transition-colors hover:bg-neutral-100"
+                        >
+                          <p className="text-[14px] font-semibold leading-[1.3] tracking-[-0.14px] text-chalk-green-500">
+                            {item.title}
+                          </p>
+                          <p className="mt-0.5 text-[12px] font-medium leading-[1.4] tracking-[-0.12px] text-[#71717a]">
+                            {item.description}
+                          </p>
+                        </CloseButton>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </PopoverPanel>
+            </>
+          )}
+        </Popover>
+
         {/* AI — Headless UI Popover */}
         <Popover className="relative">
           {({ open }) => (
@@ -214,9 +273,6 @@ export default function Navbar() {
             className={`flex items-center gap-1 whitespace-nowrap text-base font-semibold leading-[1.2] tracking-[-0.16px] transition-colors ${isLightBg ? "text-chalk-green-500 hover:text-chalk-green-400" : "text-creme-500 hover:text-white"}`}
           >
             {link.label}
-            {link.hasDropdown && (
-              <ChevronDownIcon className="h-[11px] w-[11px]" />
-            )}
           </a>
         ))}
       </div>
@@ -335,6 +391,40 @@ export default function Navbar() {
                   >
                     View all solutions
                   </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Platform accordion */}
+            <div>
+              <button
+                onClick={() => setMobilePlatformOpen(!mobilePlatformOpen)}
+                className="flex w-full items-center justify-between text-base font-semibold text-chalk-green-500"
+              >
+                Platform
+                <ChevronDownIcon
+                  className={`h-4 w-4 text-chalk-green-500 transition-transform ${mobilePlatformOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobilePlatformOpen && (
+                <div className="mt-2 flex flex-col gap-3 border-l border-gray-200 pl-3">
+                  {platformSections.map((group) => (
+                    <div key={group.section} className="flex flex-col gap-1">
+                      <p className="px-2 text-[11px] font-semibold uppercase leading-[1.2] tracking-[0.6px] text-[#a1a1aa]">
+                        {group.section}
+                      </p>
+                      {group.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="rounded-lg px-2 py-2 text-[14px] font-medium text-[#71717a] transition-colors hover:text-chalk-green-500"
+                          onClick={closeMobile}
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
                 </div>
               )}
             </div>

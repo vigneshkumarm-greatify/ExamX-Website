@@ -15,7 +15,7 @@ export default function HeroSection() {
         <div className="flex flex-col gap-3">
           <div className="flex items-start">
             <span className="inline-flex items-center gap-1 rounded-lg border border-[rgba(0,220,70,0.4)] bg-[rgba(0,220,70,0.2)] px-2 py-1.5">
-              <Image src="/images/home/illustrations/greatify-ai.svg" alt="" width={15} height={15} />
+              <Image src="/images/common/icons/icon-greatify-ai.svg" alt="" width={15} height={15} />
               <span className="text-[11.11px] font-semibold leading-[1.2] tracking-[-0.01em] text-green-500">
                 AI Empowered
               </span>
